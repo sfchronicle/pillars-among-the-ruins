@@ -11,8 +11,8 @@ Description TK
 ### Installation
 ```bash
 $ git clone git@github.com:sfchronicle/pillars-among-the-ruins.git
-$ cd $PROJECT_NAME
-$ mkvirtualenv $PROJECT_NAME
+$ cd pillars-among-the-ruins
+$ mkvirtualenv pillars-among-the-ruins
 $ pip install -r requirements.txt && npm install && bower install
 $ grunt serve  # visit localhost:5000 in your browser
 ```
