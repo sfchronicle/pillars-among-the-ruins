@@ -1,0 +1,13 @@
+*.db
+*.pyc
+.DS_Store
+migrations/
+node_modules/
+bower_components/
+*.css
+*.css.map
+build/
+data/
+.sass-cache/
+.webassets-cache/
+local_settings.py
