@@ -17,6 +17,13 @@ $ pip install -r requirements.txt && npm install && bower install
 $ grunt serve  # visit localhost:5000 in your browser
 ```
 
+### Start project
+```bash
+$ cd path/to/pillars-among-the-ruins/
+$ workon pillars-among-the-ruins # or whatever you named the environment
+$ grunt serve
+```
+
 ## Structure
 Coming soon.
 
