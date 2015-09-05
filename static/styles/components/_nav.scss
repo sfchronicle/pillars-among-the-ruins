@@ -1,0 +1,209 @@
+@keyframes slideInRight {
+  0% {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: translate3d(100%, 0, 0);
+    visibility: hidden;
+  }
+}
+
+body {
+  &:after {
+    background: color(primary);
+    content: '';
+    height: 100%;
+    left: 0;
+    opacity: 0;
+    overflow: auto;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    transition: $b-transition;
+    //width: 100%;
+  }
+
+  &.open {
+    overflow: hidden;
+  }
+
+  &.open:after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.b-nav {
+  position: absolute;
+  z-index: 11;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: white;
+  border-left: 1px solid #eee;
+  box-shadow: 1px 1px #222;
+  transition: $b-transition;
+
+  &:not(.open) {
+    visibility: hidden;
+  }
+
+  li {
+    color: color(complement);
+    list-style-type: none;
+    padding: 10px;
+    text-align: center;
+    transform: translateX(-250px);
+  }
+
+  li:not(.open) {
+    animation-duration: $b-trans-speed;
+    animation-fill-mode: both;
+    animation-name: slideOutRight;
+  }
+
+  li:first-child {
+    padding-top: $b-txt-pad-top;
+  }
+
+  &.open {
+    visibility: visible;
+
+    li {
+      animation-duration: $b-trans-speed;
+      animation-fill-mode: both;
+      animation-name: slideInRight;
+    }
+  }
+}
+
+.b-link {
+  background: transparent;
+  border-left: color(complement, normal, 0) solid $b-border-width;
+  color: color(complement);
+  font-family: $b-font-family;
+  font-size: $b-font-size;
+  font-weight: $b-font-weight;
+  //margin-left: $b-margin-left;
+  margin-right: $b-margin-right;
+  text-decoration: none;
+  transition: $b-transition;
+  width: auto;
+
+  &:hover,
+  &--active {
+    border-left: color(complement) solid $b-border-width;
+    padding-left: $b-txt-pad;
+  }
+}
+
+.b-menu {
+  background: color(primary);
+  border: color(primary) solid $b-border-width;
+  border-radius: $b-border-radius;
+  cursor: pointer;
+  display: inline-block;
+  height: $b-height;
+  padding-left: $b-pad-left;
+  padding-top: $b-pad-top;
+  position: relative;
+  transition: $b-transition;
+  user-select: none;
+  width: $b-height;
+  z-index: 12;
+
+  &:hover {
+    border: color(complement) solid $b-border-width;
+  }
+}
+
+.b-bun {
+  background: color(complement);
+  position: relative;
+  transition: $b-transition;
+
+  &--top {
+    height: $b-bun-height;
+    top: 0;
+    width: $b-bun-width;
+  }
+
+  &--mid {
+    height: $b-bun-height;
+    top: 8px;
+    width: $b-bun-width;
+  }
+
+  &--bottom {
+    height: $b-bun-height;
+    top: 16px;
+    width: $b-bun-width;
+  }
+}
+
+.b-brand {
+  color: color(primary);
+  font-family: $b-font-family;
+  font-size: $b-font-size;
+  font-weight: $b-font-weight;
+  margin-left: $b-txt-pad;
+  position: relative;
+  text-decoration: none;
+  top: -$b-line-height;
+  transition: $b-transition;
+  z-index: 13;
+}
+
+.b-container {
+  height: $b-height;
+  //left: $b-margin-left;
+  right: $b-margin-right;
+  position: absolute;
+  top: $b-margin-top;
+
+  &:hover:not(.open) {
+    .bun-top,
+    .bun-mid,
+    .bun-bottom {
+      background: color(primary);
+    }
+  }
+
+  &.open {
+    .b-main {
+      border: color(complement) solid $b-border-width;
+    }
+
+    .b-bun--top {
+      background: color(complement);
+      top: 9px;
+      transform: rotate(45deg);
+    }
+
+    .b-bun--mid {
+      opacity: 0;
+    }
+
+    .b-bun--bottom {
+      background: color(complement);
+      top: 5px;
+      transform: rotate(-45deg);
+    }
+
+    .b-brand {
+      color: color(complement);
+    }
+  }
+}

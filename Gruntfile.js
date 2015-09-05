@@ -50,10 +50,10 @@ module.exports = function (grunt) {
         files: ['<%= config.app %>/styles/{,*/}*.{scss,sass}'],
         tasks: ['sass:server', 'autoprefixer']
       },
-      styles: {
-        files: ['<%= config.app %>/styles/{,*/}*.css'],
-        tasks: ['autoprefixer']
-      },
+    //   styles: {
+    //     files: ['<%= config.app %>/styles/{,*/}*.css'],
+    //     tasks: ['autoprefixer']
+    //   },
       livereload: {
         files: [
           '<%= config.templates %>/{,*/}*.html',
@@ -80,7 +80,7 @@ module.exports = function (grunt) {
     sass: {
       options: {
         sourceMap: true,
-        includePaths: ['bower_components']
+        includePaths: require('node-refills').includePaths.concat('static/bower_components')
       },
       dist: {
         files: [{

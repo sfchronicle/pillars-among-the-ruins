@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}New Web App | SF Chronicle{% endblock %}
+
+{% block head %}{% endblock %}
+
+{% block content %}
+<main>
+    <section class="hero" id="hero-image">
+        {% block profile_image %}{% endblock %}
+    </section>
+
+    <section class="hero" id="hero-copy">
+        <div class="content">
+            {% include 'components/nav.html' %}
+            {% block profile_content %}{% endblock %}
+        </div>
+    </section>
+</main>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.nav();
+    });
+</script>
+{% endblock %}

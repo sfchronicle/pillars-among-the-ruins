@@ -8,6 +8,7 @@ bower_components/
 *.css.map
 build/
 data/
+images/
 .sass-cache/
 .webassets-cache/
 local_settings.py

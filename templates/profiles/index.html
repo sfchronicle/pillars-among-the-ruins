@@ -1,0 +1,58 @@
+{% extends 'profile_base.html' %}
+
+{% block title %}Profiles{% endblock %}
+
+{% block profile_image %}
+    <!-- <img src="{{ url_for('static', filename='images/lighttest.9283.jpg') }}" alt=""> -->
+    <div class="img-container" style="background-image: url();"></div>
+{% endblock %}
+
+{% block profile_content %}
+    <section>
+        <ul class="character-list">
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9033.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9036.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9090.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9153.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9165.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9283.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+            <li>
+                <a href="#" data-url="{{ url_for('static', filename='images/lighttest.9290.jpg') }}" class="character-selection">
+                    <h2>Person</h2>
+                </a>
+            </li>
+        </ul>
+    </section>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
+{% endblock %}
