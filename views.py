@@ -12,6 +12,6 @@ def index():
 def profiles():
     return render_template('profiles/index.html', title='profiles')
 
-@app.route('/p/<profile>')
+@app.route('/p/<profile>/')
 def profile(profile):
     return render_template('profiles/{}.html'.format(profile), title='profile')
