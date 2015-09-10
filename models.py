@@ -9,6 +9,7 @@ class Profile(db.Model):
     name = db.Column(db.String(100))
     body = db.Column(db.Text())
     slug = db.Column(db.String(100))
+    image_url = db.Column(db.String(100))
     video_url = db.Column(db.String(100))
 
     def __unicode__(self):

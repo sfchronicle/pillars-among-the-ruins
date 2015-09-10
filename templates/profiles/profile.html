@@ -1,0 +1,17 @@
+{% extends 'profile_base.html' %}
+
+{% block title %}{{ profile.name }}{% endblock %}
+
+{% block profile_image %}
+    <!-- <img src="{{ url_for('static', filename='images/lighttest.9283.jpg') }}" alt=""> -->
+    <div class="img-container" style="background-image: url({{ profile.image_url }});"></div>
+{% endblock %}
+
+{% block profile_content %}
+    <section class="profile-page">
+        <h2>
+            <span class="name">{{ profile.name }}</span>
+        </h2>
+        <p>{{ profile.body }}</p>
+    </section>
+{% endblock %}
