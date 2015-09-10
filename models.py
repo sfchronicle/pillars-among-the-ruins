@@ -4,18 +4,15 @@ from app import db
 # Create models here
 
 
-class Example(db.Model):
+class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    headline = db.Column(db.Unicode(64))
-    body = db.Column(db.UnicodeText())
+    name = db.Column(db.String(100))
+    body = db.Column(db.Text())
+    slug = db.Column(db.String(100))
+    video_url = db.Column(db.String(100))
 
-    created_on = db.Column(db.DateTime(), default=datetime.utcnow)
-    updated_on = db.Column(
-        db.DateTime(), default=datetime.utcnow, onupdate=datetime.utcnow)
-
-    def __init__(self, headline="", body=""):
-        self.headline = headline
-        self.body = body
+    def __unicode__(self):
+        return self.name
 
     def __repr__(self):
-        return '<Example - {}>'.format(self.headline)
+        return '<Profile: {}>'.format(self.name)
