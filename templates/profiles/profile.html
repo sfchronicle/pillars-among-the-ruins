@@ -13,5 +13,15 @@
             <span class="name">{{ profile.name }}</span>
         </h2>
         <p>{{ profile.body }}</p>
+        <a href="#animatedModal" class="button secondary">Video</a>
     </section>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.nav();
+        App.profileList();
+    });
+</script>
 {% endblock %}

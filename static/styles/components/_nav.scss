@@ -20,6 +20,21 @@
   }
 }
 
+.header-border {
+    &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: -10px; // puts the line a bit further down
+        left: 0;
+        background: linear-gradient(left, transparent 0%,#444 50%,transparent 100%);
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out 0s;
+    }
+}
+
 body {
   &:after {
     background: color(primary);
@@ -52,8 +67,6 @@ body {
   height: 100%;
   width: 100%;
   background-color: white;
-  border-left: 1px solid #eee;
-  box-shadow: 1px 1px #222;
   transition: $b-transition;
 
   &:not(.open) {
@@ -90,22 +103,29 @@ body {
 }
 
 .b-link {
+  position: relative;
   background: transparent;
-  border-left: color(complement, normal, 0) solid $b-border-width;
-  color: color(complement);
+  // border-left: color(complement, normal, 0) solid $b-border-width;
+  color: #777;
   font-family: $b-font-family;
   font-size: $b-font-size;
   font-weight: $b-font-weight;
   //margin-left: $b-margin-left;
   margin-right: $b-margin-right;
   text-decoration: none;
-  transition: $b-transition;
+  // transition: $b-transition;
   width: auto;
+  @extend .header-border;
 
   &:hover,
   &--active {
-    border-left: color(complement) solid $b-border-width;
-    padding-left: $b-txt-pad;
+    // border-left: color(complement) solid $b-border-width;
+    // padding-left: $b-txt-pad;
+    color: #222;
+    &:before {
+        visibility: visible;
+        transform: scaleX(1);
+    }
   }
 }
 

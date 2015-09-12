@@ -6,6 +6,8 @@ node_modules/
 bower_components/
 *.css
 *.css.map
+vendor.*.js
+main.*.js
 build/
 data/
 images/

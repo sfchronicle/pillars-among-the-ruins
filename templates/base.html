@@ -6,6 +6,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     {% block head %}{% endblock %}
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
   </head>
   <body class="{% if config.DEBUG %}debug{% endif %}">
@@ -14,8 +15,17 @@
     <![endif]-->
     {% block content %}{% endblock %}
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='scripts/main.js') }}"></script>
+
+    {% assets filters="uglifyjs", output="vendor.%(version)s.js",
+              "bower_components/jquery/dist/jquery.js",
+              "bower_components/animatedModal/animatedModal.js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+
+    {% assets filters="uglifyjs", output="main.%(version)s.js", "scripts/main.js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+
     {% block javascript %}{% endblock %}
 
     {% if config.DEBUG %}
