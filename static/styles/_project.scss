@@ -59,57 +59,36 @@ main {
       margin: 0;
       width: 50%;
   }
+}
 
-  &#home { // mainbar
+// MAIN BAR
+#home {
+  height: 100vh;
+
+  header {
     height: 100vh;
+    background-image: url(http://ww2.hdnux.com/photos/37/27/52/8223381/3/1500x1500.jpg);
+    background-size: cover;
+    filter: grayscale(1);
 
-    header {
-        height: 100vh;
-        background-image: url(http://ww2.hdnux.com/photos/37/27/52/8223381/3/1500x1500.jpg);
-        background-size: cover;
-        filter: grayscale(1);
-
-        h1 {
-            color: white;
-            text-align: center;
-            text-transform: uppercase;
-            font-size: 4em;
-            font-family: Antenna;
-        }
+    h1 {
+      color: white;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 4em;
+      font-family: Antenna;
     }
+  }
 
-    .inner {
-        position: relative;
-        background-color: white;
-        height: 100%;
-    }
+  .hero > .content {
+    @include span-columns(5 of 6);
+    @include shift(1);
+  }
 
-    section {
-      margin-top: 50px;
-      @include span-columns(5);
-      @include shift(3);
-
-      #dropcap { @include span-columns(1 of 5); }
-      #sentence { @include span-columns(4 of 5); }
-
-      #letter {
-        @extend .header-border;
-        position: relative;
-        font-size: 2.4em;
-        display: block;
-        border: 2px solid black;
-        padding: 0.5em 0 3em 1em;
-        font-family: Helvetica;
-
-        &:before {
-          visibility: visible;
-          transform: scaleX(1);
-          width: 20px;
-          bottom: 135px;
-          left: 49px;
-        }
-      }
-    }
+  #right-panel {
+    position: fixed;
+    right: 0;
+    top: 50px;
   }
 }
 

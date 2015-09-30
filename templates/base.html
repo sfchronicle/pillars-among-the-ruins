@@ -18,6 +18,7 @@
 
     {% assets filters="uglifyjs", output="vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
+              "bower_components/dropcap.js/dropcap.js",
               "bower_components/animatedModal/animatedModal.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}

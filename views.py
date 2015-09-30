@@ -4,9 +4,14 @@ from app import app, db
 from models import Profile
 
 @app.route('/')
-def index():
+def landing():
     profiles = Profile.query.all()
-    return render_template('index.html', title='index', profiles=profiles)
+    return render_template('story-landing.html', title='story-landing', profiles=profiles)
+
+@app.route('/story/')
+def story():
+    profiles = Profile.query.all()
+    return render_template('story.html', title='story', profiles=profiles)
 
 @app.route('/p/')
 def profiles():
