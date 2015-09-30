@@ -5,27 +5,28 @@ Description TK
 - Python 2.7.x
 - Node.js 0.12
   - uglifyjs (`npm install -g uglifyjs`)
-  - clean-css (`npm install -g cleancss`)
+  - clean-css (`npm install -g clean-css`)
   - Bower and Grunt (`$ npm install -g grunt-cli bower`)
 
-### Installation
+## Installation
 ```bash
 $ git clone git@github.com:sfchronicle/pillars-among-the-ruins.git
 $ cd pillars-among-the-ruins
 $ mkvirtualenv pillars-among-the-ruins
 $ pip install -r requirements.txt && npm install && bower install
-$ grunt serve  # visit localhost:5000 in your browser
 ```
 
-### Start project
+## Setup database
 ```bash
-$ cd path/to/pillars-among-the-ruins/
-$ workon pillars-among-the-ruins # or whatever you named the environment
+$ python createdb.py
+$ python migratedb.py db init
+$ python migratedb.py db migrate
+```
+
+## Start app
+```bash
 $ grunt serve
 ```
-
-## Structure
-Coming soon.
 
 ### Build and deployment
 Create a `local_settings.py` file in the `settings` directory. Add the following env variables:
