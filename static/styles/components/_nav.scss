@@ -118,6 +118,8 @@ body {
   @extend .header-border;
 
   &:hover,
+  &:focus,
+  &:active,
   &--active {
     // border-left: color(complement) solid $b-border-width;
     // padding-left: $b-txt-pad;

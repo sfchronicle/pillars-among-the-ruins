@@ -22,20 +22,16 @@ App = {
     })();
   },
   profileList: function () {
+    var self = this;
     var $characters = $('.character-selection');
-    $characters.on('mouseenter', function (event) { setBg(this); })
+    self.current = $('.img-container');
+
+    $characters.on('mouseenter', function (event) { setBg(this); });
+    $characters.on('mouseout', function (event) { setBg(self.current); });
 
     function setBg (node) {
       var imageUrl = $(node).data('url');
       $('.img-container').css('background-image', 'url('+imageUrl+')');
     }
-  },
-  enableDropcap: function () {
-    /* EXPERIMENT */
-    var dropcap = document.getElementById('dropcap');
-    window.Dropcap.layout(dropcap, 8);
-  },
-  enableVideoModal: function () {
-    $('.video').animatedModal();
   }
 };
