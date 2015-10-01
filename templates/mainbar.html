@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}New Web App | SF Chronicle{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main>
+    <header>
+        <h1>Mainbar</h1>
+    </header>
+    <article>
+        {% include 'components/_storytext.html' %}
+
+        <ul>
+            {% for p in profiles %}
+            <li>
+                <a href="/p/{{ p.slug }}" data-url="{{ p.image_url }}" class="b-link character-selection" tabindex="10">
+                    {{ p.name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </article>
+</main>
+{% endblock %}

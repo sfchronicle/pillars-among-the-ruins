@@ -1,10 +1,4 @@
 @import '../bower_components/foundation/scss/normalize';
-@import '../bower_components/foundation/scss/foundation/components/type';
-@import '../bower_components/foundation/scss/foundation/components/buttons';
 @import 'bourbon';
-//@import 'base/base';
+@import 'base/base';
 @import 'neat';
-
-@import 'components/variables';
-@import 'components/nav';
-@import 'project';

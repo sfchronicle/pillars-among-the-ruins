@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ profile.name }}{% endblock %}
+
+{% block content %}
+<section>
+    <img src="{{ profile.image_url }}" alt="{{ profile.name }}">
+</section>
+
+
+<section class="profile-page">
+    <h2>{{ profile.name }}</h2>
+    <p>{{ profile.body }}</p>
+    <continue>
+        <i class="fa fa-chevron-down"></i>
+    </continue>
+</section>
+{% endblock %}

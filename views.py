@@ -1,30 +1,29 @@
-from flask import render_template  #, redirect, url_for
+from flask import render_template, redirect, url_for
 
 from app import app, db
 from models import Profile
 
 @app.route('/')
-def landing():
-    profiles = Profile.query.all()
-    return render_template('story-landing.html', title='story-landing', profiles=profiles)
+def index():
+    return redirect(url_for('mainbar'))
 
-@app.route('/story/')
-def story():
-    profiles = Profile.query.all()
-    return render_template('story.html', title='story', profiles=profiles)
-
-@app.route('/p/')
-def profiles():
+@app.route('/mainbar/')
+def mainbar():
     profiles = Profile.query.all()
     return render_template(
-        'profiles/profiles.html',
-        title='profiles',
+        'mainbar.html',
+        title='mainbar',
         profiles=profiles
     )
 
-@app.route('/p/<slug>/')
+@app.route('/<slug>/')
 def profile(slug):
     profiles = Profile.query.all()
     profile = Profile.query.filter_by(slug=slug).all()[0]
-    return render_template('profiles/profile.html',
-        title='profile', profile=profile, profiles=profiles)
+
+    return render_template(
+        'profile.html',
+        title='profile',
+        profile=profile,
+        profiles=profiles
+    )
