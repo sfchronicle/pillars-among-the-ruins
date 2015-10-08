@@ -1,0 +1,25 @@
+/* ========================
+   PROJECT STYLES
+   ========================
+*/
+main {
+}
+
+article {
+  @include outer-container;
+}
+
+footer {
+  @include span-columns(12);
+}
+//============================
+
+#lede {
+  font-size: 1.35em;
+}
+
+.step {
+  @include span-columns(8);
+  @include shift(1);
+  margin-bottom: 100px;
+}

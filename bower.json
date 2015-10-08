@@ -15,7 +15,6 @@
   ],
   "dependencies": {
     "foundation": "~5.5.2",
-    "jquery": "~2.1.4",
-    "normalize-libsass": "~1.0.3"
+    "jquery": "~2.1.4"
   }
 }
