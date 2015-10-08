@@ -2,24 +2,15 @@
    PROJECT STYLES
    ========================
 */
-main {
-}
-
-article {
+main,
+.mainbar {
   @include outer-container;
 }
 
 footer {
   @include span-columns(12);
 }
-//============================
 
-#lede {
-  font-size: 1.35em;
-}
-
-.step {
+.mainbar > article {
   @include span-columns(8);
-  @include shift(1);
-  margin-bottom: 100px;
 }

@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block content %}
-<main>
-    {% include 'components/nav.html' %}
-    {% include 'components/header.html' %}
+<main class="mainbar">
+    {# include 'components/nav.html' #}
+    {# include 'components/header.html' #}
     <article>
         {% include 'components/_storytext.html' %}
         <ul>
@@ -21,6 +21,14 @@
             {% endfor %}
         </ul>
     </article>
-    {% include 'components/footer.html' %}
+    {# include 'components/footer.html' #}
 </main>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
 {% endblock %}

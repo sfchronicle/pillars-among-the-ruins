@@ -1,6 +1,8 @@
 @import '../bower_components/foundation/scss/normalize';
 @import 'bourbon';
-@import 'base/base';
 @import 'neat';
+@import 'base/base';
 
+@import 'components/viz';
+@import 'components/type';
 @import 'components/project';

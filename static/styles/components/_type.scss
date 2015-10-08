@@ -1,0 +1,19 @@
+$serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+$sans-serif: 'Lato',  'Helvetica Neue', Helvetica, sans-serif;
+main {
+  font-family: $serif;
+}
+
+p {
+  // Thanks Medium
+  font-size: 21px;
+  line-height: 1.58;
+  margin-top: 29px;
+  letter-spacing: -0.003em;
+}
+
+.dropcap {
+  font-family: $sans-serif;
+  padding: 0 5px 0 0 !important;
+  display: inline-block;
+}

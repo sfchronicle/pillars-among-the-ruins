@@ -19,8 +19,9 @@
 
     {% assets filters="uglifyjs", output="vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
+              "bower_components/webfontloader/webfontloader.js",
               "bower_components/dropcap.js/dropcap.js",
-              "bower_components/animatedModal/animatedModal.js" %}
+              "bower_components/scotchPanels/dist/scotchPanels.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
@@ -28,6 +29,13 @@
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
+    <script>
+        WebFont.load({
+          google: {
+            families: ['Merriweather', 'Lato']
+          }
+        });
+    </script>
     {% block javascript %}{% endblock %}
 
     {% if config.DEBUG %}

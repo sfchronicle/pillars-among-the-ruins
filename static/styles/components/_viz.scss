@@ -1,0 +1,7 @@
+.viz-trigger {
+  color: red;
+  &:hover {
+    color: darken(red, 20%);
+    cursor: pointer;
+  }
+}
