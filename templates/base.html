@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -17,7 +17,7 @@
     {% block content %}{% endblock %}
 
 
-    {% assets filters="uglifyjs", output="vendor.%(version)s.js",
+    {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
               "bower_components/webfontloader/webfontloader.js",
               "bower_components/dropcap.js/dropcap.js",
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
-    {% assets filters="uglifyjs", output="main.%(version)s.js", "scripts/main.js" %}
+    {% assets filters="uglifyjs", output="scripts/main.%(version)s.js", "scripts/main.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 

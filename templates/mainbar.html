@@ -8,18 +8,9 @@
 {% block content %}
 <main class="mainbar">
     {# include 'components/nav.html' #}
-    {# include 'components/header.html' #}
+    {% include 'components/header.html' %}
     <article>
         {% include 'components/_storytext.html' %}
-        <ul>
-            {% for p in profiles %}
-            <li>
-                <a href="/{{ p.slug }}" data-url="{{ p.image_url }}" tabindex="10">
-                    {{ p.name }}
-                </a>
-            </li>
-            {% endfor %}
-        </ul>
     </article>
     {# include 'components/footer.html' #}
 </main>

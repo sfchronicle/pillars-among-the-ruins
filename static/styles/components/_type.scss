@@ -1,15 +1,28 @@
 $serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
 $sans-serif: 'Lato',  'Helvetica Neue', Helvetica, sans-serif;
+$base-font: 21px;
+$line-height: 1.58;
+$margin-top: 29px;
+$letter-spacing: -0.003em;
+
+$mobile: 640px;
+
 main {
   font-family: $serif;
+  padding: 10px;
 }
 
 p {
   // Thanks Medium
-  font-size: 21px;
-  line-height: 1.58;
-  margin-top: 29px;
-  letter-spacing: -0.003em;
+  font-size: $base-font;
+  line-height: $line-height;
+  margin-top: $margin-top;
+  letter-spacing: $letter-spacing;
+
+  @include media(max-width $mobile) {
+    font-size: 18px;
+    margin-top: 26px;
+  }
 }
 
 .dropcap {

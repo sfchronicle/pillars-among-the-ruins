@@ -2,15 +2,24 @@
    PROJECT STYLES
    ========================
 */
-main,
-.mainbar {
-  @include outer-container;
+$mobile: new-breakpoint(max-width 640px 4);
+
+main{
+  @include outer-container(100%);
 }
 
 footer {
   @include span-columns(12);
 }
 
-.mainbar > article {
+p {
+  @include span-columns(6);
+  @include shift(3);
+}
+
+header {
   @include span-columns(8);
+  @include shift(2);
+
+  text-align: center;
 }

@@ -1,7 +1,9 @@
-.viz-trigger {
-  color: red;
-  &:hover {
-    color: darken(red, 20%);
-    cursor: pointer;
-  }
+.viz {
+  font-family: $sans-serif;
+  font-weight: bold;
+  //@include span-columns(12);
 }
+
+// .scotch-panel-canvas.scotch-is-showing {
+//   height: 100vh !important;
+// }

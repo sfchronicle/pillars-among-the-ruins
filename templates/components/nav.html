@@ -1,3 +1,11 @@
 <nav>
-    This is the nav
+    <ul>
+        {% for p in profiles %}
+        <li>
+            <a href="/{{ p.slug }}" data-url="{{ p.image_url }}" tabindex="10">
+                {{ p.name }}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </nav>
