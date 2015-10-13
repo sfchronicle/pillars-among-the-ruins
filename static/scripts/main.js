@@ -6,7 +6,6 @@ App = {
   init: function () {
     this.dropcap();
     this.fadeStoryIn();
-    this.triggerViz();
   },
   dropcap: function () {
     var dropcaps = document.querySelectorAll('.dropcap');
@@ -26,5 +25,7 @@ App = {
       forceMinHeight: true,
       enableEscapeKey: true
     });
+  },
+  nav: function () {
   }
 };

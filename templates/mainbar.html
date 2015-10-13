@@ -7,13 +7,13 @@
 
 {% block content %}
 <main class="mainbar">
-    {# include 'components/nav.html' #}
     {% include 'components/header.html' %}
     <article>
         {% include 'components/_storytext.html' %}
     </article>
     {# include 'components/footer.html' #}
 </main>
+{% include 'components/nav.html' %}
 {% endblock %}
 
 {% block javascript %}

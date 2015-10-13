@@ -1,5 +1,6 @@
-<nav>
-    <ul>
+<nav role="navigation" class="v-h">
+	<h2>Navigation</h2>
+	<ul>
         {% for p in profiles %}
         <li>
             <a href="/{{ p.slug }}" data-url="{{ p.image_url }}" tabindex="10">

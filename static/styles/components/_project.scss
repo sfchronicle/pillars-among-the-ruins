@@ -2,24 +2,60 @@
    PROJECT STYLES
    ========================
 */
-$mobile: new-breakpoint(max-width 640px 4);
+$mobile: new-breakpoint(max-width 640px);
 
 main{
+}
+
+article {
   @include outer-container(100%);
 }
 
-footer {
-  @include span-columns(12);
+aside {
+  @include row;
 }
 
-p {
+// Inline content
+aside > p,
+article > p  {
   @include span-columns(6);
   @include shift(3);
+
+  @include media($mobile) {
+    @include span-columns(12);
+    @include shift(0);
+  }
 }
+
+article > p {
+  @include omega();
+}
+
+aside > section {
+  @include span-columns(3);
+  @include shift(0);
+
+  @include media($mobile) {
+    @include span-columns(12);
+  }
+}
+
+// INLINE-ASSET ADJUSTMENTS
+// ========================
+aside.inline-asset-left > section {
+  @include shift(-9);
+  @include media($mobile) {
+    @include shift(0);
+  }
+}
+// ========================
 
 header {
   @include span-columns(8);
   @include shift(2);
-
   text-align: center;
+}
+
+footer {
+  @include span-columns(12);
 }

@@ -8,6 +8,11 @@
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- CHANGE IN PRODUCTION -->
+    <script src="{{ url_for('static', filename='scripts/modernizr-dev.js') }}"></script>
+    <!-- CHANGE IN PRODUCTION -->
+
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
   </head>
   <body class="{% if config.DEBUG %}debug{% endif %}">
