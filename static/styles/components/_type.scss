@@ -11,7 +11,7 @@ main {
   font-family: $serif;
 }
 
-p {
+article > p {
   // Thanks Medium
   font-size: $base-font;
   line-height: $line-height;

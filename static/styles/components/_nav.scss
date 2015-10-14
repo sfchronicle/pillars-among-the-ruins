@@ -1,0 +1,219 @@
+$animation-duration: 0.4s;
+$secondary-font: 'Lora', serif;
+$background-color: rgba(#222, 0.35);
+
+$color-1: #9e87ce; // East Side
+$color-2: #5c4b51; // Don Juan
+$color-3: #e0cf75; // Chenin
+$color-4: #f5b65a; // Casablanca
+$color-5: #f25f5c; // Carnation
+$color-6: #8abeb2; // Gulf Stream
+$color-7: #ffffff; // White
+
+.nav-trigger {
+	/* hamburger icon */
+	position: fixed;
+	z-index: 3;
+	top: 12px;
+	right: 5%;
+	height: 44px;
+	width: 44px;
+
+	/* image replacement */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	@include transition(transform 0.2s);
+
+	span {
+		/* icon created in CSS */
+		position: absolute;
+		@include center; // mixin inside partials > _mixins.scss
+		width: 32px;
+		height: 3px;
+		background-color: darken(#5c4b51, 40%);
+
+		&::before, &:after {
+			/* upper and lower lines of the menu icon */
+			content: '';
+			position: absolute;
+			top: 0;
+			right: 0;
+			width: 100%;
+			height: 100%;
+			background-color: inherit;
+
+			/* Force Hardware Acceleration in WebKit */
+			@include transform(translateZ(0));
+			-webkit-backface-visibility: hidden;
+			backface-visibility: hidden;
+
+			@include transition(transform 0.2s, width 0.2s);
+		}
+
+		&::before {
+			@include transform-origin(right top);
+			@include transform(translateY(-10px));
+		}
+
+		&::after {
+			@include transform-origin(right bottom);
+			@include transform(translateY(10px));
+		}
+
+	}
+
+	.no-touch &:hover {
+		/* rotate trigger on hover */
+		@include transform(rotate(180deg));
+
+		span::after,
+		span::before {
+			/* animate arrow --> from hamburger to arrow */
+			width: 50%;
+		}
+
+		span::before {
+			@include transform(translateX(1px) translateY(1px) rotate(45deg));
+		}
+
+		span::after {
+			@include transform(translateX(1px) translateY(-1px) rotate(-45deg));
+		}
+	}
+
+	@include MQ(L) {
+		top: 38px;
+	}
+}
+
+
+/* --------------------------------
+
+xnavigation
+
+-------------------------------- */
+
+nav{
+	@include outer-container(100%);
+	position: fixed;
+	z-index: 4;
+	top: 0;
+	right: 0;
+	height: 100%;
+	overflow-y: auto;
+	background-color: white;
+
+	width: 70%;
+
+	/* Force Hardware Acceleration in WebKit */
+	@include transform(translateZ(0));
+	@include backface-visibility(hidden);
+
+	@include transform(translateX(100%));
+	@include transition(transform $animation-duration 0s, box-shadow 0s $animation-duration); // see partials > _variables.scss
+
+	&.is-visible {
+		@include transform(translateX(0));
+		-webkit-overflow-scrolling: touch;
+		box-shadow: -4px 0 30px rgba(#000, .2);
+		@include transition(transform $animation-duration 0s, box-shadow 0s 0s);
+	}
+}
+
+.cd-close-nav {
+	/* 'X' close icon */
+	position: absolute;
+	top: 12px;
+	right: 5%;
+	height: 44px;
+	width: 44px;
+
+	/* image replacement */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+
+	@include transition(opacity .2s);
+
+	&::after,
+	&::before {
+		/* lines of 'X' icon */
+		content: '';
+		position: absolute;
+		height: 3px;
+		width: 32px;
+		left: 50%;
+    top: 50%;
+		background-color: $color-2;
+		@include backface-visibility(hidden);
+	}
+
+	&::after {
+		@include transform(translateX(-50%) translateY(-50%) rotate(45deg));
+	}
+
+	&::before {
+		@include transform(translateX(-50%) translateY(-50%) rotate(-45deg));
+	}
+
+	.no-touch &:hover {
+		opacity: .8;
+	}
+
+	@include MQ(L) {
+		top: 38px;
+	}
+
+	@include MQ(M) {
+		right: 7.14%;
+	}
+}
+
+
+
+@include keyframes(cd-shock) {
+	0% {
+    	@include transform(rotate(0));
+  	}
+
+  	30% {
+    	@include transform(rotate(10deg));
+  	}
+
+  	60% {
+   		@include transform(rotate(-10deg));
+  	}
+
+  	100% {
+     	@include transform(rotate(0));
+  	}
+}
+
+/* --------------------------------
+
+xshadow layer
+
+-------------------------------- */
+
+.overlay {
+	/* shadow layer visible when navigation is open */
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+	background-color: $background-color;
+	visibility: hidden;
+	opacity: 0;
+	@include backface-visibility(hidden);
+	@include transition(opacity $animation-duration 0s, visibility 0s $animation-duration);
+
+	&.is-visible {
+		opacity: 1;
+		visibility: visible;
+		@include transition(opacity $animation-duration 0s, visibility 0s 0s);
+	}
+}

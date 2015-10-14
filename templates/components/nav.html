@@ -1,12 +1,18 @@
-<nav role="navigation" class="v-h">
-	<h2>Navigation</h2>
-	<ul>
-        {% for p in profiles %}
-        <li>
-            <a href="/{{ p.slug }}" data-url="{{ p.image_url }}" tabindex="10">
-                {{ p.name }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
+<a href="#nav" class="nav-trigger">
+	Menu<span></span>
+</a>
+
+<nav id="nav" role="navigation">
+	<a href="javascript:void(0)" class="cd-close-nav">Close</a>
+	<section>
+		{% for p in profiles %}
+		<p>
+			<a href="/{{ p.slug }}" data-url="{{ p.image_url }}" tabindex="10">
+				<em>{{ p.name }}</em>
+			</a>
+		</p>
+		{% endfor %}
+	</section>
 </nav>
+
+<div class="overlay"><!-- shadow layer visible when navigation is visible --></div>
