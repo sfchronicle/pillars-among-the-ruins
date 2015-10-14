@@ -2,14 +2,6 @@ $animation-duration: 0.4s;
 $secondary-font: 'Lora', serif;
 $background-color: rgba(#222, 0.35);
 
-$color-1: #9e87ce; // East Side
-$color-2: #5c4b51; // Don Juan
-$color-3: #e0cf75; // Chenin
-$color-4: #f5b65a; // Casablanca
-$color-5: #f25f5c; // Carnation
-$color-6: #8abeb2; // Gulf Stream
-$color-7: #ffffff; // White
-
 .nav-trigger {
 	/* hamburger icon */
 	position: fixed;
@@ -103,7 +95,7 @@ nav{
 	right: 0;
 	height: 100%;
 	overflow-y: auto;
-	background-color: white;
+	background-color: #222;
 
 	width: 70%;
 
@@ -146,7 +138,7 @@ nav{
 		width: 32px;
 		left: 50%;
     top: 50%;
-		background-color: $color-2;
+		background-color: #5c4b51;
 		@include backface-visibility(hidden);
 	}
 
