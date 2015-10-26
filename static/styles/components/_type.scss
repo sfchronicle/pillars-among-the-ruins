@@ -11,7 +11,8 @@ main {
   font-family: $serif;
 }
 
-article > p {
+article > p,
+aside.inline-asset > p {
   // Thanks Medium
   font-size: $base-font;
   line-height: $line-height;
