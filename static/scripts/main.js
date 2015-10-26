@@ -2,11 +2,21 @@
 
 var App = App || {};
 
+// Custom jQuery function to enable scrollTo logic
+$.fn.goTo = function() {
+  $('html, body').animate({
+    scrollTop: $(this).offset().top + 'px'
+  }, 'fast');
+  return this; // for chaining...
+};
+
 App = {
   init: function () {
     this.dropcap();
     this.fadeStoryIn();
     this.nav();
+
+    this.setupInlines();
   },
   dropcap: function () {
     var dropcaps = document.querySelectorAll('.dropcap');
@@ -85,5 +95,24 @@ App = {
   			section.prev('.cd-section').remove();
   		}
   	}
+  },
+  setupInlines: function () {
+    var self = this;
+    var inlines = ['deathviz'];
+    inlines.forEach(function (selector) {
+      self.reveal(selector);
+    });
+  },
+  reveal: function (selector, callback) {
+    var $trigger = $('button#'+selector);
+    var $reveal  = $('.inline#'+selector);
+
+    typeof callback === 'function' && callback();
+
+    $trigger.on('click', function (e) {
+      $reveal.slideToggle('fast')
+             .toggleClass('is-expanded')
+             .goTo();
+    });
   }
 };

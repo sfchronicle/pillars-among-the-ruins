@@ -1,0 +1,13 @@
+.inline {
+  display: none;
+}
+
+.inline#deathviz {
+  height: 100vh;
+  background-color: pink;
+}
+
+.is-expanded {
+  display: block;
+  padding-bottom: 0;
+}
