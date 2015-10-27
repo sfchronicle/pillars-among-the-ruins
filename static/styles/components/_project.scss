@@ -50,12 +50,12 @@ aside.inline-asset-left > section {
 }
 // ========================
 
-header {
+main > header {
   @include span-columns(8);
   @include shift(2);
   text-align: center;
 }
 
-footer {
+main > footer {
   @include span-columns(12);
 }

@@ -98,9 +98,13 @@ App = {
   },
   setupInlines: function () {
     var self = this;
-    var inlines = ['deathviz'];
-    inlines.forEach(function (selector) {
-      self.reveal(selector);
+    var inlines = [{
+      selector: 'deathviz',
+      callback: App.deathviz
+    }];
+
+    inlines.forEach(function (obj) {
+      self.reveal(obj.selector, obj.callback);
     });
   },
   reveal: function (selector, callback) {
@@ -110,9 +114,41 @@ App = {
     typeof callback === 'function' && callback();
 
     $trigger.on('click', function (e) {
+      e.preventDefault();
+
       $reveal.slideToggle('fast')
              .toggleClass('is-expanded')
              .goTo();
+    });
+
+    $('.viz-close').on('click', function (e) {
+      e.preventDefault();
+      
+      $reveal.slideToggle('fast')
+             .toggleClass('is-expanded');
+    })
+  },
+  deathviz: function () {
+    var self = this;
+
+    function switchStep(newStep) {
+      $('.step-link').toggleClass('active', false);
+      $('#' + newStep).toggleClass('active', true);
+    }
+
+    function switchAnnotation(newStep) {
+      $(".annotation-step").hide();
+      $("#" + newStep + "-annotation").delay(300).fadeIn(500);
+    }
+
+    $('a.step-link').click(function(e) {
+      e.preventDefault();
+
+      var clickedStep = $(this).attr('id');
+
+      switchStep(clickedStep);
+      switchAnnotation(clickedStep);
+      return false;
     });
   }
 };

@@ -26,8 +26,10 @@
     {% endif %}
     {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
+              "bower_components/d3/d3.js",
               "bower_components/webfontloader/webfontloader.js",
               "bower_components/dropcap.js/dropcap.js",
+              "bower_components/stepper/js/thirdparty/stepper.js",
               "bower_components/scotchPanels/dist/scotchPanels.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
