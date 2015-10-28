@@ -23,8 +23,14 @@
         </section>
     </section>
     {% endfor %}
+    {% include 'components/nav.html' %}
 </main>
 {% endblock %}
 
 {% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
 {% endblock %}
