@@ -7,22 +7,13 @@
 
 {% block content %}
 <main class="profile">
+    <section id="fullpage">
     {% for slide in slides %}
-    <section>
-        <section class="slide" id="slide-{{loop.index}}">
-          <div class="arrow-container">
-            <div class="arrow-down"><a href="#slide-{{loop.index + 1}}"><i class="fa fa-arrow-down"></i></a></div>
-          </div>
-          <article class="slide-container-outer bg-none">
-            <section class="slide-container-inner">
-              <section class="slide-content">
-                <p>{{ slide.body }}</p>
-              </section>
-            </section>
-          </article>
+        <section class="section" id="section{{ loop.for }}">
+            {{ slide.body|safe }} 
         </section>
-    </section>
     {% endfor %}
+    </section>
     {% include 'components/nav.html' %}
 </main>
 {% endblock %}
@@ -31,6 +22,7 @@
 <script>
     $(document).ready(function() {
         App.init();
+        $('#fullpage').fullpage();
     });
 </script>
 {% endblock %}

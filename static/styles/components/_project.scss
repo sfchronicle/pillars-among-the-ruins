@@ -4,7 +4,9 @@
 */
 $mobile: new-breakpoint(max-width 640px);
 
-main{
+body {
+  width: 100%;
+  height: 100%;
 }
 
 article {

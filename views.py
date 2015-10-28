@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for
 
 from app import app, db
-from models import Profile
+from models import Profile, Slide
 
 @app.route('/')
 def index():
@@ -19,8 +19,8 @@ def mainbar():
 @app.route('/<slug>/')
 def profile(slug):
     profiles = Profile.query.all()
-    profile = Profile.query.filter_by(slug=slug).all()[0]
-    slides = profile.slides.all()
+    profile = Profile.query.filter_by(slug=slug)[0]
+    slides = profile.slides.order_by(Slide.ordering)
 
     return render_template(
         'profile.html',

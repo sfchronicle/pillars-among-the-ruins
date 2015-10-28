@@ -25,5 +25,7 @@ class Slide(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text())
     image_url = db.Column(db.String(100))
+    video_url = db.Column(db.String(100))
+    ordering = db.Column(db.Integer())
 
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))

@@ -4,7 +4,9 @@
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="http://www.sfchronicle.com/favicon.ico?v=2">
     {% block head %}{% endblock %}
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.0/animate.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
@@ -32,6 +34,7 @@
               "bower_components/webfontloader/webfontloader.js",
               "bower_components/dropcap.js/dropcap.js",
               "bower_components/stepper/js/thirdparty/stepper.js",
+              "bower_components/fullpage.js/jquery.fullPage.js",
               "bower_components/scotchPanels/dist/scotchPanels.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
