@@ -40,62 +40,22 @@ App = {
     });
   },
   nav: function () {
+
     //open navigation clicking the menu icon
   	$('.nav-trigger').on('click', function(event){
   		event.preventDefault();
   		toggleNav(true);
   	});
+
   	//close the navigation
   	$('.cd-close-nav, .overlay').on('click', function(event){
   		event.preventDefault();
   		toggleNav(false);
   	});
-  	//select a new section
-  	// $('.nav-list li').on('click', function(event){
-  	// 	event.preventDefault();
-  	// 	var target = $(this),
-  	// 		//detect which section user has chosen
-  	// 		sectionTarget = target.data('menu');
-  	// 	if( !target.hasClass('cd-selected') ) {
-  	// 		//if user has selected a section different from the one alredy visible
-  	// 		//update the navigation -> assign the .cd-selected class to the selected item
-  	// 		target.addClass('cd-selected').siblings('.cd-selected').removeClass('cd-selected');
-  	// 		//load the new section
-  	// 		loadNewContent(sectionTarget);
-  	// 	} else {
-  	// 		// otherwise close navigation
-  	// 		toggleNav(false);
-  	// 	}
-  	// });
 
-  	function toggleNav(bool) {
+    function toggleNav(bool) {
   		$('nav, .overlay').toggleClass('is-visible', bool);
   		$('main').toggleClass('scale-down', bool);
-  	}
-
-  	function loadNewContent(newSection) {
-  		//create a new section element and insert it into the DOM
-  		var section = $('<section class="cd-section '+newSection+'"></section>').appendTo($('main'));
-  		//load the new content from the proper html file
-  		section.load(newSection+'.html .cd-section > *', function(){
-  			//add the .cd-selected to the new section element -> it will cover the old one
-  			section.addClass('cd-selected').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-  				//close navigation
-  				toggleNav(false);
-  			});
-  			section.prev('.cd-selected').removeClass('cd-selected');
-  		});
-
-  		$('main').on('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-  			//once the navigation is closed, remove the old section from the DOM
-  			section.prev('.cd-section').remove();
-  		});
-
-  		if( $('.no-csstransitions').length > 0 ) {
-  			//if browser doesn't support transitions - don't wait but close navigation and remove old item
-  			toggleNav(false);
-  			section.prev('.cd-section').remove();
-  		}
   	}
   },
   setupInlines: function () {
@@ -120,7 +80,7 @@ App = {
              .toggleClass('is-expanded')
              .goTo();
 
-      typeof callback === 'function' && callback();
+      if (typeof callback === 'function') { callback(); }
     });
 
     $('.viz-close').on('click', function (e) {
@@ -131,6 +91,7 @@ App = {
     });
   },
   visualize: function (step) {
+    console.log('Step', step);
     // ===================================
     function combineDatasets (us, sf) {
       /* Take two datasets  and combine into one
@@ -143,7 +104,7 @@ App = {
             diagnoses: d.diagnoses,
             type: type
           };
-        })
+        });
       };
 
       return format( us, 'us' ).concat( format( sf, 'sf' ) );
@@ -155,10 +116,6 @@ App = {
       var data = combineDatasets( us, sf ).filter(function (d) {
         return parseInt(d.year) > 1984 && parseInt(d.year) < 2013;
       });
-
-
-      var parseDate = d3.time.format('%Y').parse;
-      var range = d3.extent(data, function(d) { return d.year; });
 
       var parsedData = d4.parsers.nestedGroup()
         .x(function () { return 'year'; })
@@ -176,7 +133,7 @@ App = {
 
       d3.select('#vis-canvas')
         .datum(parsedData.data)
-        .call(chart)
+        .call(chart);
     }
     // ===================================
 
@@ -187,7 +144,7 @@ App = {
     queue()
       .defer(d3.csv, '/static/data/us-aids-deaths-diagnoses.csv')
       .defer(d3.csv, '/static/data/sf-aids-deaths-diagnoses.csv')
-      .await(makeViz)
+      .await(makeViz);
   },
   stepper: function () {
     App.visualize(1); // default
@@ -200,8 +157,8 @@ App = {
 
     function switchAnnotation(newStep) {
       // Step logic
-      $(".annotation-step").hide();
-      $("#" + newStep + "-annotation").delay(300).fadeIn(500);
+      $('.annotation-step').hide();
+      $('#' + newStep + '-annotation').delay(300).fadeIn(500);
     }
 
     // Click event to trigger annotation switch

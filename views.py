@@ -20,10 +20,12 @@ def mainbar():
 def profile(slug):
     profiles = Profile.query.all()
     profile = Profile.query.filter_by(slug=slug).all()[0]
+    slides = profile.slides.all()
 
     return render_template(
         'profile.html',
         title='profile',
         profile=profile,
-        profiles=profiles
+        profiles=profiles,
+        slides=slides
     )
