@@ -1,3 +1,5 @@
+/* global $, d3, d4, queue */
+
 'use strict';
 
 var App = App || {};
@@ -99,8 +101,8 @@ App = {
   setupInlines: function () {
     var self = this;
     var inlines = [{
-      selector: 'deathviz',
-      callback: App.deathviz
+      selector: 'stepper-graphic',
+      callback: App.stepper
     }];
 
     inlines.forEach(function (obj) {
@@ -111,36 +113,98 @@ App = {
     var $trigger = $('button#'+selector);
     var $reveal  = $('.inline#'+selector);
 
-    typeof callback === 'function' && callback();
-
     $trigger.on('click', function (e) {
       e.preventDefault();
 
       $reveal.slideToggle('fast')
              .toggleClass('is-expanded')
              .goTo();
+
+      typeof callback === 'function' && callback();
     });
 
     $('.viz-close').on('click', function (e) {
       e.preventDefault();
-      
+
       $reveal.slideToggle('fast')
              .toggleClass('is-expanded');
-    })
+    });
   },
-  deathviz: function () {
-    var self = this;
+  visualize: function (step) {
+    // ===================================
+    function combineDatasets (us, sf) {
+      /* Take two datasets  and combine into one
+      */
+      var format = function (dataset, type) {
+        return dataset.map(function (d) {
+          return {
+            year: d.year,
+            deaths: d.deaths,
+            diagnoses: d.diagnoses,
+            type: type
+          };
+        })
+      };
+
+      return format( us, 'us' ).concat( format( sf, 'sf' ) );
+    }
+
+    function makeViz(error, us, sf) {
+      if (error) { throw error; }
+
+      var data = combineDatasets( us, sf ).filter(function (d) {
+        return parseInt(d.year) > 1984 && parseInt(d.year) < 2013;
+      });
+
+
+      var parseDate = d3.time.format('%Y').parse;
+      var range = d3.extent(data, function(d) { return d.year; });
+
+      var parsedData = d4.parsers.nestedGroup()
+        .x(function () { return 'year'; })
+          .nestKey(function () { return 'type'; })
+        .y(function () { return 'diagnoses'; })
+          .value(function () { return 'diagnoses'; })(data);
+
+      var chart = d4.charts.line()
+        .outerWidth( $graphic.width() )
+        .x(function (x) {
+          x.key('year');
+        })
+        .y(function (y) { y.key('diagnoses'); });
+
+
+      d3.select('#vis-canvas')
+        .datum(parsedData.data)
+        .call(chart)
+    }
+    // ===================================
+
+    var $graphic = $('#vis-canvas');
+
+    $graphic.empty();
+
+    queue()
+      .defer(d3.csv, '/static/data/us-aids-deaths-diagnoses.csv')
+      .defer(d3.csv, '/static/data/sf-aids-deaths-diagnoses.csv')
+      .await(makeViz)
+  },
+  stepper: function () {
+    App.visualize(1); // default
 
     function switchStep(newStep) {
+      // Stepper Nav
       $('.step-link').toggleClass('active', false);
       $('#' + newStep).toggleClass('active', true);
     }
 
     function switchAnnotation(newStep) {
+      // Step logic
       $(".annotation-step").hide();
       $("#" + newStep + "-annotation").delay(300).fadeIn(500);
     }
 
+    // Click event to trigger annotation switch
     $('a.step-link').click(function(e) {
       e.preventDefault();
 
@@ -148,6 +212,7 @@ App = {
 
       switchStep(clickedStep);
       switchAnnotation(clickedStep);
+      App.visualize(clickedStep);
       return false;
     });
   }
