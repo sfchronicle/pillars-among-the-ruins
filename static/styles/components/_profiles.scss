@@ -1,0 +1,72 @@
+main.profile {
+  background-color: #000;
+  margin: 0px;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.arrow-container {
+  bottom: 10;
+  right: 10;
+  position: absolute;
+  display: block;
+  z-index: 1000;
+}
+.arrow-down, .arrow-up {
+  padding: 10px;
+  border: 1px solid #FFFFFF;
+  display: inline-block;
+  background-color: rgba(0,0,0,0.2);
+}
+i.fa.fa-arrow-up {
+  color: white;
+}
+i.fa.fa-arrow-down {
+  color: white;
+}
+.slide-container-outer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-image: url('http://localhost:8888/aids/img/harry/074_harry.jpg');
+  background-size: cover;
+  background-position: center;
+}
+.slide-content {
+  color: white;
+  z-index: 100;
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 480px;
+  padding: 20px;
+  line-height: 1.5em;
+  font-family: 'FarnhamText';
+  font-size: 1.1em;
+}
+.overlay-dark {
+  position: absolute;
+  background-color: #000;
+  opacity: .75;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  display: block;
+}
+.bg-none {
+  background-image: none;
+}

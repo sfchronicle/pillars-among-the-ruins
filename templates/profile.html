@@ -2,18 +2,29 @@
 
 {% block title %}{{ profile.name }}{% endblock %}
 
+{% block head %}
+{% endblock %}
+
 {% block content %}
-<section>
-    <img src="{{ profile.image_url }}" alt="{{ profile.name }}">
-</section>
+<main class="profile">
+    {% for slide in slides %}
+    <section>
+        <section class="slide" id="slide-{{loop.index}}">
+          <div class="arrow-container">
+            <div class="arrow-down"><a href="#slide-{{loop.index + 1}}"><i class="fa fa-arrow-down"></i></a></div>
+          </div>
+          <article class="slide-container-outer bg-none">
+            <section class="slide-container-inner">
+              <section class="slide-content">
+                <p>{{ slide.body }}</p>
+              </section>
+            </section>
+          </article>
+        </section>
+    </section>
+    {% endfor %}
+</main>
+{% endblock %}
 
-
-<section>
-    <h2>{{ profile.name }}</h2>
-    <p>{{ profile.body }}</p>
-    
-    <continue>
-        <i class="fa fa-chevron-down"></i>
-    </continue>
-</section>
+{% block javascript %}
 {% endblock %}

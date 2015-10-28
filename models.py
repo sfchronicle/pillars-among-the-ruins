@@ -12,7 +12,7 @@ class Profile(db.Model):
     image_url = db.Column(db.String(100))
     video_url = db.Column(db.String(100))
 
-    slides = db.relationship('Slide', backref='profile', lazy='dynamic')
+    slides = db.relationship('Slide', backref=db.backref('profile', lazy='joined'), lazy='dynamic')
 
     def __unicode__(self):
         return self.name
