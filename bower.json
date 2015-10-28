@@ -15,13 +15,19 @@
   ],
   "dependencies": {
     "d3": "~3.5.6",
+    "d4": "~0.9.4",
     "dropcap.js": "~1.0.0",
     "foundation": "~5.5.2",
     "jquery": "~2.1.4",
     "modernizr": "~3.1.0",
     "queue-async": "~1.0.7",
     "scotchPanels": "scotch-panels#~1.0.3",
+    "stepper": "git@github.com:mhkeller/stepper.git",
     "tota11y": "~0.1.2",
     "webfontloader": "~1.6.8"
+  },
+  "resolutions": {
+    "modernizr": "~3.1.0",
+    "d3": "~3.5.6"
   }
 }
