@@ -1,8 +1,9 @@
 .profile {
-  background-color: #000;
   @include pad();
-
   @include fill-parent();
+
+  background-color: #000;
+  color: #fff;
 }
 
 .nav-trigger span {
@@ -11,9 +12,7 @@
 
 .two-up {
   @include span-columns(6);
-
   height: 100%;
-  color: #fff;
 
   &#left {
     background-size: cover;

@@ -10,7 +10,11 @@
     <section id="fullpage">
     {% for slide in slides %}
         <section class="section" data-anchor="{{ loop.index }}" id="section{{ loop.index }}">
+        {% if slide.template == 'two_up' %}
             {% include 'slides/two-up.html' %}
+        {% else %}
+            {{ slide.body|safe }}
+        {% endif %}
         </section>
     {% endfor %}
     </section>
