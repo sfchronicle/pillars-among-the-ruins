@@ -17,16 +17,19 @@ $.fn.goTo = function() {
 // =====================================================
 
 App.init = function () {
-  this.dropcap();
-  this.fadeStoryIn();
-  this.nav();
-
-  this.setupInlines();
-  this.profileScroll();
+  this.initProject();
+  this.initVisualizations();
+  this.initProfile();
 };
 
 // Project design
 // =====================================================
+App.initProject = function () {
+  this.dropcap();
+  this.fadeStoryIn();
+  this.nav();
+};
+
 App.dropcap = function () {
   var dropcaps = document.querySelectorAll('.dropcap');
   window.Dropcap.layout(dropcaps, 3);
@@ -56,6 +59,11 @@ App.nav = function () {
 
 // Profile logic
 // =====================================================
+App.initProfile = function () {
+    this.profileScroll();
+    this.fullscreenVideo();
+};
+
 App.profileScroll = function () {
   $('#fullpage').fullpage({
     scrollingSpeed: 0,
@@ -74,8 +82,15 @@ App.profileScroll = function () {
   });
 };
 
+App.fullscreenVideo = function () {
+  $('.video-container').fitVids();
+};
 // Visualization
 // =====================================================
+App.initVisualizations = function () {
+    this.setupInlines();
+};
+
 App.triggerViz = function () {
   $('aside#one').scotchPanel({
     containerSelector: '.viz', // .viz

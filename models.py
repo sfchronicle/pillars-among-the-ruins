@@ -32,12 +32,12 @@ class Slide(db.Model):
     body = db.Column(db.Text())
     subhed = db.Column(db.String(100))
     image_url = db.Column(db.String(100))
-    video_url = db.Column(db.String(100))
     ordering = db.Column(db.Integer())
 
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
 
     template = db.Column(db.String(100))
 
+    is_video = db.Column(db.Boolean())
     is_lede = db.Column(db.Boolean())
     show_text = db.Column(db.Boolean())

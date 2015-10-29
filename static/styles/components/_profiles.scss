@@ -1,13 +1,18 @@
-.profile {
-  @include pad();
-  @include fill-parent();
+$inset-color: #151414;
+$bg-color: #000;
 
-  background-color: #000;
+.profile {
+  @include fill-parent();
   color: #fff;
 
   .nav-trigger span {
     background-color: #fff;
   }
+}
+
+.section {
+  background-color: $bg-color;
+  @include pad();
 }
 
 .two-up {
@@ -20,7 +25,7 @@
   }
 
   &#right {
-    background-color: #151414;
+    background-color: $inset-color;
   }
 }
 
@@ -46,5 +51,35 @@
   &:focus,
   &:visited {
     color: white;
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.large-display {
+  @include pad(10% 20% 30%);
+  position: relative;
+  height: 100%;
+  background-color: $inset-color;
+
+  .subhed {
+    font-family: $serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: em(60);
+
+    &::before {
+      content: url('/static/images/year-tail.png');
+      position: absolute;
+      right: 81%;
+    }
+  }
+
+  p {
+    margin-bottom: em(20);
   }
 }

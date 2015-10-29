@@ -20,6 +20,7 @@
     "foundation": "~5.5.2",
     "fullpage.js": "~2.7.4",
     "jquery": "~2.1.4",
+    "jquery.fitvids": "fitvids#~1.1.0",
     "modernizr": "~3.1.0",
     "pagePiling.js": "pagepiling.js#~1.5.1",
     "queue-async": "~1.0.7",
