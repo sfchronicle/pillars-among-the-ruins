@@ -52,6 +52,7 @@ main.profile {
 
 .slide-control {
   position: relative;
+  z-index: 2;
   color: white;
   font-size: em(20);
   background-color: #000;
@@ -69,6 +70,10 @@ main.profile {
     margin: 0 auto;
     bottom: em(100);
   }
+
+  &.fa-arrow-up {
+    margin-right: em(10);
+  }
 }
 
 .video-container {
@@ -83,6 +88,12 @@ main.profile {
   height: 100%;
   background-color: $inset-color;
 
+  &.image-cover {
+    @include pad(20% 28% 30%);
+    background-size: cover;
+    background-position: center;
+  }
+
   .subhed {
     font-family: $serif;
     font-style: italic;
@@ -92,11 +103,13 @@ main.profile {
     &::before {
       content: url('/static/images/year-tail.png');
       position: absolute;
-      right: 73%;
+      right: 103%; // HACK
     }
   }
 
   p {
+    position: relative;
+    z-index: 2;
     margin-bottom: em(20);
   }
 }

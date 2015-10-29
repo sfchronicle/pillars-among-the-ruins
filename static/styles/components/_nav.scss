@@ -188,8 +188,7 @@ nav{
 xshadow layer
 
 -------------------------------- */
-
-.overlay {
+.base-overlay {
 	/* shadow layer visible when navigation is open */
 	position: fixed;
 	height: 100%;
@@ -200,6 +199,10 @@ xshadow layer
 	background-color: $background-color;
 	visibility: hidden;
 	opacity: 0;
+}
+
+.overlay {
+	@extend .base-overlay;
 	@include backface-visibility(hidden);
 	@include transition(opacity $animation-duration 0s, visibility 0s $animation-duration);
 
@@ -208,4 +211,12 @@ xshadow layer
 		visibility: visible;
 		@include transition(opacity $animation-duration 0s, visibility 0s 0s);
 	}
+}
+
+.alt-overlay {
+  @extend .base-overlay;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
 }

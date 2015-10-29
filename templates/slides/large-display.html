@@ -1,6 +1,10 @@
-<section class="large-display">
-    <p class="subhed">{{ slide.subhed }}</p>
+<section class="large-display {% if slide.image_url %}image-cover{% endif %}" style="{% if slide.image_url %}background-image: url({{ slide.image_url }}){% endif %}">
+    {% if slide.subhed %}<p class="subhed">{{ slide.subhed }}</p>{% endif %}
     {{ slide.body|safe }}
+
+    {% if slide.show_text %}
+    <div class="alt-overlay"></div>
+    {% endif %}
 
     {% include 'slides/_controls.html' %}
 </section>
