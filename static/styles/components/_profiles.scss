@@ -1,9 +1,10 @@
 $inset-color: #151414;
 $bg-color: #000;
 
-.profile {
+main.profile {
   @include fill-parent();
   color: #fff;
+  background-color: $bg-color;
 
   .nav-trigger span {
     background-color: #fff;
@@ -62,7 +63,7 @@ $bg-color: #000;
 }
 
 .large-display {
-  @include pad(10% 20% 30%);
+  @include pad(10% 28% 30%);
   position: relative;
   height: 100%;
   background-color: $inset-color;
@@ -76,7 +77,7 @@ $bg-color: #000;
     &::before {
       content: url('/static/images/year-tail.png');
       position: absolute;
-      right: 81%;
+      right: 73%;
     }
   }
 
