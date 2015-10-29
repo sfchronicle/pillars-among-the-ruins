@@ -6,5 +6,9 @@ from models import Profile, Slide
 
 # Admin
 admin = admin.Admin(app)
-admin.add_view(ModelView(Profile, db.session))
-admin.add_view(ModelView(Slide, db.session))
+
+
+class ProfileView(ModelView):
+    inline_models = (Slide,)
+
+admin.add_view(ProfileView(Profile, db.session))

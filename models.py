@@ -1,8 +1,6 @@
 from datetime import datetime
 from app import db
 
-# Create models here
-
 
 class Profile(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -22,10 +20,24 @@ class Profile(db.Model):
 
 
 class Slide(db.Model):
+
+    SLIDE_CHOICES = (
+        ('two_up', 'Photo on left with text on the right'),  # this should have a lede option
+        ('vignette', 'Video vignette for profile'),
+        ('large_display', 'Optional large photo with optional text'),  # this one will have optional overlays and text, optional toggle for subhed
+        ('small_photo', 'small photo with optional text'),  # this one will have optional overlays and text
+    )
+
     id = db.Column(db.Integer, primary_key=True)
     body = db.Column(db.Text())
+    subhed = db.Column(db.String(100))
     image_url = db.Column(db.String(100))
     video_url = db.Column(db.String(100))
     ordering = db.Column(db.Integer())
 
     profile_id = db.Column(db.Integer, db.ForeignKey('profile.id'))
+
+    template = db.Column(db.String(100))
+
+    is_lede = db.Column(db.Boolean())
+    show_text = db.Column(db.Boolean())
