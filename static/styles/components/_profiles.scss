@@ -22,14 +22,30 @@
 
   &#right {
     background-color: #151414;
-    @include reset-display;
-    @include pad(9.7%);
   }
 }
 
-.two-up#right {
+.two-up-container {
+  @include pad(20%);
+  position: relative;
+  height: 100%;
+
   p,
   blockquote {
     @include vertical-align(relative, 30%);
+  }
+}
+
+.slide-control {
+  bottom: 10%;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+
+  color: white;
+  &:hover,
+  &:focus,
+  &:visited {
+    color: white;
   }
 }

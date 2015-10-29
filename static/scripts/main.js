@@ -62,9 +62,15 @@ App.profileScroll = function () {
     controlArrows: true,
     controlArrowColor: '#000',
     normalScrollElements: ['.grid-items'],
+
     afterLoad: function () {
       console.log(this);
     }
+  });
+
+  $('.slide-control').on('click', function (event) {
+    event.preventDefault();
+    $.fn.fullpage.moveSectionDown();
   });
 };
 

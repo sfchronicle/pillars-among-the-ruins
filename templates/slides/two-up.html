@@ -1,4 +1,8 @@
 <section class="two-up" id="left" style="background-image: url({{ slide.image_url }})"></section>
 <section class="two-up" id="right">
-    {{ slide.body|safe }}
+    <div class="two-up-container">
+        {{ slide.body|safe }}
+
+        <a href="#" class="slide-control fa fa-arrow-down" title="next slide"></a>
+    </div>
 </section>
