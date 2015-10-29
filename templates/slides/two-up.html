@@ -2,7 +2,6 @@
 <section class="two-up" id="right">
     <div class="two-up-container">
         {{ slide.body|safe }}
-
-        <a href="#" class="slide-control fa fa-arrow-down" title="next slide"></a>
     </div>
+    {% include 'slides/_controls.html' %}
 </section>

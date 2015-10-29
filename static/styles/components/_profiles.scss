@@ -19,6 +19,7 @@ main.profile {
 
 .two-up {
   @include span-columns(6);
+  position: relative;
   height: 100%;
 
   &#left {
@@ -27,6 +28,7 @@ main.profile {
   }
 
   &#right {
+    @include omega();
     background-color: $inset-color;
   }
 }
@@ -42,17 +44,30 @@ main.profile {
   }
 }
 
-.slide-control {
-  bottom: 10%;
+.slide-controls {
   position: absolute;
-  left: 50%;
-  right: 50%;
+  right: 25px;
+  bottom: 75px;
+}
 
+.slide-control {
+  position: relative;
   color: white;
+  font-size: em(20);
+  background-color: #000;
+  text-align: center;
+  width: 25px;
+
   &:hover,
   &:focus,
   &:visited {
     color: white;
+  }
+
+  &.lede {
+    display: block;
+    margin: 0 auto;
+    bottom: em(100);
   }
 }
 

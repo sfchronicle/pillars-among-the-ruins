@@ -1,4 +1,6 @@
 <section class="large-display">
     <p class="subhed">{{ slide.subhed }}</p>
     {{ slide.body|safe }}
+
+    {% include 'slides/_controls.html' %}
 </section>
