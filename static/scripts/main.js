@@ -72,11 +72,15 @@ App.profileScroll = function () {
     normalScrollElements: ['.grid-items'],
 
     afterLoad: function () {
-      console.log(this);
     }
   });
 
-  $('.slide-control').on('click', function (event) {
+  $('.fa-arrow-up').on('click', function (event) {
+    event.preventDefault();
+    $.fn.fullpage.moveSectionUp();
+  });
+
+  $('.fa-arrow-down').on('click', function (event) {
     event.preventDefault();
     $.fn.fullpage.moveSectionDown();
   });
