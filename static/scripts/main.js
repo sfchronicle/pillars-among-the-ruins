@@ -5,6 +5,7 @@
 var App = App || {};
 
 // Custom jQuery function to enable scrollTo logic
+// =====================================================
 $.fn.goTo = function() {
   $('html, body').animate({
     scrollTop: $(this).offset().top + 'px'
@@ -12,165 +13,191 @@ $.fn.goTo = function() {
   return this; // for chaining...
 };
 
-App = {
-  init: function () {
-    this.dropcap();
-    this.fadeStoryIn();
-    this.nav();
+// Initialize application
+// =====================================================
 
-    this.setupInlines();
-  },
-  dropcap: function () {
-    var dropcaps = document.querySelectorAll('.dropcap');
-    window.Dropcap.layout(dropcaps, 3);
-  },
-  fadeStoryIn: function () {
-    $('body').hide().fadeIn(1000);
-  },
-  triggerViz: function () {
-    $('aside#one').scotchPanel({
-      containerSelector: '.viz', // .viz
-      direction: 'right',
-      duration: 300,
-      transition: 'ease',
-      clickSelector: '.viz-trigger',
-      distanceX: '100%',
-      forceMinHeight: true,
-      enableEscapeKey: true
-    });
-  },
-  nav: function () {
+App.init = function () {
+  this.dropcap();
+  this.fadeStoryIn();
+  this.nav();
 
-    //open navigation clicking the menu icon
-  	$('.nav-trigger').on('click', function(event){
-  		event.preventDefault();
-  		toggleNav(true);
-  	});
+  this.setupInlines();
+  this.profileScroll();
+};
 
-  	//close the navigation
-  	$('.cd-close-nav, .overlay').on('click', function(event){
-  		event.preventDefault();
-  		toggleNav(false);
-  	});
+// Project design
+// =====================================================
+App.dropcap = function () {
+  var dropcaps = document.querySelectorAll('.dropcap');
+  window.Dropcap.layout(dropcaps, 3);
+};
+App.fadeStoryIn = function () {
+  $('body').hide().fadeIn(1000);
+};
 
-    function toggleNav(bool) {
-  		$('nav, .overlay').toggleClass('is-visible', bool);
-  		$('main').toggleClass('scale-down', bool);
-  	}
-  },
-  setupInlines: function () {
-    var self = this;
-    var inlines = [{
-      selector: 'stepper-graphic',
-      callback: App.stepper
-    }];
+App.nav = function () {
+  //open navigation clicking the menu icon
+	$('.nav-trigger').on('click', function(event){
+		event.preventDefault();
+		toggleNav(true);
+	});
 
-    inlines.forEach(function (obj) {
-      self.reveal(obj.selector, obj.callback);
-    });
-  },
-  reveal: function (selector, callback) {
-    var $trigger = $('button#'+selector);
-    var $reveal  = $('.inline#'+selector);
+	//close the navigation
+	$('.cd-close-nav, .overlay').on('click', function(event){
+		event.preventDefault();
+		toggleNav(false);
+	});
 
-    $trigger.on('click', function (e) {
-      e.preventDefault();
+  function toggleNav(bool) {
+		$('nav, .overlay').toggleClass('is-visible', bool);
+		$('main').toggleClass('scale-down', bool);
+	}
+};
 
-      $reveal.slideToggle('fast')
-             .toggleClass('is-expanded')
-             .goTo();
-
-      if (typeof callback === 'function') { callback(); }
-    });
-
-    $('.viz-close').on('click', function (e) {
-      e.preventDefault();
-
-      $reveal.slideToggle('fast')
-             .toggleClass('is-expanded');
-    });
-  },
-  visualize: function (step) {
-    console.log('Step', step);
-    // ===================================
-    function combineDatasets (us, sf) {
-      /* Take two datasets  and combine into one
-      */
-      var format = function (dataset, type) {
-        return dataset.map(function (d) {
-          return {
-            year: d.year,
-            deaths: d.deaths,
-            diagnoses: d.diagnoses,
-            type: type
-          };
-        });
-      };
-
-      return format( us, 'us' ).concat( format( sf, 'sf' ) );
+// Profile logic
+// =====================================================
+App.profileScroll = function () {
+  $('#fullpage').fullpage({
+    scrollingSpeed: 0,
+    controlArrows: true,
+    controlArrowColor: '#000',
+    normalScrollElements: ['.grid-items'],
+    afterLoad: function () {
+      console.log(this);
     }
+  });
+};
 
-    function makeViz(error, us, sf) {
-      if (error) { throw error; }
+// Visualization
+// =====================================================
+App.triggerViz = function () {
+  $('aside#one').scotchPanel({
+    containerSelector: '.viz', // .viz
+    direction: 'right',
+    duration: 300,
+    transition: 'ease',
+    clickSelector: '.viz-trigger',
+    distanceX: '100%',
+    forceMinHeight: true,
+    enableEscapeKey: true
+  });
+};
 
-      var data = combineDatasets( us, sf ).filter(function (d) {
-        return parseInt(d.year) > 1984 && parseInt(d.year) < 2013;
+App.setupInlines = function () {
+  var self = this;
+  var inlines = [{
+    selector: 'stepper-graphic',
+    callback: App.stepper
+  }];
+
+  inlines.forEach(function (obj) {
+    self.reveal(obj.selector, obj.callback);
+  });
+};
+
+App.reveal = function (selector, callback) {
+  var $trigger = $('button#'+selector);
+  var $reveal  = $('.inline#'+selector);
+
+  $trigger.on('click', function (e) {
+    e.preventDefault();
+
+    $reveal.slideToggle('fast')
+           .toggleClass('is-expanded')
+           .goTo();
+
+    if (typeof callback === 'function') { callback(); }
+  });
+
+  $('.viz-close').on('click', function (e) {
+    e.preventDefault();
+
+    $reveal.slideToggle('fast')
+           .toggleClass('is-expanded');
+  });
+};
+
+App.visualize = function (step) {
+  console.log('Step', step);
+  // ===================================
+  function combineDatasets (us, sf) {
+    /* Take two datasets  and combine into one
+    */
+    var format = function (dataset, type) {
+      return dataset.map(function (d) {
+        return {
+          year: d.year,
+          deaths: d.deaths,
+          diagnoses: d.diagnoses,
+          type: type
+        };
       });
+    };
 
-      var parsedData = d4.parsers.nestedGroup()
-        .x(function () { return 'year'; })
-          .nestKey(function () { return 'type'; })
-        .y(function () { return 'diagnoses'; })
-          .value(function () { return 'diagnoses'; })(data);
-
-      var chart = d4.charts.line()
-        .outerWidth( $graphic.width() )
-        .x(function (x) {
-          x.key('year');
-        })
-        .y(function (y) { y.key('diagnoses'); });
-
-
-      d3.select('#vis-canvas')
-        .datum(parsedData.data)
-        .call(chart);
-    }
-    // ===================================
-
-    var $graphic = $('#vis-canvas');
-
-    $graphic.empty();
-
-    queue()
-      .defer(d3.csv, '/static/data/us-aids-deaths-diagnoses.csv')
-      .defer(d3.csv, '/static/data/sf-aids-deaths-diagnoses.csv')
-      .await(makeViz);
-  },
-  stepper: function () {
-    App.visualize(1); // default
-
-    function switchStep(newStep) {
-      // Stepper Nav
-      $('.step-link').toggleClass('active', false);
-      $('#' + newStep).toggleClass('active', true);
-    }
-
-    function switchAnnotation(newStep) {
-      // Step logic
-      $('.annotation-step').hide();
-      $('#' + newStep + '-annotation').delay(300).fadeIn(500);
-    }
-
-    // Click event to trigger annotation switch
-    $('a.step-link').click(function(e) {
-      e.preventDefault();
-
-      var clickedStep = $(this).attr('id');
-
-      switchStep(clickedStep);
-      switchAnnotation(clickedStep);
-      App.visualize(clickedStep);
-      return false;
-    });
+    return format( us, 'us' ).concat( format( sf, 'sf' ) );
   }
+
+  function makeViz(error, us, sf) {
+    if (error) { throw error; }
+
+    var data = combineDatasets( us, sf ).filter(function (d) {
+      return parseInt(d.year) > 1984 && parseInt(d.year) < 2013;
+    });
+
+    var parsedData = d4.parsers.nestedGroup()
+      .x(function () { return 'year'; })
+        .nestKey(function () { return 'type'; })
+      .y(function () { return 'diagnoses'; })
+        .value(function () { return 'diagnoses'; })(data);
+
+    var chart = d4.charts.line()
+      .outerWidth( $graphic.width() )
+      .x(function (x) {
+        x.key('year');
+      })
+      .y(function (y) { y.key('diagnoses'); });
+
+
+    d3.select('#vis-canvas')
+      .datum(parsedData.data)
+      .call(chart);
+  }
+  // ===================================
+
+  var $graphic = $('#vis-canvas');
+
+  $graphic.empty();
+
+  queue()
+    .defer(d3.csv, '/static/data/us-aids-deaths-diagnoses.csv')
+    .defer(d3.csv, '/static/data/sf-aids-deaths-diagnoses.csv')
+    .await(makeViz);
+};
+
+App.stepper = function () {
+  App.visualize(1); // default
+
+  function switchStep(newStep) {
+    // Stepper Nav
+    $('.step-link').toggleClass('active', false);
+    $('#' + newStep).toggleClass('active', true);
+  }
+
+  function switchAnnotation(newStep) {
+    // Step logic
+    $('.annotation-step').hide();
+    $('#' + newStep + '-annotation').delay(300).fadeIn(500);
+  }
+
+  // Click event to trigger annotation switch
+  $('a.step-link').click(function(e) {
+    e.preventDefault();
+
+    var clickedStep = $(this).attr('id');
+
+    switchStep(clickedStep);
+    switchAnnotation(clickedStep);
+    App.visualize(clickedStep);
+    return false;
+  });
 };

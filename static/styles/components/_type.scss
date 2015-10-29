@@ -1,5 +1,5 @@
-$serif: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
-$sans-serif: 'Lato',  'Helvetica Neue', Helvetica, sans-serif;
+$serif: 'FarnhamText', 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+$sans-serif: 'AntennaMedium', 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
 $base-font: 21px;
 $line-height: 1.58;
 $margin-top: 29px;
@@ -36,4 +36,18 @@ aside > section {
   font-family: $sans-serif;
   padding: 0 5px 0 0 !important;
   display: inline-block;
+}
+
+blockquote {
+  font-family: $serif;
+  font-weight: bold;
+  border-left: 0;
+  margin: 0 0 1.25em;
+  padding: 0;
+  color: inherit;
+  font-size: em(20);
+}
+
+.profile {
+  font-family: $sans-serif;
 }

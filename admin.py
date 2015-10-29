@@ -12,3 +12,4 @@ class ProfileView(ModelView):
     inline_models = (Slide,)
 
 admin.add_view(ProfileView(Profile, db.session))
+admin.add_view(ModelView(Slide, db.session))

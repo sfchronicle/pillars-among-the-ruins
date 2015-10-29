@@ -9,8 +9,8 @@
 <main class="profile">
     <section id="fullpage">
     {% for slide in slides %}
-        <section class="section" id="section{{ loop.for }}">
-            {{ slide.body|safe }} 
+        <section class="section" data-anchor="{{ loop.index }}" id="section{{ loop.index }}">
+            {% include 'slides/two-up.html' %}
         </section>
     {% endfor %}
     </section>
@@ -22,7 +22,6 @@
 <script>
     $(document).ready(function() {
         App.init();
-        $('#fullpage').fullpage();
     });
 </script>
 {% endblock %}

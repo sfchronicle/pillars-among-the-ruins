@@ -21,6 +21,7 @@
     "fullpage.js": "~2.7.4",
     "jquery": "~2.1.4",
     "modernizr": "~3.1.0",
+    "pagePiling.js": "pagepiling.js#~1.5.1",
     "queue-async": "~1.0.7",
     "scotchPanels": "scotch-panels#~1.0.3",
     "stepper": "git@github.com:mhkeller/stepper.git",
