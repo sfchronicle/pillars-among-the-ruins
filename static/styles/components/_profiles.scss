@@ -11,8 +11,9 @@ $bg-color: #000;
 }
 
 .section {
+  border: em(25) solid $bg-color;
   background-color: $bg-color;
-  @include pad();
+  overflow: hidden;
 }
 
 .two-up {
