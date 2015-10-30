@@ -67,8 +67,8 @@ App.initProfile = function () {
 App.profileScroll = function () {
   $('#fullpage').fullpage({
     scrollingSpeed: 0,
-    controlArrows: true,
-    controlArrowColor: '#000',
+    css3: true,
+    touchSensitivity: 30,
     normalScrollElements: ['.grid-items'],
 
     afterLoad: function () {
