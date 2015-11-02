@@ -7,9 +7,10 @@
 
 {% block content %}
 <main class="profile">
-    <section id="fullpage">
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
         {% for slide in slides %}
-            <section class="section" data-anchor="{{ loop.index }}" id="section{{ loop.index }}">
+            <section class="section swiper-slide" data-hash="{{ loop.index }}" id="section{{ loop.index }}">
             {% if slide.template == 'two_up' %}
                 {% include 'slides/two-up.html' %}
             {% elif slide.template == 'large_display' %}
@@ -21,6 +22,7 @@
             {% endif %}
             </section>
         {% endfor %}
+        </div>
     </section>
     {% include 'components/nav.html' %}
 </main>

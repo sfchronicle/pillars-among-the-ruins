@@ -2,7 +2,8 @@ $inset-color: #151414;
 $bg-color: #000;
 
 main.profile {
-  @include fill-parent();
+  position: relative;
+  height: 100%;
   color: #fff;
   background-color: $bg-color;
 
@@ -11,13 +12,26 @@ main.profile {
   }
 }
 
+.swiper-container{
+  height: 100%;
+  width: 100%;
+}
+
 .section {
+  @include fill-parent();
   border: em(25) solid $bg-color;
   background-color: $bg-color;
-  overflow: hidden;
+  overflow: hidden; // This hides the slides behind
+  max-height: 100%;
+
+  &.swiper-slide-active {
+    position: relative;
+    z-index: 3;
+  }
 }
 
 .two-up {
+  @include fill-parent();
   @include span-columns(6);
   position: relative;
   height: 100%;

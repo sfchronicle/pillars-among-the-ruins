@@ -65,24 +65,28 @@ App.initProfile = function () {
 };
 
 App.profileScroll = function () {
-  $('#fullpage').fullpage({
-    scrollingSpeed: 0,
-    css3: true,
-    touchSensitivity: 30,
-    normalScrollElements: ['.grid-items'],
-
-    afterLoad: function () {
-    }
+  var self = this;
+  self.swiper = new Swiper('.swiper-container', {
+    direction: 'vertical',
+    keyboardControl: true,
+    mousewheelControl: true,
+    hashnav: true,
+    watchSlidesVisibility: true,
+    effect: 'fade',
+    slidesPerView: 1,
+    preloadImages: false,
+    lazyLoading: true,
+    a11y: true
   });
 
   $('.fa-arrow-up').on('click', function (event) {
     event.preventDefault();
-    $.fn.fullpage.moveSectionUp();
+    self.swiper.slidePrev();
   });
 
   $('.fa-arrow-down').on('click', function (event) {
     event.preventDefault();
-    $.fn.fullpage.moveSectionDown();
+    self.swiper.slideNext();
   });
 };
 
