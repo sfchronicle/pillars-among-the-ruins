@@ -39,6 +39,7 @@ main.profile {
   &#left {
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
   }
 
   &#right {
@@ -55,6 +56,12 @@ main.profile {
   p,
   blockquote {
     @include vertical-align(relative, 30%);
+  }
+
+  p {
+    position: relative;
+    z-index: 2;
+    margin-bottom: em(30);
   }
 }
 
