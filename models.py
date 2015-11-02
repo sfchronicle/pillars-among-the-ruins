@@ -41,3 +41,5 @@ class Slide(db.Model):
     is_video = db.Column(db.Boolean())
     is_lede = db.Column(db.Boolean())
     show_text = db.Column(db.Boolean())
+
+    custom_css = db.Column(db.Text())

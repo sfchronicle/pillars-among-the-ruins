@@ -128,7 +128,8 @@ main.profile {
     }
   }
 
-  p {
+  p,
+  blockquote {
     position: relative;
     z-index: 2;
     margin-bottom: em(20);

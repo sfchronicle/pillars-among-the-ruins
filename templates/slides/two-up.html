@@ -1,4 +1,4 @@
-<section class="two-up" id="left" style="background-image: url({{ slide.image_url }})"></section>
+<section class="two-up" id="left" style="background-image: url({{ slide.image_url }}); {{ slide.custom_css|safe }}"></section>
 <section class="two-up" id="right">
     <div class="two-up-container">
         {{ slide.body|safe }}
