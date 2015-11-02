@@ -1,0 +1,25 @@
+/* Common variables used throughout the project
+*/
+
+// Breakpoints
+// =============================
+
+$small-breakpoint:  em(640)  !default;
+$medium-breakpoint: em(1024) !default;
+$large-breakpoint:  em(1440) !default;
+$xlarge-breakpoint: em(1920) !default;
+
+// Colors
+// =============================
+$inset-color: #151414;
+$bg-color: #000;
+$background-color: rgba(#222, 0.35);
+
+// Type
+// ==============================
+$serif: 'FarnhamText', 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+$sans-serif: 'AntennaMedium', 'Lato', 'Helvetica Neue', Helvetica, sans-serif;
+$base-font: 21px;
+$line-height: 1.58;
+$margin-top: 29px;
+$letter-spacing: -0.003em;
