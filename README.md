@@ -1,14 +1,25 @@
 # Pillars Among the Ruins
 Description TK
 
-### Requirements
+## Requirements
 - Python 2.7.x
 - Node.js 0.12
   - uglifyjs (`npm install -g uglifyjs`)
   - clean-css (`npm install -g clean-css`)
   - Bower and Grunt (`$ npm install -g grunt-cli bower`)
 
+## Activate
+Already have the project installed? Here's how you re-activate for development:
+```bash
+$ cd pillars-among-the-ruins  # change into the directory
+$ workon pillars-among-the-ruins  # activate virtual environment
+$ git pull  # pull down latests
+$ bower install # install new frontend dependencies
+$ grunt serve # start server
+```
+
 ## Installation
+First time with the project? Here's how you set everything up:
 ```bash
 $ git clone git@github.com:sfchronicle/pillars-among-the-ruins.git
 $ cd pillars-among-the-ruins
@@ -16,25 +27,25 @@ $ mkvirtualenv pillars-among-the-ruins
 $ pip install -r requirements.txt && npm install && bower install
 ```
 
-## Setup database
+### Setup database
 ```bash
 $ python createdb.py
 $ python migratedb.py db init
 $ python migratedb.py db migrate
 ```
 
-## Start app
+### Start app
 ```bash
 $ grunt serve
 ```
 
-### Explore ORM
-Interact with the SQLite database by running the shell.py file: 
+## Explore ORM
+Interact with the SQLite database by running the shell.py file:
 ```bash
 $ ./shell.py
 ```
 
-### Build and deployment
+## Build and deployment
 Create a `local_settings.py` file in the `settings` directory. Add the following env variables:
 ```python
 AWS_ACCESS_KEY_ID = ''
@@ -51,11 +62,3 @@ Now run `build.py` to compress assets for production and upload production files
 ```bash
 $ python build.py
 ```
-
-## Contributing
-1. Fork it.
-2. Create a branch (`git checkout -b username-patch-n`)
-3. Commit your changes (`git commit -am "Added support for MovableType"`)
-4. Push to the branch (`git push origin username-patch-n`)
-5. Open a [Pull Request](https://help.github.com/articles/creating-a-pull-request/)
-6. Enjoy some [artisanal toast](https://www.eater.com/2014/5/30/6215971/artisanal-toast-is-taking-the-nation-by-storm)
