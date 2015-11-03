@@ -1,6 +1,4 @@
 $animation-duration: 0.4s;
-$secondary-font: 'Lora', serif;
-$background-color: rgba(#222, 0.35);
 
 .nav-trigger {
 	/* hamburger icon */
@@ -188,9 +186,9 @@ nav{
 xshadow layer
 
 -------------------------------- */
-
-.overlay {
+.base-overlay {
 	/* shadow layer visible when navigation is open */
+	@include user-select(none);
 	position: fixed;
 	height: 100%;
 	width: 100%;
@@ -200,12 +198,25 @@ xshadow layer
 	background-color: $background-color;
 	visibility: hidden;
 	opacity: 0;
+}
+
+.overlay {
+	@extend .base-overlay;
 	@include backface-visibility(hidden);
 	@include transition(opacity $animation-duration 0s, visibility 0s $animation-duration);
 
 	&.is-visible {
 		opacity: 1;
 		visibility: visible;
+		z-index: 3;
 		@include transition(opacity $animation-duration 0s, visibility 0s 0s);
 	}
+}
+
+.alt-overlay {
+  @extend .base-overlay;
+  position: absolute;
+  z-index: 1;
+  opacity: 1;
+  visibility: visible;
 }

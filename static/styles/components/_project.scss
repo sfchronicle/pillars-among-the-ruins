@@ -2,9 +2,10 @@
    PROJECT STYLES
    ========================
 */
-$mobile: new-breakpoint(max-width 640px);
-
-main{
+html, body {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
 }
 
 article {
@@ -21,7 +22,7 @@ article > p  {
   @include span-columns(6);
   @include shift(3);
 
-  @include media($mobile) {
+  @include media(max-width $small-breakpoint) {
     @include span-columns(12);
     @include shift(0);
   }
@@ -35,7 +36,7 @@ aside > section {
   @include span-columns(3);
   @include shift(0);
 
-  @include media($mobile) {
+  @include media(max-width $small-breakpoint) {
     @include span-columns(12);
   }
 }
@@ -44,7 +45,7 @@ aside > section {
 // ========================
 aside.inline-asset-left > section {
   @include shift(-9);
-  @include media($mobile) {
+  @include media(max-width $small-breakpoint) {
     @include shift(0);
   }
 }

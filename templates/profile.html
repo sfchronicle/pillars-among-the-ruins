@@ -2,18 +2,36 @@
 
 {% block title %}{{ profile.name }}{% endblock %}
 
+{% block head %}
+{% endblock %}
+
 {% block content %}
-<section>
-    <img src="{{ profile.image_url }}" alt="{{ profile.name }}">
-</section>
+<main class="profile" id="{{ profile.slug }}">
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+        {% for slide in slides %}
+            <section class="section swiper-slide" data-hash="{{ loop.index }}" id="section{{ loop.index }}">
+            {% if slide.template == 'two_up' %}
+                {% include 'slides/two-up.html' %}
+            {% elif slide.template == 'large_display' %}
+                {% include 'slides/large-display.html' %}
+            {% elif slide.is_video %}
+                {% include 'slides/video.html' %}
+            {% else %}
+                {{ slide.body|safe }}
+            {% endif %}
+            </section>
+        {% endfor %}
+        </div>
+    </section>
+    {% include 'components/nav.html' %}
+</main>
+{% endblock %}
 
-
-<section>
-    <h2>{{ profile.name }}</h2>
-    <p>{{ profile.body }}</p>
-    
-    <continue>
-        <i class="fa fa-chevron-down"></i>
-    </continue>
-</section>
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
 {% endblock %}

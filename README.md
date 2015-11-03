@@ -28,6 +28,12 @@ $ python migratedb.py db migrate
 $ grunt serve
 ```
 
+### Explore ORM
+Interact with the SQLite database by running the shell.py file: 
+```bash
+$ ./shell.py
+```
+
 ### Build and deployment
 Create a `local_settings.py` file in the `settings` directory. Add the following env variables:
 ```python

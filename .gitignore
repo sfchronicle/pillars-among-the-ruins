@@ -1,4 +1,3 @@
-*.db
 *.pyc
 .DS_Store
 migrations/
@@ -14,3 +13,5 @@ images/
 .sass-cache/
 .webassets-cache/
 local_settings.py
+
+*.db-journal

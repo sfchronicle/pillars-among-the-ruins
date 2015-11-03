@@ -1,0 +1,196 @@
+main.profile {
+  position: relative;
+  height: 100%;
+  color: #fff;
+  background-color: $bg-color;
+
+  .nav-trigger {
+    @include media(max-width $small-breakpoint) {
+      top: 25px;
+      right: 30px;
+    }
+
+    span {
+      background-color: #fff;
+    }
+  }
+}
+
+.swiper-container{
+  height: 100%;
+  width: 100%;
+}
+
+.section {
+  @include fill-parent();
+  border: em(25) solid $bg-color;
+  background-color: $bg-color;
+  overflow: hidden; // This hides the slides behind
+  max-height: 100%;
+
+  @include media(max-width $small-breakpoint) {
+    border-width: em(15);
+  }
+
+  &.swiper-slide-active {
+    position: relative;
+    z-index: 3;
+  }
+}
+
+.two-up {
+  @include fill-parent();
+  @include span-columns(6);
+  position: relative;
+  height: 100%;
+
+  @include media(max-width $small-breakpoint) {
+    @include span-columns(12);
+  }
+
+  &#left {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @include media(max-width $small-breakpoint) {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 2;
+    }
+  }
+
+  &#right {
+    @include omega();
+    background-color: $inset-color;
+  }
+}
+
+.two-up-container {
+  @include pad(20%);
+  position: relative;
+  height: 100%;
+
+  @include media(max-width $small-breakpoint) {
+    @include pad(10px);
+    position: absolute;
+    height: auto;
+    bottom: em(50);
+  }
+
+  p,
+  blockquote {
+    position: relative;
+    z-index: 2;
+    @include vertical-align(relative, 30%);
+  }
+
+  p {
+    margin-bottom: em(30);
+  }
+}
+
+.slide-controls {
+  position: absolute;
+  right: 25px;
+  bottom: 75px;
+
+  @include media(max-width $small-breakpoint) {
+    right: 10px;
+    bottom: 10px;
+  }
+}
+
+.slide-control {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: em(20);
+  background-color: #000;
+  text-align: center;
+  width: 25px;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    color: white;
+  }
+
+  &.lede {
+    display: block;
+    margin: 0 auto;
+    bottom: em(100);
+    @include media(max-width $small-breakpoint) {
+      position: absolute;
+      bottom: em(10);
+      left: 50%;
+      right: 50%;
+    }
+  }
+
+  &.fa-arrow-up {
+    margin-right: em(10);
+  }
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.large-display {
+  @include pad(10% 28% 30%);
+  position: relative;
+  height: 100%;
+  background-color: $inset-color;
+
+
+  @include media(max-width $small-breakpoint) {
+    @include pad(10px);
+  }
+
+  &.image-cover {
+    @include pad(20% 28% 30%);
+    background-size: cover;
+    background-position: center;
+
+    @include media(max-width $small-breakpoint) {
+      @include pad(10px);
+    }
+  }
+
+  .large-display-container { // this should be determined per slide
+    @include media(max-width $small-breakpoint) {
+      position: absolute;
+      bottom: em(20);
+    }
+  }
+
+  .subhed {
+    position: relative;
+    font-family: $serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: em(60);
+
+    @include media(max-width $small-breakpoint) {
+      left: em(75);
+      margin-bottom: em(50);
+    }
+
+    &::before {
+      content: url('/static/images/year-tail.png');
+      position: absolute;
+      right: 103%; // HACK
+    }
+  }
+
+  p,
+  blockquote {
+    position: relative;
+    z-index: 2;
+    margin-bottom: em(20);
+  }
+}
