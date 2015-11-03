@@ -62,9 +62,9 @@ App.nav = function () {
 // Profile logic
 // =====================================================
 App.initProfile = function () {
-    this.profileScroll();
-    this.lazyload();
-    this.fullscreenVideo();
+  this.lazyload();
+  this.profileScroll();
+  this.fullscreenVideo();
 };
 
 App.profileScroll = function () {
@@ -79,7 +79,21 @@ App.profileScroll = function () {
     slidesPerView: 1,
     preloadImages: false,
     lazyLoading: true,
-    a11y: true
+    a11y: true,
+    onInit: function (swiper) {
+      var slide = swiper.slides[swiper.activeIndex],
+          twoUpCover = slide.querySelector('.two-up#left');
+
+      if (twoUpCover) { self.blazy.load( twoUpCover ); }
+    },
+    onSlideChangeStart: function (swiper) {
+      var slide = swiper.slides[swiper.activeIndex],
+          twoUpCover = slide.querySelector('.two-up#left'),
+          imageCover = slide.querySelector('.image-cover');
+
+      if (imageCover) { self.blazy.load( imageCover ); }
+      if (twoUpCover) { self.blazy.load( twoUpCover ); }
+    }
   });
 
   $('.fa-arrow-up').on('click', function (event) {
@@ -98,10 +112,8 @@ App.fullscreenVideo = function () {
 };
 
 App.lazyload = function () {
-  $('.image-cover').lazyload({
-    event: 'onSlideChangeStart',
-    effect: 'fadeIn'
-  });
+  var self = this;
+  self.blazy = new Blazy();
 };
 // Visualization
 // =====================================================

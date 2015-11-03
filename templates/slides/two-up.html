@@ -1,4 +1,6 @@
-<section class="two-up" id="left" style="background-image: url({{ slide.image_url }}); {{ slide.custom_css|safe }}"></section>
+<section class="two-up" id="left" data-src="{{ slide.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }}); {{ slide.custom_css|safe }}"></section>
+<!-- Fallback for non JavaScript browsers -->
+<noscript><section class="two-up noscript" id="left" style="background-image: url({{ slide.image_url }}); {{ slide.custom_css|safe }}"></section></noscript>
 <section class="two-up" id="right">
     <div class="two-up-container">
         {{ slide.body|safe }}

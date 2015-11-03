@@ -156,9 +156,21 @@ main.profile {
     background-size: cover;
     background-position: center;
 
-    @include media(max-width $small-breakpoint) {
-      @include pad(10px);
-    }
+    /* Transitions are optional for bLazy. I've decided to not use
+       them but keep the scss just in case it ends up being a request
+       ---------------------------------------------------------
+      @include transition(opacity 100ms ease-in-out);
+
+      opacity: 0;
+
+      &.b-loaded {
+        opacity: 1;
+      }
+
+      @include media(max-width $small-breakpoint) {
+        @include pad(10px);
+      }
+    */
   }
 
   .large-display-container { // this should be determined per slide
