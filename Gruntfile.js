@@ -71,6 +71,7 @@ module.exports = function (grunt) {
           '<%= config.app %>/scripts/vendor.*.js',
           '<%= config.app %>/scripts/main.*.js',
           '<%= config.app %>/scripts/modernizr-dev.js',
+          '<%= config.app %>/scripts/array.foreach.polyfill.js'
         ]
       },
       all: [

@@ -45,6 +45,8 @@ App.nav = function () {
 	$('.nav-trigger').on('click', function(event){
 		event.preventDefault();
 		toggleNav(true);
+
+    App.blazy.load( document.querySelectorAll('.grid-item') );
 	});
 
 	//close the navigation
@@ -62,9 +64,9 @@ App.nav = function () {
 // Profile logic
 // =====================================================
 App.initProfile = function () {
-    this.profileScroll();
-    this.lazyload();
-    this.fullscreenVideo();
+  this.lazyload();
+  this.profileScroll();
+  this.fullscreenVideo();
 };
 
 App.profileScroll = function () {
@@ -79,7 +81,40 @@ App.profileScroll = function () {
     slidesPerView: 1,
     preloadImages: false,
     lazyLoading: true,
-    a11y: true
+    a11y: true,
+    onInit: function (swiper) {
+      var slide = swiper.slides[swiper.activeIndex],
+          twoUpCover = slide.querySelector('.two-up#left'),
+          imageCover = slide.querySelector('.image-cover');
+
+      if (imageCover) { self.blazy.load( imageCover ); }
+      if (twoUpCover) { self.blazy.load( twoUpCover ); }
+    },
+    onSlideChangeStart: function (swiper) {
+      /* So, first, in order to prevent lazyload from triggering,
+         We check if we made it to the end, otherwise, we make sure
+         that whether or not the reader comes from the beginning or
+         the end of the slide, we preload the image in whatever
+         direction they choose to navigate.
+      */
+      if (!swiper.isEnd) {
+        var currentSlide = swiper.slides[swiper.activeIndex],
+            prevSlide = document.querySelector('.swiper-slide-prev'),
+            nextSlide = document.querySelector('.swiper-slide-next');
+
+        [prevSlide, nextSlide].forEach(function (node) {
+          if (!node) { return; }
+          var twoUpCover = node.querySelector('.two-up#left'),
+              imageCover = node.querySelector('.image-cover');
+
+          if (imageCover) { self.blazy.load( imageCover ); }
+          if (twoUpCover) { self.blazy.load( twoUpCover ); }
+        });
+
+      } else {
+        // To be implemented when this case is needed
+      }
+    }
   });
 
   $('.fa-arrow-up').on('click', function (event) {
@@ -98,10 +133,8 @@ App.fullscreenVideo = function () {
 };
 
 App.lazyload = function () {
-  $('.image-cover').lazyload({
-    event: 'onSlideChangeStart',
-    effect: 'fadeIn'
-  });
+  var self = this;
+  self.blazy = new Blazy();
 };
 // Visualization
 // =====================================================
