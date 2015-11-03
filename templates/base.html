@@ -44,7 +44,9 @@
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
-    {% assets filters="uglifyjs", output="scripts/main.%(version)s.js", "scripts/main.js" %}
+    {% assets filters="uglifyjs", output="scripts/main.%(version)s.js",
+              "scripts/array.foreach.polyfill.js",
+              "scripts/main.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
