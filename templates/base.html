@@ -28,6 +28,8 @@
     {% endif %}
     {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
+              "bower_components/fastclick/lib/fastclick.js",
+              "bower_components/jquery_lazyload/jquery.lazyload.js",
               "bower_components/d3/d3.js",
               "bower_components/d4/d4.js",
               "bower_components/queue-async/queue.js",

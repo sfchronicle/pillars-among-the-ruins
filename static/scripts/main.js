@@ -1,4 +1,4 @@
-/* global $, d3, d4, queue */
+/* global $, d3, d4, queue, Fastclick, document */
 
 'use strict';
 
@@ -17,6 +17,8 @@ $.fn.goTo = function() {
 // =====================================================
 
 App.init = function () {
+  FastClick.attach(document.body);
+
   this.initProject();
   this.initVisualizations();
   this.initProfile();
@@ -61,6 +63,7 @@ App.nav = function () {
 // =====================================================
 App.initProfile = function () {
     this.profileScroll();
+    this.lazyload();
     this.fullscreenVideo();
 };
 
@@ -92,6 +95,13 @@ App.profileScroll = function () {
 
 App.fullscreenVideo = function () {
   $('.video-container').fitVids();
+};
+
+App.lazyload = function () {
+  $('.image-cover').lazyload({
+    event: 'onSlideChangeStart',
+    effect: 'fadeIn'
+  });
 };
 // Visualization
 // =====================================================

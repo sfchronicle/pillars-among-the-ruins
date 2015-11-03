@@ -19,6 +19,7 @@
     "dropcap.js": "~1.0.0",
     "foundation": "~5.5.2",
     "jquery": "~2.1.4",
+    "jquery_lazyload": "jquery.lazyload#~1.9.7",
     "jquery.fitvids": "fitvids#~1.1.0",
     "modernizr": "~3.1.0",
     "queue-async": "~1.0.7",

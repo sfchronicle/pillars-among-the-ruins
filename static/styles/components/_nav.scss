@@ -188,6 +188,7 @@ xshadow layer
 -------------------------------- */
 .base-overlay {
 	/* shadow layer visible when navigation is open */
+	@include user-select(none);
 	position: fixed;
 	height: 100%;
 	width: 100%;
