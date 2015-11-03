@@ -6,11 +6,16 @@
 	<a href="javascript:void(0)" class="cd-close-nav">Close</a>
 	<div class="grid-items">
 	{% for p in profiles %}
-	  <a href="/{{ p.slug }}" style="background-image: url({{ p.image_url }});" tabindex="10" class="grid-item">
+	  <a href="/{{ p.slug }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item">
 	    <h3>{{ p.name }}</h3>
 	    <p>{{ p.description }}</p>
 	  </a>
-	 {% endfor %}
+	  <!-- Fallback for non JavaScript browsers -->
+	  <noscript><a href="/{{ p.slug }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item">
+	    <h3>{{ p.name }}</h3>
+	    <p>{{ p.description }}</p>
+	  </a></noscript>
+	{% endfor %}
 	</div>
 </nav>
 

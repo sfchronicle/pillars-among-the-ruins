@@ -45,6 +45,8 @@ App.nav = function () {
 	$('.nav-trigger').on('click', function(event){
 		event.preventDefault();
 		toggleNav(true);
+
+    App.blazy.load( document.querySelectorAll('.grid-item') );
 	});
 
 	//close the navigation
