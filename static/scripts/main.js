@@ -1,4 +1,4 @@
-/* global $, d3, d4, queue, Fastclick, document */
+/* global $, d3, d4, queue, FastClick, Swiper, Blazy, document */
 
 'use strict';
 
@@ -28,7 +28,7 @@ App.init = function () {
 // =====================================================
 App.initProject = function () {
   this.dropcap();
-  this.fadeStoryIn();
+  //this.fadeStoryIn();
   this.nav();
 };
 
@@ -73,6 +73,7 @@ App.profileScroll = function () {
   var self = this;
   self.swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
+    //setWrapperSize: true,
     keyboardControl: true,
     mousewheelControl: true,
     hashnav: true,
@@ -98,8 +99,8 @@ App.profileScroll = function () {
          direction they choose to navigate.
       */
       if (!swiper.isEnd) {
-        var currentSlide = swiper.slides[swiper.activeIndex],
-            prevSlide = document.querySelector('.swiper-slide-prev'),
+        // var currentSlide = swiper.slides[swiper.activeIndex];
+        var prevSlide = document.querySelector('.swiper-slide-prev'),
             nextSlide = document.querySelector('.swiper-slide-next');
 
         [prevSlide, nextSlide].forEach(function (node) {

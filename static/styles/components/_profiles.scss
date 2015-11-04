@@ -63,7 +63,14 @@ main.profile {
 
   &#right {
     @include omega();
+    float: right; // Prevents FOUC since the columns naturally float left
     background-color: $inset-color;
+  }
+
+  .alt-overlay {
+    @include media(max-width $small-breakpoint) {
+      z-index: 2;
+    }
   }
 }
 
@@ -76,6 +83,7 @@ main.profile {
     @include pad(10px);
     position: absolute;
     height: auto;
+    z-index: 3;
     bottom: em(50);
   }
 
@@ -84,6 +92,9 @@ main.profile {
     position: relative;
     z-index: 2;
     @include vertical-align(relative, 30%);
+    @include media(max-width $small-breakpoint) {
+      @include vertical-align(relative, 0);
+    }
   }
 
   p {
@@ -156,6 +167,10 @@ main.profile {
     background-size: cover;
     background-position: center;
 
+    @include media(max-width $small-breakpoint) {
+      @include pad(10px);
+    }
+
     /* Transitions are optional for bLazy. I've decided to not use
        them but keep the scss just in case it ends up being a request
        ---------------------------------------------------------
@@ -165,10 +180,6 @@ main.profile {
 
       &.b-loaded {
         opacity: 1;
-      }
-
-      @include media(max-width $small-breakpoint) {
-        @include pad(10px);
       }
     */
   }
