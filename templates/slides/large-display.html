@@ -1,6 +1,4 @@
 <section {% if slide.image_url %} class="large-display image-cover" data-src="{{ slide.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});"{% else %} class="large-display" {% endif %}>
-    {% if slide.subhed %}<p class="subhed">{{ slide.subhed }}</p>{% endif %}
-
     <div class="large-display-container">{{ slide.body|safe }}</div>
 
     {% if slide.show_text %}
