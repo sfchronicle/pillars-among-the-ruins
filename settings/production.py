@@ -1,6 +1,6 @@
 import os
 
-S3_BUCKET_NAME = 'sfchronicle'
+S3_BUCKET_NAME = 'projects.sfchronicle.com'
 S3_REGION = 'us-west-1'
 
 try:
