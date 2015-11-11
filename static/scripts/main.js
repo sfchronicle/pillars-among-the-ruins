@@ -86,7 +86,7 @@ App.profileScroll = function () {
 
   self.swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    //setWrapperSize: true,
+    loop: true,
     keyboardControl: true,
     mousewheelControl: true,
     hashnav: true,
@@ -103,22 +103,10 @@ App.profileScroll = function () {
       lazyloadnodes([slide, nextSlide]);
     },
     onSlideChangeStart: function (swiper) {
-      /* So, first, in order to prevent lazyload from triggering,
-         We check if we made it to the end, otherwise, we make sure
-         that whether or not the reader comes from the beginning or
-         the end of the slide, we preload the image in whatever
-         direction they choose to navigate.
-      */
-      if (!swiper.isEnd) {
-        // var currentSlide = swiper.slides[swiper.activeIndex];
-        var prevSlide = document.querySelector('.swiper-slide-prev'),
-            nextSlide = document.querySelector('.swiper-slide-next');
+      var prevSlide = document.querySelector('.swiper-slide-prev'),
+          nextSlide = document.querySelector('.swiper-slide-next');
 
-        lazyloadnodes([prevSlide, nextSlide]);
-
-      } else {
-        // To be implemented when this case is needed
-      }
+      lazyloadnodes([prevSlide, nextSlide]);
     }
   });
 

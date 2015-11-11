@@ -14,9 +14,16 @@
                     Explore their story
                 </a>
             </section>
+        {% elif slide.is_end %}
+            <h2>{{ profile.name }}</h2>
+            <p>Share their story</p>
+            <section class="button-group">
+                <a class="fa fa-twitter" href="#">  Twitter</a>
+                <a class="fa fa-facebook" href="#">  Facebook</a>
+                <a class="fa fa-envelope" href="#">  Email</a>
+            </section>
         {% endif %}
     </div>
     {% include 'slides/_controls.html' %}
     <div class="alt-overlay" unselectable="on"></div>
-    <iframe class="lightbox" id="video-modal" src="https://player.vimeo.com/video/140115987?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>

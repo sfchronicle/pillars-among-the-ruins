@@ -8,7 +8,7 @@ class Profile(db.Model):
     body = db.Column(db.Text())
     slug = db.Column(db.String(100))
     image_url = db.Column(db.String(100))
-    video_url = db.Column(db.String(100))
+    vimeo_id = db.Column(db.Integer())
 
     slides = db.relationship('Slide', backref=db.backref('profile', lazy='joined'), lazy='dynamic')
 
@@ -40,6 +40,7 @@ class Slide(db.Model):
 
     is_video = db.Column(db.Boolean())
     is_lede = db.Column(db.Boolean())
+    is_end = db.Column(db.Boolean())
     show_text = db.Column(db.Boolean())
 
     custom_css = db.Column(db.Text())
