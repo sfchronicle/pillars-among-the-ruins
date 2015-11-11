@@ -7,6 +7,7 @@ Description TK
   - uglifyjs (`npm install -g uglifyjs`)
   - clean-css (`npm install -g clean-css`)
   - Bower and Grunt (`$ npm install -g grunt-cli bower`)
+ - Samba (`brew install samba`)
 
 ## Activate
 Already have the project installed? Here's how you re-activate for development:
