@@ -71,6 +71,19 @@ App.initProfile = function () {
 
 App.profileScroll = function () {
   var self = this;
+
+  function lazyloadnodes (array) {
+    // Take an array of DOM elements and lazy load images
+    array.forEach(function (node) {
+      if (!node) { return; }
+      var twoUpCover = node.querySelector('.two-up#left'),
+          imageCover = node.querySelector('.image-cover');
+
+      if (imageCover) { self.blazy.load( imageCover ); }
+      if (twoUpCover) { self.blazy.load( twoUpCover ); }
+    });
+  }
+
   self.swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
     //setWrapperSize: true,
@@ -85,11 +98,9 @@ App.profileScroll = function () {
     a11y: true,
     onInit: function (swiper) {
       var slide = swiper.slides[swiper.activeIndex],
-          twoUpCover = slide.querySelector('.two-up#left'),
-          imageCover = slide.querySelector('.image-cover');
+          nextSlide = document.querySelector('.swiper-slide-next');
 
-      if (imageCover) { self.blazy.load( imageCover ); }
-      if (twoUpCover) { self.blazy.load( twoUpCover ); }
+      lazyloadnodes([slide, nextSlide]);
     },
     onSlideChangeStart: function (swiper) {
       /* So, first, in order to prevent lazyload from triggering,
@@ -103,14 +114,7 @@ App.profileScroll = function () {
         var prevSlide = document.querySelector('.swiper-slide-prev'),
             nextSlide = document.querySelector('.swiper-slide-next');
 
-        [prevSlide, nextSlide].forEach(function (node) {
-          if (!node) { return; }
-          var twoUpCover = node.querySelector('.two-up#left'),
-              imageCover = node.querySelector('.image-cover');
-
-          if (imageCover) { self.blazy.load( imageCover ); }
-          if (twoUpCover) { self.blazy.load( twoUpCover ); }
-        });
+        lazyloadnodes([prevSlide, nextSlide]);
 
       } else {
         // To be implemented when this case is needed

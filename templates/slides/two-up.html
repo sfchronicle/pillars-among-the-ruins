@@ -4,6 +4,17 @@
 <section class="two-up" id="right">
     <div class="two-up-container">
         {{ slide.body|safe }}
+        {% if slide.is_lede %}
+            <h2>{{ profile.name }}</h2>
+            <section class="button-group">
+                <a href="#">
+                    Watch the movie
+                </a>
+                <a href="#">
+                    Explore their story
+                </a>
+            </section>
+        {% endif %}
     </div>
     {% include 'slides/_controls.html' %}
     <div class="alt-overlay" unselectable="on"></div>
