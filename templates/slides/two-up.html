@@ -7,7 +7,7 @@
         {% if slide.is_lede %}
             <h2>{{ profile.name }}</h2>
             <section class="button-group">
-                <a href="#">
+                <a href="#" data-featherlight="#video-modal">
                     Watch the movie
                 </a>
                 <a href="#">
@@ -18,4 +18,5 @@
     </div>
     {% include 'slides/_controls.html' %}
     <div class="alt-overlay" unselectable="on"></div>
+    <iframe class="lightbox" id="video-modal" src="https://player.vimeo.com/video/140115987?color=ffffff&title=0&byline=0&portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 </section>

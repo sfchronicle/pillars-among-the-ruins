@@ -141,6 +141,9 @@ App.lazyload = function () {
   var self = this;
   self.blazy = new Blazy();
 };
+
+App.triggerModel = function () {
+};
 // Visualization
 // =====================================================
 App.initVisualizations = function () {
