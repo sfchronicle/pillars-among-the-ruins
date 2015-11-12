@@ -31,16 +31,10 @@ aside > section {
 
 blockquote {
   font-family: $sans-serif;
-  font-weight: bold;
   border-left: 0;
   margin: 0 0 1.25em;
   padding: 0;
   color: inherit;
-  font-size: em(20);
-
-  @include media(max-width $small-breakpoint) {
-    font-size: em(16);
-  }
 }
 
 .profile {
