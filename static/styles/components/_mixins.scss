@@ -54,11 +54,16 @@ $L:     1024px;
   float: $float-direction;
 }
 
-/* Vertical align element 
+/* Vertical align element
    http://zerosixthree.se/vertical-align-anything-with-just-3-lines-of-css/
 */
 @mixin vertical-align($position: relative, $value: 50%) {
   position: $position;
   top: $value;
   @include transform(translateY(-$value));
+}
+
+@mixin z-index($z-index) {
+  position: relative;
+  z-index: $z-index;
 }

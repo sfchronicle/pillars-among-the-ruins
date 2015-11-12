@@ -1,11 +1,7 @@
-@mixin z-index($z-index) {
-  position: relative;
-  z-index: $z-index;
-}
-
 main.profile {
   position: relative;
   height: 100%;
+  overflow: hidden;
   color: #fff;
   background-color: $bg-color;
 
@@ -125,8 +121,7 @@ main.profile {
 }
 
 .slide-control {
-  position: relative;
-  z-index: 2;
+  @include z-index(10);
   color: white;
   font-size: em(20);
   background-color: #000;
@@ -152,7 +147,7 @@ main.profile {
   }
 
   &.fa-arrow-up {
-    margin-right: em(10);
+    margin-right: em(20);
   }
 }
 
