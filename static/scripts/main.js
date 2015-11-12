@@ -92,6 +92,9 @@ App.profileScroll = function () {
     hashnav: true,
     watchSlidesVisibility: true,
     effect: 'fade',
+    fade: {
+      crossFade: true
+    },
     slidesPerView: 1,
     preloadImages: false,
     lazyLoading: true,
@@ -102,7 +105,7 @@ App.profileScroll = function () {
 
       lazyloadnodes([slide, nextSlide]);
     },
-    onSlideChangeStart: function (swiper) {
+    onSlideChangeStart: function () {
       var prevSlide = document.querySelector('.swiper-slide-prev'),
           nextSlide = document.querySelector('.swiper-slide-next');
 
