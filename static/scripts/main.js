@@ -99,6 +99,8 @@ App.profileScroll = function () {
     preloadImages: false,
     lazyLoading: true,
     a11y: true,
+    followFinger: false,
+    simulateTouch: false,
     onInit: function (swiper) {
       var slide = swiper.slides[swiper.activeIndex],
           nextSlide = document.querySelector('.swiper-slide-next');
