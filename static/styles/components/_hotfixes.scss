@@ -1,0 +1,8 @@
+#ralph-and-david {
+  #section10 > .two-up {
+    @include media(max-width $small-breakpoint) {
+      background-size: cover !important;
+      background-position: 100% !important;
+    }
+  }
+}
