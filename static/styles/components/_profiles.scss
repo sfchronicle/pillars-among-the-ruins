@@ -96,12 +96,11 @@ main.profile {
 
   p,
   blockquote {
-    position: relative;
-    z-index: 2;
-    @include vertical-align(relative, 30%);
-    @include media(max-width $small-breakpoint) {
-      @include vertical-align(relative, 0);
-    }
+    @include z-index(20);
+    // @include vertical-align(relative, 30%);
+    // @include media(max-width $small-breakpoint) {
+    //   @include vertical-align(relative, 0);
+    // }
   }
 
   p {
@@ -194,25 +193,6 @@ main.profile {
     @include media(max-width $small-breakpoint) {
       position: absolute;
       bottom: em(20);
-    }
-  }
-
-  .subhed {
-    position: relative;
-    font-family: $serif;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: em(60);
-
-    @include media(max-width $small-breakpoint) {
-      left: em(75);
-      margin-bottom: em(50);
-    }
-
-    &::before {
-      content: url('/static/images/year-tail.png');
-      position: absolute;
-      right: 103%; // HACK
     }
   }
 
