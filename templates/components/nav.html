@@ -2,9 +2,18 @@
 	Menu<span></span>
 </a>
 
-<nav id="nav" role="navigation">
+<nav id="nav" role="navigation" class="swiper-no-swiping">
 	<a href="javascript:void(0)" class="cd-close-nav">Close</a>
 	<div class="grid-items">
+		<section class="profile-nav grid-item grid-item-full" tabindex="10">
+			<h1>Pillars among the ruins</h2>
+
+			<ul>
+				<li><a href="#"><b>Action:</b> Something old</a></li>
+				<li><a href="#"><b>Action:</b> Something new</a></li>
+				<li><a href="#"><b>Action:</b> Something red</a></li>
+			</ul>
+		</section>
 	{% for p in profiles %}
 	  <a href="/{{ p.slug }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item">
 	    <h3>{{ p.name }}</h3>
@@ -16,7 +25,12 @@
 	    <p>{{ p.description }}</p>
 	  </a></noscript>
 	{% endfor %}
-		<a href="#" data-src="http://placehold.it/350x200" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item"></a>
+	{% if profile %}
+	<section class="current-profile grid-item grid-item-big">
+		<h2>{{ profile.name }}</h2>
+		<p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
+	</section>
+	{% endif %}
 	</div>
 </nav>
 

@@ -119,6 +119,7 @@ nav{
 	right: 5%;
 	height: 44px;
 	width: 44px;
+	z-index: 20;
 
 	/* image replacement */
 	overflow: hidden;
@@ -136,7 +137,7 @@ nav{
 		width: 32px;
 		left: 50%;
     top: 50%;
-		background-color: #5c4b51;
+		background-color: white;
 		@include backface-visibility(hidden);
 	}
 

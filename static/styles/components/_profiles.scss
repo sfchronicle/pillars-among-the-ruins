@@ -224,3 +224,41 @@ main.profile {
     }
   }
 }
+
+.grid-item {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif;
+  }
+
+  &.current-profile {
+    text-align: left;
+    
+    h2 {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+  }
+  &.profile-nav {
+    text-align: left;
+    height: inherit;
+
+    ul {
+      @include inline-list;
+
+      > li {
+
+        a {
+          color: white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        b {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}
