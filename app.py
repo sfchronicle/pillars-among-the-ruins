@@ -1,4 +1,5 @@
 from flask import Flask
+from flask.ext.frozen import Freezer
 from flask_sqlalchemy import SQLAlchemy
 from flask.ext.assets import Environment
 
@@ -17,3 +18,5 @@ app.config['SQLALCHEMY_ECHO'] = True
 db = SQLAlchemy(app)
 # asset management
 assets =  Environment(app)
+# building
+freezer = Freezer(app)
