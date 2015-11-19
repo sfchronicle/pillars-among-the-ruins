@@ -26,7 +26,7 @@
     {% block content %}{% endblock %}
 
     {% if config.DEBUG %}
-    <!-- <script src="{{ url_for('static', filename='bower_components/tota11y/build/tota11y.js') }}"></script> -->
+    <script src="{{ url_for('static', filename='bower_components/tota11y/build/tota11y.js') }}"></script>
     {% endif %}
     {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
               "bower_components/jquery/dist/jquery.js",
