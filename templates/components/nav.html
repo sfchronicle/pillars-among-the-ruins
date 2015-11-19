@@ -16,18 +16,18 @@
 		</section>
 	{% for p in profiles %}
 	  <a href="/{{ p.slug }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item">
-	    <h3>{{ p.name }}</h3>
+	    <h2>{{ p.name }}</h2>
 	    <p>{{ p.description }}</p>
 	  </a>
 	  <!-- Fallback for non JavaScript browsers -->
 	  <noscript><a href="/{{ p.slug }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item">
-	    <h3>{{ p.name }}</h3>
+	    <h2>{{ p.name }}</h2>
 	    <p>{{ p.description }}</p>
 	  </a></noscript>
 	{% endfor %}
 	{% if profile %}
 	<section class="current-profile grid-item grid-item-big">
-		<h2>{{ profile.name }}</h2>
+		<h3>{{ profile.name }}</h3>
 		<p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
 	</section>
 	{% endif %}

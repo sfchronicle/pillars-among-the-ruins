@@ -20,6 +20,7 @@ main.profile {
 .swiper-container{
   height: 100%;
   width: 100%;
+  //overflow: hidden;
 }
 
 .section {
@@ -156,6 +157,10 @@ main.profile {
   height: 100%;
 }
 
+.video-wrapper {
+  @include responsive-video;
+}
+
 .large-display {
   @include pad(10% 28% 30%);
   position: relative;
@@ -232,8 +237,8 @@ main.profile {
 
   &.current-profile {
     text-align: left;
-    
-    h2 {
+
+    h3 {
       max-width: 60%;
       margin: 0 auto;
     }

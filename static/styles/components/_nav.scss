@@ -3,7 +3,7 @@ $animation-duration: 0.4s;
 .nav-trigger {
 	/* hamburger icon */
 	position: fixed;
-	z-index: 3;
+	z-index: 4;
 	top: 12px;
 	right: 5%;
 	height: 44px;
@@ -88,7 +88,7 @@ xnavigation
 nav{
 	@include outer-container(100%);
 	position: fixed;
-	z-index: 4;
+	z-index: 5;
 	top: 0;
 	right: 0;
 	height: 100%;
@@ -208,7 +208,7 @@ xshadow layer
 	&.is-visible {
 		opacity: 1;
 		visibility: visible;
-		z-index: 3;
+		z-index: 4;
 		@include transition(opacity $animation-duration 0s, visibility 0s 0s);
 	}
 }
