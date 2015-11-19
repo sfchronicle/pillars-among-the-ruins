@@ -1,5 +1,10 @@
-main {
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans-serif;
+}
+
+body {
   font-family: $serif;
+  font-size: 2.6vh;
 }
 
 article > p,

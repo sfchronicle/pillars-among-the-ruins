@@ -11,7 +11,7 @@
     <section class="swiper-container">
         <div class="swiper-wrapper">
         {% for slide in slides %}
-            <section class="section swiper-slide" data-hash="{{ loop.index }}" id="section{{ loop.index }}">
+            <section class="section {% if slide.is_lede %}lede{% endif %} {% if slide.is_end %}is-end{% endif %} swiper-slide" data-hash="{{ loop.index }}" id="section{{ loop.index }}">
             {% if slide.template == 'two_up' %}
                 {% include 'slides/two-up.html' %}
             {% elif slide.template == 'large_display' %}
@@ -26,11 +26,11 @@
         </div>
     </section>
 
-    <!-- <div class="video lightbox" id="video-modal">
+    <div class="video lightbox" id="video-modal">
       <div class="video-wrapper">
           <iframe src="https://player.vimeo.com/video/{{profile.vimeo_id}}?color=ffffff&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
       </div>
-    </div> -->
+    </div>
 </main>
 {% endblock %}
 

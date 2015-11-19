@@ -86,7 +86,6 @@ App.profileScroll = function () {
 
   self.swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    loop: true,
     keyboardControl: true,
     mousewheelControl: true,
     hashnav: true,

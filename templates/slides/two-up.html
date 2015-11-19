@@ -8,26 +8,22 @@
             <h2>{{ profile.name }}</h2>
             <section class="button-group">
                 <a href="#" data-featherlight="#video-modal">
-                    Watch the movie
-                </a>
-                <a href="#">
-                    Explore their story
+                    <i class="fa fa-play"></i> Play vignette
                 </a>
             </section>
 
             <a href="#"><img src="http://placehold.it/300x250" alt="" class="banner-ad"></a>
         {% elif slide.is_end %}
             <h2>{{ profile.name }}</h2>
-            <p>Share their story</p>
             <section class="button-group">
-                <a class="fa fa-twitter" href="#">  Twitter</a>
-                <a class="fa fa-facebook" href="#">  Facebook</a>
-                <a class="fa fa-envelope" href="#">  Email</a>
+                <a href="#" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" title="Share via Email"><i class="fa fa-envelope"></i></a>
             </section>
 
             <a href="#"><img src="http://placehold.it/500x100" alt="" class="banner-ad"></a>
         {% endif %}
     </div>
-    {% include 'slides/_controls.html' %}
+    {% if not slide.is_end %}{% include 'slides/_controls.html' %}{% endif %}
     <div class="alt-overlay" unselectable="on"></div>
 </section>

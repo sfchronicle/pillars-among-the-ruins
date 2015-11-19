@@ -22,7 +22,7 @@
   $grid-item-big-columns: 8;
   $grid-item-full-columns: 12;
   $grid-item-color: white;
-  $grid-item-height: 14em;
+  $grid-item-height: em(300);
 
   @include clearfix;
 
