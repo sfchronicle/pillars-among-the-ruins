@@ -10,10 +10,6 @@ main.profile {
       top: 25px;
       right: 30px;
     }
-
-    span {
-      background-color: #fff;
-    }
   }
 }
 
@@ -36,6 +32,13 @@ main.profile {
   &.swiper-slide-active {
     position: relative;
     z-index: 3;
+  }
+
+  &.lede,
+  &.is-end {
+    .alt-overlay {
+      visibility: hidden;
+    }
   }
 }
 
@@ -64,6 +67,10 @@ main.profile {
 
   &#right {
     @include omega();
+    @include display(flex);
+    @include align-items(center);
+    @include justify-content(center);
+
     float: right; // Prevents FOUC since the columns naturally float left
     background-color: $inset-color;
   }
@@ -76,16 +83,12 @@ main.profile {
 }
 
 .two-up-container {
-  @include pad(20%);
   position: relative;
-  height: 100%;
-
-  @include media(max-width $small-breakpoint) {
-    @include pad(10px);
-    position: absolute;
-    height: auto;
-    z-index: 3;
-    bottom: em(50);
+  max-width: 60%;
+  @include media(max-width $medium-breakpoint) {
+    @include align-self(flex-end);
+    max-width: 95%;
+    margin-bottom: em(100);
   }
 
   h2 {
@@ -96,12 +99,7 @@ main.profile {
 
   p,
   blockquote {
-    position: relative;
-    z-index: 2;
-    @include vertical-align(relative, 30%);
-    @include media(max-width $small-breakpoint) {
-      @include vertical-align(relative, 0);
-    }
+    @include z-index(20);
   }
 
   p {
@@ -111,13 +109,8 @@ main.profile {
 
 .slide-controls {
   position: absolute;
-  right: 25px;
-  bottom: 75px;
-
-  @include media(max-width $small-breakpoint) {
-    right: 10px;
-    bottom: 10px;
-  }
+  right: em(10);
+  bottom: em(10);
 }
 
 .slide-control {
@@ -135,15 +128,9 @@ main.profile {
   }
 
   &.lede {
-    display: block;
-    margin: 0 auto;
-    bottom: em(100);
-    @include media(max-width $small-breakpoint) {
-      position: absolute;
-      bottom: em(10);
-      left: 50%;
-      right: 50%;
-    }
+    position: absolute;
+    bottom: em(10);
+    right: em(10);
   }
 
   &.fa-arrow-up {
@@ -157,62 +144,24 @@ main.profile {
   height: 100%;
 }
 
+.video-wrapper {
+  @include responsive-video;
+}
+
 .large-display {
-  @include pad(10% 28% 30%);
-  position: relative;
-  height: 100%;
+  @include display(flex);
+  @include align-items(center);
+  @include justify-content(center);
+
   background-color: $inset-color;
+  height: 100%;
 
+  &.image-cover { background-size: cover; background-position: center; }
 
-  @include media(max-width $small-breakpoint) {
-    @include pad(10px);
-  }
-
-  &.image-cover {
-    @include pad(20% 28% 30%);
-    background-size: cover;
-    background-position: center;
-
+  > .large-display-container {
+    max-width: 50%;
     @include media(max-width $small-breakpoint) {
-      @include pad(10px);
-    }
-
-    /* Transitions are optional for bLazy. I've decided to not use
-       them but keep the scss just in case it ends up being a request
-       ---------------------------------------------------------
-      @include transition(opacity 100ms ease-in-out);
-
-      opacity: 0;
-
-      &.b-loaded {
-        opacity: 1;
-      }
-    */
-  }
-
-  .large-display-container { // this should be determined per slide
-    @include media(max-width $small-breakpoint) {
-      position: absolute;
-      bottom: em(20);
-    }
-  }
-
-  .subhed {
-    position: relative;
-    font-family: $serif;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: em(60);
-
-    @include media(max-width $small-breakpoint) {
-      left: em(75);
-      margin-bottom: em(50);
-    }
-
-    &::before {
-      content: url('/static/images/year-tail.png');
-      position: absolute;
-      right: 103%; // HACK
+      max-width: 95%;
     }
   }
 
@@ -241,6 +190,44 @@ main.profile {
     &:hover {
       background-color: white;
       color: $bg-color;
+    }
+  }
+}
+
+.grid-item {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif;
+  }
+
+  &.current-profile {
+    text-align: left;
+
+    h3 {
+      max-width: 60%;
+      margin: 0 auto;
+    }
+  }
+  &.profile-nav {
+    text-align: left;
+    height: inherit;
+
+    ul {
+      @include inline-list;
+
+      > li {
+
+        a {
+          color: white;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+
+        b {
+          text-transform: uppercase;
+        }
+      }
     }
   }
 }

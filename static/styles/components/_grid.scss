@@ -8,7 +8,7 @@
   $medium-screen: em(640) !default;
   $large-screen: em(860) !default;
   $grid-items-background: $base-background-color;
-  $grid-item-background: desaturate($action-color, 30%);
+  $grid-item-background: black;
   $grid-item-colors:
     desaturate($action-color, 30%),
     #3581A5,
@@ -20,8 +20,9 @@
   $grid-item-border-size: 9px;
   $grid-item-columns: 4;
   $grid-item-big-columns: 8;
+  $grid-item-full-columns: 12;
   $grid-item-color: white;
-  $grid-item-height: 14em;
+  $grid-item-height: em(300); // em(300 for mobile)
 
   @include clearfix;
 
@@ -48,10 +49,11 @@
 
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
+      height: em(150);
     }
   }
 
-  .grid-item h3 {
+  .grid-item h2 {
     visibility: hidden; // TEMP
     color: $grid-item-color;
     font-size: 1.3em;
@@ -71,6 +73,18 @@
   .grid-item-big {
     @include media($large-screen) {
       @include grid-item-columns($grid-item-big-columns);
+    }
+
+    p {
+      @include media($medium-screen) {
+        max-width: 60%;
+      }
+    }
+  }
+
+  .grid-item-full {
+    @include media($large-screen) {
+      @include grid-item-columns($grid-item-full-columns);
     }
 
     p {

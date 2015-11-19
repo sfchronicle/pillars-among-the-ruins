@@ -67,3 +67,74 @@ $L:     1024px;
   position: relative;
   z-index: $z-index;
 }
+
+
+//
+// @variables
+//
+
+// We use these to control text direction settings
+$text-direction: ltr !default;
+$default-float: left !default;
+$opposite-direction: right !default;
+@if $text-direction == ltr {
+  $default-float: left;
+  $opposite-direction: right;
+} @else {
+  $default-float: right;
+  $opposite-direction: left;
+}
+
+// We use this to control the margins and padding of the inline list.
+$inline-list-top-margin: 0 !default;
+$inline-list-opposite-margin: 0 !default;
+$inline-list-bottom-margin: em(17) !default;
+$inline-list-default-float-margin: em(-22) !default;
+$inline-list-default-float-list-margin: em(22) !default;
+
+$inline-list-padding: 0 !default;
+
+// We use this to control the overflow of the inline list.
+$inline-list-overflow: hidden !default;
+
+// We use this to control the list items
+$inline-list-display: block !default;
+
+// We use this to control any elements within list items
+$inline-list-children-display: inline-block !default;
+
+//
+// @mixins
+//
+// We use this mixin to create inline lists
+@mixin inline-list {
+  list-style: none;
+  margin-top: $inline-list-top-margin;
+  margin-bottom: $inline-list-bottom-margin;
+  margin-#{$default-float}: $inline-list-default-float-margin;
+  margin-#{$opposite-direction}: $inline-list-opposite-margin;
+  overflow: $inline-list-overflow;
+  padding: $inline-list-padding;
+
+  > li {
+    display: $inline-list-display;
+    float: $default-float;
+    list-style: none;
+    margin-#{$default-float}: $inline-list-default-float-list-margin;
+    > * { display: $inline-list-children-display; }
+  }
+}
+
+@mixin responsive-video {
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 56.25%; // For ratio 16:9. 75% if ratio is 4:3
+  position: relative;
+
+  embed,
+  object,
+  iframe {
+    @include position(absolute, 0px null null 0px);
+    @include size(100%);
+  }
+}

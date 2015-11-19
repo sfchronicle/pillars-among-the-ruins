@@ -44,20 +44,18 @@ App.nav = function () {
   //open navigation clicking the menu icon
 	$('.nav-trigger').on('click', function(event){
 		event.preventDefault();
-		toggleNav(true);
 
-    App.blazy.load( document.querySelectorAll('.grid-item') );
-	});
-
-	//close the navigation
-	$('.cd-close-nav, .overlay').on('click', function(event){
-		event.preventDefault();
-		toggleNav(false);
+    if ($(this).hasClass('active')) {
+      toggleNav(false);
+    } else {
+      toggleNav(true);
+      App.blazy.load( document.querySelectorAll('.grid-item') );
+    }
 	});
 
   function toggleNav(bool) {
 		$('nav, .overlay').toggleClass('is-visible', bool);
-		$('main').toggleClass('scale-down', bool);
+    $('.nav-trigger').toggleClass('active', bool);
 	}
 };
 
@@ -86,7 +84,6 @@ App.profileScroll = function () {
 
   self.swiper = new Swiper('.swiper-container', {
     direction: 'vertical',
-    loop: true,
     keyboardControl: true,
     mousewheelControl: true,
     hashnav: true,
