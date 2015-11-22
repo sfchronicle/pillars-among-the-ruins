@@ -16,6 +16,7 @@
     <!-- CHANGE IN PRODUCTION -->
 
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    {% if not config.DEBUG %}{% include 'hearst/analytics.html' %}{% endif %}
   </head>
   <body class="{% if config.DEBUG %}debug{% endif %}">
     <!--[if lt IE 10]>
@@ -39,6 +40,7 @@
               "bower_components/stepper/js/thirdparty/stepper.js",
               "bower_components/Swiper/dist/js/swiper.jquery.js",
               "bower_components/jquery.fitvids/jquery.fitvids.js",
+              "bower_components/okvideo/src/okvideo.js",
               "bower_components/scotchPanels/dist/scotchPanels.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
@@ -64,6 +66,5 @@
         + ':35729/livereload.js"></'
         + 'script>')</script>
     {% endif %}
-    {% if not config.DEBUG %}{% include 'hearst/analytics.html' %}{% endif %}
 </body>
 </html>

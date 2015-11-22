@@ -3,9 +3,14 @@ from flask import render_template, redirect, url_for
 from app import app, db, freezer
 from models import Profile, Slide
 
-# @app.route('/')
-# def index():
-#     return redirect(url_for('mainbar'))
+@app.route('/')
+def index():
+    profiles = Profile.query.all()
+    return render_template(
+        'landing.html',
+        title='landing',
+        profiles=profiles
+    )
 
 
 @app.route('/mainbar')

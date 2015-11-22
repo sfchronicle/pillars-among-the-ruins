@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block title %}LANDING | SF Chronicle{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main class="landing">
+    {% include 'components/nav.html' %}
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <!-- First -->
+            <section class="section swiper-slide">
+                <section class="large-display">
+                    <div class="large-display-container">
+                        <p>During the height of the AIDS crisis in San Francisco, about 30 people a week died from the virus. All told, AIDS has claimed 20,000 lives in San Francisco. The loss to society of so much promise can never be calculated. But AIDS didn’t just kill, it maimed the futures of so many survivors who came of age under a death sentence.</p>
+                    </div>
+                </section>
+                <a href="#" class="slide-control lede fa fa-arrow-down" title="next slide"></a>
+            </section>
+
+            <!-- Second -->
+            <section class="section swiper-slide">
+                <section class="large-display">
+                    <div class="large-display-container">
+                        <p>Now, 20 years after HIV became a treatable, survivable disease, and as the city and country push aggressive campaigns to stop all new infections and eradicate AIDS, the survivors wonder what becomes of them. No one expected survivors. No one planned for their futures. There’s no one to care for them and they feel abandoned by their city and their community.</p>
+                    </div>
+                </section>
+                <div class="slide-controls">
+                    <a href="#" class="slide-control fa fa-arrow-up" title="previous slide"></a>
+                    <a href="#" class="slide-control fa fa-arrow-down" title="next slide"></a>
+                </div>
+            </section>
+
+
+            <!-- Third // Landing -->
+            <section class="section swiper-slide">
+                <section class="large-display">
+                    <div class="landing-container">
+                        <header>
+                            <h1>Pillars among the ruins</h1>
+                            <p>A San Francisco Chronicle special report on the spread of AIDS in San Francisco, and the men who’s lives it touched, altered and changed forever.</p>
+                        </header>
+
+                        <section>
+                            <h2>THE LONGFORM</h2>
+                            <p>The story of AIDS in San Francisco’s Castro is one of a nearly forgotten past.</p>
+                            <a href="#"><i class="fa fa-angle-double-right"></i> Read the story</a>
+                        </section>
+                        <section>
+                            <h2>THE NEARLY FORGOTTEN</h2>
+                            <p>Their resiliance, remarkable. Their stories, hopeful. Meet these survivors.</p>
+                            <a href="#"><i class="fa fa-angle-double-right"></i> Explore their stories</a>
+                        </section>
+                        <section>
+                            <h2>THE DOCUMENTARY</h2>
+                            <p>Watch the in-depth 30-minute film that tells the stories of these survivors.</p>
+                            <a href="#"><i class="fa fa-angle-double-right"></i> Watch the film</a>
+                        </section>
+                    </div>
+                </section>
+            </section>
+
+
+        </div>
+    </section>
+    <div class="alt-overlay" unselectable="on"></div>
+</main>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+        App.bigvideo();
+    });
+</script>
+{% endblock %}

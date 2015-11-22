@@ -13,6 +13,10 @@ $.fn.goTo = function() {
   return this; // for chaining...
 };
 
+// Globals
+// ===============================================
+App.looperURL = 'https://vimeo.com/145925416';
+
 // Initialize application
 // =====================================================
 
@@ -28,7 +32,7 @@ App.init = function () {
 // =====================================================
 App.initProject = function () {
   this.dropcap();
-  //this.fadeStoryIn();
+  this.fadeStoryIn();
   this.nav();
 };
 
@@ -42,10 +46,11 @@ App.fadeStoryIn = function () {
 
 App.nav = function () {
   //open navigation clicking the menu icon
-	$('.nav-trigger').on('click', function(event){
+  var $trigger = $('.nav-trigger');
+	$('.nav-trigger, .overlay').on('click', function(event){
 		event.preventDefault();
 
-    if ($(this).hasClass('active')) {
+    if ( $trigger.hasClass('active') ) {
       toggleNav(false);
     } else {
       toggleNav(true);
@@ -57,6 +62,19 @@ App.nav = function () {
 		$('nav, .overlay').toggleClass('is-visible', bool);
     $('.nav-trigger').toggleClass('active', bool);
 	}
+};
+
+App.bigvideo = function () {
+  var self = this;
+  $.okvideo({
+    //video: self.looperURL,
+    source: '145925416',
+    volume: 0,
+    hd:true,
+    loop: true,
+    adproof: true,
+    annotations: false
+  });
 };
 
 // Profile logic
