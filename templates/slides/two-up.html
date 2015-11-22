@@ -24,6 +24,8 @@
             <a href="#"><img src="http://placehold.it/500x100" alt="" class="banner-ad"></a>
         {% endif %}
     </div>
-    {% if not slide.is_end %}{% include 'slides/_controls.html' %}{% endif %}
+    {% if not slide.is_end and not slide.is_lede %}
+    {% include 'slides/_controls.html' %}
+    {% endif %}
     <div class="alt-overlay" unselectable="on"></div>
 </section>
