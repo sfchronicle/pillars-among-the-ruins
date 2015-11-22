@@ -1,0 +1,63 @@
+main.landing {
+  position: relative;
+  z-index: 5;
+  height: 100%;
+  overflow: hidden;
+  color: #fff;
+  background-color: transparent;
+
+  p {
+    font-family: $sans-serif;
+  }
+
+  .large-display,
+  .section {
+    background-color: transparent;
+  }
+
+}
+
+.landing-container {
+  @include outer-container(1024px);
+  position: relative;
+  text-align: center;
+  z-index: 5;
+
+  header {
+    @include span-columns(10);
+    @include shift(1);
+    margin-bottom: em(50);
+
+    p {
+      font-family: $serif;
+    }
+  }
+
+  h2 {
+    display: inline-block;
+    font-size: em(16);
+    text-decoration: none;
+    border-bottom: 1px solid gray;
+  }
+
+  > section {
+    @include span-columns(4);
+
+    p {
+      font-size: em(14);
+    }
+
+    a {
+      @include transition(all ease-in-out 100ms);
+      color: white;
+      font-style: italic;
+      text-decoration: none;
+      font-weight: normal;
+
+      &:hover {
+        font-weight: bold;
+        text-decoration: underline;
+      }
+    }
+  }
+}
