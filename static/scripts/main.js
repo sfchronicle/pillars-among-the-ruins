@@ -47,7 +47,7 @@ App.fadeStoryIn = function () {
 App.nav = function () {
   //open navigation clicking the menu icon
   var $trigger = $('.nav-trigger');
-	$('.nav-trigger, .overlay').on('click', function(event){
+	$('.nav-trigger, .overlay, .landing-nav-trigger').on('click', function(event){
 		event.preventDefault();
 
     if ( $trigger.hasClass('active') ) {
