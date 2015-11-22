@@ -3,21 +3,21 @@
 <nav id="nav" role="navigation" class="swiper-no-swiping">
 	<div class="grid-items">
 		<section class="profile-nav grid-item grid-item-full" tabindex="10">
-			<h1>Pillars among the ruins</h2>
+			<h1>The Last Men Standing</h2>
 
 			<ul>
-				<li><a href="#"><b>Action:</b> Something old</a></li>
-				<li><a href="#"><b>Action:</b> Something new</a></li>
-				<li><a href="#"><b>Action:</b> Something red</a></li>
+				<li><a href="#"><b>read:</b> Mainbar hed goes here</a></li>
+				<li><a href="#"><b>Watch:</b> The Documentary</a></li>
+				<li><a href="#"><b>Share:</b> Twitter, Facebook, etc</a></li>
 			</ul>
 		</section>
 	{% for p in profiles %}
-	  <a href="/{{ p.slug }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item">
+	  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item">
 	    <h2>{{ p.name }}</h2>
 	    <p>{{ p.description }}</p>
 	  </a>
 	  <!-- Fallback for non JavaScript browsers -->
-	  <noscript><a href="/{{ p.slug }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item">
+	  <noscript><a href="{{ url_for('profile_view', slug=p.slug) }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item">
 	    <h2>{{ p.name }}</h2>
 	    <p>{{ p.description }}</p>
 	  </a></noscript>

@@ -24,11 +24,16 @@ def upload_assets():
 if __name__ == '__main__':
     app.config['DEBUG'] = False
     app.config['ASSETS_DEBUG'] = False
-    app.config['FREEZER_BASE_URL'] = '{}/{}'.format(ROOT_URL, TEST_PROJECT_NAME)
 
     for arg in sys.argv[1:]:
-        if arg == 'build':
+        if arg == 'testbuild':
+            app.config['FREEZER_RELATIVE_URLS'] = True
             freezer.freeze()
+
+        if arg == 'build':
+            app.config['FREEZER_BASE_URL'] = '{}/{}'.format(ROOT_URL, TEST_PROJECT_NAME)
+            freezer.freeze()
+
         elif arg == 'publish':
             upload_assets()
         else:
