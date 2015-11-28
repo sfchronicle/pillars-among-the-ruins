@@ -15,6 +15,13 @@ main.landing {
     background-color: transparent;
   }
 
+  .large-display {
+    > .large-display-container {
+      @include media(max-width $sm-md-breakpoint) {
+        max-width: 80%;  
+      }
+    }
+  }
 }
 
 .landing-container {
