@@ -38,7 +38,7 @@ App.initProject = function () {
 
 App.dropcap = function () {
   var dropcaps = document.querySelectorAll('.dropcap');
-  window.Dropcap.layout(dropcaps, 3);
+  window.Dropcap.layout(dropcaps, 2);
 };
 App.fadeStoryIn = function () {
   $('body').hide().fadeIn(1000);

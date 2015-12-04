@@ -19,7 +19,7 @@ aside {
 // Inline content
 aside > p,
 article > p  {
-  @include span-columns(6);
+  @include span-columns(5);
   @include shift(3);
 
   @include media(max-width $small-breakpoint) {
@@ -44,18 +44,12 @@ aside > section {
 // INLINE-ASSET ADJUSTMENTS
 // ========================
 aside.inline-asset-left > section {
-  @include shift(-9);
+  @include shift(-8); // Add article > p (span-columns + shift)
   @include media(max-width $small-breakpoint) {
     @include shift(0);
   }
 }
 // ========================
-
-main > header {
-  @include span-columns(8);
-  @include shift(2);
-  text-align: center;
-}
 
 main > footer {
   @include span-columns(12);
