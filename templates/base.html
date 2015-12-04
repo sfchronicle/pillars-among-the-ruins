@@ -32,16 +32,9 @@
               "bower_components/fastclick/lib/fastclick.js",
               "bower_components/featherlight/src/featherlight.js",
               "bower_components/bLazy/blazy.js",
-              "bower_components/d3/d3.js",
-              "bower_components/d4/d4.js",
-              "bower_components/queue-async/queue.js",
-              "bower_components/webfontloader/webfontloader.js",
               "bower_components/dropcap.js/dropcap.js",
-              "bower_components/stepper/js/thirdparty/stepper.js",
               "bower_components/Swiper/dist/js/swiper.jquery.js",
-              "bower_components/jquery.fitvids/jquery.fitvids.js",
-              "bower_components/okvideo/src/okvideo.js",
-              "bower_components/scotchPanels/dist/scotchPanels.js" %}
+              "bower_components/okvideo/src/okvideo.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
 
@@ -50,14 +43,6 @@
               "scripts/main.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>
     {% endassets %}
-
-    <script>
-        WebFont.load({
-          google: {
-            families: ['Merriweather', 'Lato']
-          }
-        });
-    </script>
     {% block javascript %}{% endblock %}
 
     {% if config.DEBUG %}
