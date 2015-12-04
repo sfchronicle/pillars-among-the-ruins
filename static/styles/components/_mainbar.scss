@@ -1,0 +1,75 @@
+.mainbar {
+  .nav-trigger {
+    span,
+    span:before,
+    span:after {
+      background: black;
+    }
+
+    &.active {
+      span:before,
+      span:after {
+        background: white;
+      }
+    }
+  }
+
+  header.topper {
+    $bg-image-1: 'http://ww2.hdnux.com/photos/42/03/13/8925905/7/2048x1594.jpg';
+    $bg-image-2: 'http://ww4.hdnux.com/photos/41/55/72/8838831/9/2048x1366.jpg';
+
+    @include display(flex);
+    @include align-items(center);
+    @include align-self(center);
+
+    color: white;
+    height: 100vh;
+    text-align: center;
+    border: em(25) solid $bg-color;
+    margin-bottom: em(60);
+
+    background-size: cover;
+    background-color: $bg-color;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url($bg-image-1);
+
+    @include media(max-width $small-breakpoint) {
+      border-width: em(15);
+      height: em(500);
+      background-size: contain;
+    }
+
+    section {
+      @include span-columns(8);
+      @include shift(2);
+      @include z-index(5);
+
+      h1 {
+        margin-bottom: em(5);
+      }
+
+      .description {
+        position: relative;
+      }
+
+      .byline {
+        @include span-columns(6 of 8);
+        @include shift(1);
+
+        font-size: em(14);
+      }
+
+      a {
+        color: white;
+        font-weight: bold;
+      }
+
+      hr {
+        width: 33%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  }
+}
