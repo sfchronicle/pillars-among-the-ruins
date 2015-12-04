@@ -73,3 +73,17 @@
     }
   }
 }
+
+.ad {
+  $border: 1px solid lightgray;
+  @include span-columns(12);
+
+  border-top: $border;
+  border-bottom: $border;
+  padding: em(25);
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}
