@@ -24,6 +24,8 @@
 
     color: white;
     height: 100vh;
+    overflow: hidden;
+    position: relative;
     text-align: center;
     border: em(25) solid $bg-color;
     margin-bottom: em(60);
