@@ -34,7 +34,7 @@
     background-color: $bg-color;
     background-repeat: no-repeat;
     background-position: center;
-    background-image: url($bg-image-1);
+    background-image: url($bg-image-2);
 
     @include media(max-width $small-breakpoint) {
       border-width: em(15);

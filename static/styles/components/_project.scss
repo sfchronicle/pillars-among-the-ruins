@@ -4,7 +4,6 @@
 */
 html, body {
   position: relative;
-  //overflow: hidden;
   height: 100%;
 }
 
@@ -12,12 +11,6 @@ article {
   @include outer-container(100%);
 }
 
-aside {
-  @include row;
-}
-
-// Inline content
-aside > p,
 article > p  {
   @include span-columns(5);
   @include shift(3);
@@ -32,7 +25,24 @@ article > p {
   @include omega();
 }
 
-aside > section {
+// INLINE-ASSETS
+// ========================
+aside {
+  @include row;
+  clear: both;
+}
+
+
+aside.inline {
+  > section {
+    @include span-columns(8);
+    @include shift(2);
+    @include omega;
+    height: em(500);
+  }
+}
+
+aside > .inline-asset.inline-right {
   @include span-columns(3);
   @include shift(0);
 
@@ -41,27 +51,9 @@ aside > section {
   }
 }
 
-// INLINE-ASSET ADJUSTMENTS
-// ========================
-aside.inline-asset-left > section {
+aside > .inline-asset.inline-left {
   @include shift(-8); // Add article > p (span-columns + shift)
   @include media(max-width $small-breakpoint) {
     @include shift(0);
   }
-}
-// ========================
-
-main > footer {
-  @include span-columns(12);
-}
-
-
-// DeathViz
-// ==================================
-#annotation-steps {
-  @include span-columns(4);
-}
-
-#vis-canvas {
-  @include span-columns(8);
 }

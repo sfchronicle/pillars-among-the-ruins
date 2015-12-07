@@ -4,11 +4,10 @@ h1, h2, h3, h4, h5, h6 {
 
 body {
   font-family: $serif;
-  font-size: em(16);
+  font-size: em(24);
 }
 
-article > p,
-aside.inline-asset > p {
+article > p {
   // Thanks Medium
   font-size: $base-font;
   line-height: $line-height;
@@ -19,13 +18,6 @@ aside.inline-asset > p {
     font-size: 18px;
     margin-top: 26px;
   }
-}
-
-aside > section {
-  margin-top: $margin-top;
-  font-family: $sans-serif;
-  padding: 5px;
-  background-color: lightgray;
 }
 
 .dropcap {
