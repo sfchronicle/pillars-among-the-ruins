@@ -67,7 +67,6 @@ App.bigvideo = function () {
 App.initProfile = function () {
   this.lazyload();
   this.profileScroll();
-  this.fullscreenVideo();
 };
 
 App.profileScroll = function () {
@@ -124,10 +123,6 @@ App.profileScroll = function () {
     event.preventDefault();
     self.swiper.slideNext();
   });
-};
-
-App.fullscreenVideo = function () {
-  $('.video-container').fitVids();
 };
 
 App.lazyload = function () {
