@@ -95,6 +95,7 @@ main.profile {
     @include z-index(20);
     text-transform: uppercase;
     text-align: center;
+    margin-bottom: em(10);
   }
 
   p,
@@ -178,6 +179,8 @@ main.profile {
   @include flex-direction(row);
   @include justify-content(space-between);
   @include z-index(20);
+
+  width: em(250);
 
   a {
     @include transition(all 0.5s ease);
