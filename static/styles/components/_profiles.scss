@@ -99,8 +99,18 @@ main.profile {
   }
 
   p,
+  ul,
   blockquote {
     @include z-index(20);
+  }
+
+  ul {
+    list-style-type: circle;
+  }
+
+  li {
+    font-weight: bold;
+    margin-bottom: em(10);
   }
 
   p {
