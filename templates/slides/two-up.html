@@ -7,11 +7,11 @@
         {% if slide.is_lede %}
             <h2>{{ profile.name }}</h2>
             <section class="button-group">
-                <a href="#" data-featherlight="#video-modal">
+                <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
                     <i class="fa fa-play"></i> Play
                 </a>
 
-                <a href="">
+                <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
                     <i class="fa fa-arrow-down"></i> Go
                 </a>
             </section>

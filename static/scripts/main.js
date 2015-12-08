@@ -119,7 +119,7 @@ App.profileScroll = function () {
     self.swiper.slidePrev();
   });
 
-  $('.fa-arrow-down').on('click', function (event) {
+  $('.fa-arrow-down, #start-profile').on('click', function (event) {
     event.preventDefault();
     self.swiper.slideNext();
   });
