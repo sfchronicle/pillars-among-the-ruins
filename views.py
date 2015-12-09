@@ -24,8 +24,8 @@ def mainbar_view():
 
 @app.route('/<slug>/')
 def profile_view(slug):
-    profiles = Profile.query.all()
     profile = Profile.query.filter_by(slug=slug)[0]
+    profiles = Profile.query.filter(Profile.slug != slug)
     slides = profile.slides.order_by(Slide.ordering)
 
     return render_template(
