@@ -13,7 +13,7 @@
 		</section>
 
 	{% if profile %}
-		<a href="{{ url_for('profile_view', slug=profile.slug) }}" data-src="{{ profile.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item" title="{{ profile.name }}">
+		<a href="{{ url_for('profile_view', slug=profile.slug) }}" data-src="{{ profile.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ profile.name }}">
 		  <h2>{{ profile.name }}</h2>
 		</a>
 		<!-- Fallback for non JavaScript browsers -->
@@ -28,7 +28,7 @@
 	{% endif %}
 
 	{% for p in profiles %}
-	  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url({{ url_for('static', filename='images/holder.jpg') }});" tabindex="10" class="grid-item" title="{{ p.name }}">
+	  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ p.name }}">
 	    <h2>{{ p.name }}</h2>
 	  </a>
 	  <!-- Fallback for non JavaScript browsers -->

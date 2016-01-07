@@ -3,7 +3,7 @@ from flask import render_template, redirect, url_for
 from app import app, db, freezer
 from models import Profile, Slide
 
-@app.route('/')
+@app.route('/index.html')
 def index():
     profiles = Profile.query.all()
     return render_template(
@@ -13,7 +13,7 @@ def index():
     )
 
 
-@app.route('/mainbar')
+@app.route('/mainbar/')
 def mainbar_view():
     profiles = Profile.query.all()
     return render_template(
