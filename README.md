@@ -62,3 +62,9 @@ Now run `build.py` to compress assets for production and upload production files
 ```bash
 $ python build.py
 ```
+
+## Troubleshooting
+If you run into a problem when installing bower at the SF Chronicle office, its due to a firewall issue. Run the following to install bower through SSL and then install bower again:
+```bash
+$ git config --global url."https://".insteadOf git://
+```
