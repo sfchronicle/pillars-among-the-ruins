@@ -6,7 +6,7 @@ from views import *
 
 BUILD_DIR = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'build')
 S3_BUCKET_NAME = 'projects.sfchronicle.com'
-ROOT_URL = '//extras.sfgate.com/Projects'
+ROOT_URL = '//extras.sfgate.com'
 TEST_PROJECT_NAME = 'test-proj'
 
 PROJECT_NAME = '2015/pillar-among-the-ruins/'
@@ -26,15 +26,9 @@ if __name__ == '__main__':
     app.config['ASSETS_DEBUG'] = False
 
     for arg in sys.argv[1:]:
-        if arg == 'testbuild':
-            app.config['FREEZER_RELATIVE_URLS'] = True
-            freezer.freeze()
-
         if arg == 'build':
             app.config['FREEZER_BASE_URL'] = '{}/{}'.format(ROOT_URL, TEST_PROJECT_NAME)
             freezer.freeze()
 
-        elif arg == 'publish':
-            upload_assets()
         else:
             print('Please specify whether to `build` or `publish` the project')
