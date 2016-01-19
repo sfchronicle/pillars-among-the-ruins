@@ -2,9 +2,9 @@
 
 <nav id="nav" role="navigation" class="swiper-no-swiping">
 	<div class="grid-items">
-		<section class="profile-nav grid-item grid-item-full" tabindex="10">
-			<h1>The Last Men Standing</h2>
 
+		<section class="current-profile grid-item grid-item-big">
+			<h1>The Last Men Standing</h2>
 			<ul>
 				<li><a href="{{ url_for('mainbar_view') }}"><b>read:</b> Mainbar hed goes here</a></li>
 				<li><a href="#"><b>Watch:</b> The Documentary</a></li>
@@ -12,30 +12,15 @@
 			</ul>
 		</section>
 
-	{% if profile %}
-		<a href="{{ url_for('profile_view', slug=profile.slug) }}" data-src="{{ profile.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ profile.name }}">
-		  <h2>{{ profile.name }}</h2>
-		</a>
-		<!-- Fallback for non JavaScript browsers -->
-		<noscript><a href="{{ url_for('profile_view', slug=profile.slug) }}" style="background-image: url({{ profile.image_url }}));" tabindex="10" class="grid-item" title="{{ profile.name }}">
-		  <h2>{{ profile.name }}</h2>
-		</a></noscript>
-
-		<section class="current-profile grid-item grid-item-big">
-			<h3>{{ profile.name }}</h3>
-			<p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
-		</section>
-	{% endif %}
-
-	{% for p in profiles %}
-	  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ p.name }}">
-	    <h2>{{ p.name }}</h2>
-	  </a>
-	  <!-- Fallback for non JavaScript browsers -->
-	  <noscript><a href="{{ url_for('profile_view', slug=p.slug) }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item" title="{{ p.name }}">
-	    <h2>{{ p.name }}</h2>
-	  </a></noscript>
-	{% endfor %}
+		{% for p in profiles %}
+		  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ p.name }}">
+		    <h2>{{ p.name }}</h2>
+		  </a>
+		  <!-- Fallback for non JavaScript browsers -->
+		  <noscript><a href="{{ url_for('profile_view', slug=p.slug) }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item" title="{{ p.name }}">
+		    <h2>{{ p.name }}</h2>
+		  </a></noscript>
+		{% endfor %}
 	</div>
 </nav>
 

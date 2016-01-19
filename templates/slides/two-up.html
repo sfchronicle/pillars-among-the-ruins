@@ -6,13 +6,14 @@
         {{ slide.body|safe }}
         {% if slide.is_lede %}
             <h2>{{ profile.name }}</h2>
+            <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
             <section class="button-group">
                 <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
-                    <i class="fa fa-play"></i> Play
+                    <i class="fa fa-play"></i> Watch
                 </a>
 
                 <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
-                    <i class="fa fa-arrow-down"></i> Start
+                    <i class="fa fa-arrow-down"></i> Read
                 </a>
             </section>
 

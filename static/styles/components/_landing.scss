@@ -15,6 +15,10 @@ main.landing {
     background-color: transparent;
   }
 
+  section{
+  border: none;
+  }
+
   .large-display {
     > .large-display-container {
       @include media(max-width $sm-md-breakpoint) {
@@ -59,7 +63,7 @@ main.landing {
     }
 
     p {
-      font-size: em(14);
+      font-size: em(13.5);
       margin-bottom: 0;
     }
 
