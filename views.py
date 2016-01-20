@@ -22,6 +22,43 @@ def mainbar_view():
         profiles=profiles
     )
 
+@app.route('/documentary/')
+def doc_view():
+    profiles = Profile.query.all()
+    return render_template(
+        'documentary.html',
+        title='documentary',
+        profiles=profiles
+    )
+
+
+@app.route('/story/harry')
+def harry_view():
+    profiles = Profile.query.all()
+    return render_template(
+        'harry.html',
+        title='harry',
+        profiles=profiles
+    )
+
+@app.route('/story/mick')
+def mick_view():
+    profiles = Profile.query.all()
+    return render_template(
+        'mick.html',
+        title='mick',
+        profiles=profiles
+    )
+
+@app.route('/about/')
+def about_view():
+    profiles = Profile.query.all()
+    return render_template(
+        'about.html',
+        title='mainbar',
+        profiles=profiles
+    )
+
 @app.route('/<slug>/')
 def profile_view(slug):
     profile = Profile.query.filter_by(slug=slug)[0]

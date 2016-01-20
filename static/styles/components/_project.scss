@@ -9,6 +9,8 @@ html, body {
 
 article {
   @include outer-container(100%);
+  background-color: #fff;
+  padding: em(60) 0;
 }
 
 article > p  {

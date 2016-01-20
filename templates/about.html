@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}About | SF Chronicle{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main id="about" class="landing">
+    {% include 'components/logo.html' %}
+    {% include 'components/nav.html' %}
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+
+            <section class="section swiper-slide">
+                <section class="large-display">
+                    <div class="landing-container">
+                        <header id="landing-title">
+                            <a href="{{ url_for('index') }}"><h1>About This Project</h1></a><br>
+                            <p class="byline">Written by <a href="">Erin Allday</a> | Edited by <a href="">Jim Trotter</a> | Designed by <a href="">Michael Grant</a> | Developed by <a href="">Aaron Williams</a> | Photography by <a href="">Russell Yip</a> | Videography by <a href="">Erin Brethauer</a> and <a href="">Tim Hussin</a> | Managed by <a href="">Kristen Go</a> &amp; <a href="">Judy Walgren</a></p>
+                        </header>
+                    </div>
+                </section>
+            </section>
+
+        </div>
+    </section>
+
+</main>
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+    
+</script>
+{% endblock %}

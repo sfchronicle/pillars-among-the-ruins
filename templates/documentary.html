@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Last Men Standing | SF Chronicle{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main class="mainbar">
+	{% include 'components/c_logo.html' %}
+    <article id="mainbar" style="background-color: #808080">
+        <div class="doc" style="max-width:900px; width:100%; margin:0 auto;">
+            <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'><iframe src='http://player.vimeo.com/video/66140585' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe></div>
+        </div>
+    </article>
+    {# include 'components/footer.html' #}
+    {% include 'components/nav.html' %}
+</main>
+{% include 'components/footer.html' %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
+{% endblock %}
