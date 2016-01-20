@@ -3,16 +3,17 @@
 <nav id="nav" role="navigation" class="swiper-no-swiping">
 	<div class="grid-items">
 
-		<section class="current-profile grid-item grid-item-big">
-			<h1>The Last Men Standing</h2>
-			<ul>
-				<li><a href="{{ url_for('mainbar_view') }}"><b>read:</b> Mainbar hed goes here</a></li>
-				<li><a href="#"><b>Watch:</b> The Documentary</a></li>
-				<li><a href="#"><b>Share:</b> Twitter, Facebook, etc</a></li>
-			</ul>
-		</section>
+	{% if profile %}
+		<a href="{{ url_for('profile_view', slug=profile.slug) }}" data-src="{{ profile.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ profile.name }}">
+		  <h2>{{ profile.name }}</h2>
+		</a>
+		<!-- Fallback for non JavaScript browsers -->
+		<noscript><a href="{{ url_for('profile_view', slug=profile.slug) }}" style="background-image: url({{ profile.image_url }}));" tabindex="10" class="grid-item" title="{{ profile.name }}">
+		  <h2>{{ profile.name }}</h2>
+		</a></noscript>
+	{% endif %}
 
-		{% for p in profiles %}
+		{% for p in profiles %}{{loop.lenght}}
 		  <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ p.name }}">
 		    <h2>{{ p.name }}</h2>
 		  </a>
@@ -21,6 +22,17 @@
 		    <h2>{{ p.name }}</h2>
 		  </a></noscript>
 		{% endfor %}
+
+		<section class="current-profile grid-item grid-item-big">
+			<a href="{{ url_for('index') }}"><h1>Last Man Standing</h2></a>
+			<ul>
+				<li><a href="{{ url_for('mainbar_view') }}"><b>Read:</b> Mainbar hed goes here</a></li>
+				<li><a href="#"><b>Watch:</b> The Documentary</a></li>
+				<li><a href="#"><b>About the project</b></a></li>
+				<li><b>Share:</b> {% include 'components/_social-include.html' %}</li>
+
+			</ul>
+		</section>
 	</div>
 </nav>
 

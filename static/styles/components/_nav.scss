@@ -53,7 +53,7 @@ xnavigation
 nav{
 	@include outer-container(100%);
 	position: fixed;
-	z-index: 5;
+	z-index: 7;
 	top: 0;
 	right: 0;
 	height: 100%;
@@ -74,6 +74,16 @@ nav{
 		-webkit-overflow-scrolling: touch;
 		box-shadow: -4px 0 30px rgba(#000, .2);
 		@include transition(transform $animation-duration 0s, box-shadow 0s 0s);
+	}
+
+	a {
+	  color:#A9A9A9;
+	}
+	a:hover {
+	  color: #fff;
+	}
+	h1 {
+	  color: #fff;
 	}
 }
 

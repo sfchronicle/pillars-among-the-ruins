@@ -13,7 +13,7 @@ def index():
     )
 
 
-@app.route('/mainbar/')
+@app.route('/story/')
 def mainbar_view():
     profiles = Profile.query.all()
     return render_template(

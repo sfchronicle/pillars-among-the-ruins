@@ -6,3 +6,33 @@
     }
   }
 }
+
+#sf_logo {
+  z-index: 6;
+  position: fixed;
+  top: 10px;
+  left: 10px;	
+}
+
+#sf_c_logo {
+  z-index: 6;
+  position: fixed;
+  top: 0;
+  left: 10px;
+  max-width: 40px;
+  width: 100%;
+  background-color: #333;
+  padding: 10px 0 0;
+}
+
+.ad {
+  float: none;
+}
+
+.lede {
+  font-weight: normal;
+}
+
+.grid-item.current-profile {
+  padding: 10px 0 0 15px;
+}

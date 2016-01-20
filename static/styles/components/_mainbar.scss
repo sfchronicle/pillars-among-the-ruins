@@ -43,8 +43,10 @@
     }
 
     section {
-      @include span-columns(8);
-      @include shift(2);
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+      max-width: 720px;
       @include z-index(5);
 
       h1 {

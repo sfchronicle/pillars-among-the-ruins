@@ -1,13 +1,13 @@
 {% extends 'base.html' %}
 
-{% block title %}LANDING | SF Chronicle{% endblock %}
+{% block title %}Last Man Standing | SF Chronicle{% endblock %}
 
 {% block head %}
 {% endblock %}
 
 {% block content %}
 <main class="landing">
-    <a href="http://www.sfchronicle.com"><div id="sf_logo"><img src="http://ww2.hdnux.com/photos/40/63/25/8598893/2/180x180.png"></div></a>
+    {% include 'components/logo.html' %}
     {% include 'components/nav.html' %}
     <section class="swiper-container">
         <div class="swiper-wrapper">
