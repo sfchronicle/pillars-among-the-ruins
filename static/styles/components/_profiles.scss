@@ -1,4 +1,4 @@
-main.profile {
+  main.profile {
   position: relative;
   height: 100%;
   overflow: hidden;
@@ -247,4 +247,11 @@ main.profile {
       }
     }
   }
+}
+
+.lede-slide {
+  height: 100%;
+  width: 100%;
+  max-width: 583px;
+  padding: 10% 8%;
 }

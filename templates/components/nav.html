@@ -27,7 +27,7 @@
 			<a href="{{ url_for('index') }}"><h1>Last Men Standing</h2></a>
 			<ul>
 				<li><a href="{{ url_for('mainbar_view') }}"><b>Read:</b> Mainbar hed goes here</a></li>
-				<li><a href="#"><b>Watch:</b> The Documentary</a></li>
+				<li><a href="{{ url_for('doc_view') }}"><b>Watch:</b> The Documentary</a></li>
 				<li><a href="{{ url_for('about_view') }}"><b>About the project</b></a></li>
 				<li><b>Share:</b> {% include 'components/_social-include.html' %}</li>
 

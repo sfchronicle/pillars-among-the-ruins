@@ -1,21 +1,26 @@
 <section class="two-up" id="left" data-src="{{ slide.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg); {{ slide.custom_css|safe }}"></section>
+
 <!-- Fallback for non JavaScript browsers -->
 <noscript><section class="two-up noscript" id="left" style="background-image: url({{ slide.image_url }}); {{ slide.custom_css|safe }}"></section></noscript>
+
 <section class="two-up" id="right">
-    <div class="two-up-container">
+    <div class="two-up-container lede-slide">
         {{ slide.body|safe }}
         {% if slide.is_lede %}
-            <h2>{{ profile.name }}</h2>
-            <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
-            <section class="button-group">
-                <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
-                    <i class="fa fa-play"></i> Watch
-                </a>
+                <div><h1>Last Men Standing</h1></div>
+                <div>
+                    <h2>{{ profile.name }}</h2>
+                    <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
+                    <section class="button-group">
+                        <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
+                            <i class="fa fa-play"></i> Watch
+                        </a>
 
-                <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
-                    <i class="fa fa-arrow-down"></i> Read
-                </a>
-            </section>
+                        <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
+                            <i class="fa fa-arrow-down"></i> Read
+                        </a>
+                    </section>
+                </div>
 
             <!-- <a href="#"><img src="http://placehold.it/300x250" alt="" class="banner-ad"></a> -->
         {% elif slide.is_end %}
