@@ -4,32 +4,31 @@
 <noscript><section class="two-up noscript" id="left" style="background-image: url({{ slide.image_url }}); {{ slide.custom_css|safe }}"></section></noscript>
 
 <section class="two-up" id="right">
-    <div class="two-up-container lede-slide">
+    <div class="two-up-container">
         {{ slide.body|safe }}
         {% if slide.is_lede %}
-                <div><h1>Last Men Standing</h1></div>
-                <div>
-                    <h2>{{ profile.name }}</h2>
-                    <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
-                    <section class="button-group">
-                        <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
-                            <i class="fa fa-play"></i> Watch
-                        </a>
+            <h2>{{ profile.name }}</h2>
+                <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
+                <section class="button-group">
+                    <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
+                        <i class="fa fa-play"></i> Watch
+                    </a>
 
-                        <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
-                            <i class="fa fa-arrow-down"></i> Read
-                        </a>
-                    </section>
-                </div>
+                    <a href="#" id="start-profile" title="Proceed through {{profile.name}}'s profile">
+                        <i class="fa fa-arrow-down"></i> Read
+                    </a>
+                </section>
 
             <!-- <a href="#"><img src="http://placehold.it/300x250" alt="" class="banner-ad"></a> -->
         {% elif slide.is_end %}
+        <div class="end-slide">
             <h2>{{ profile.name }}</h2>
             <section class="button-group">
                 <a href="#" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
                 <a href="#" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
                 <a href="#" title="Share via Email"><i class="fa fa-envelope"></i></a>
             </section>
+        </div>
 
             <!-- <a href="#"><img src="http://placehold.it/500x100" alt="" class="banner-ad"></a> -->
         {% endif %}
