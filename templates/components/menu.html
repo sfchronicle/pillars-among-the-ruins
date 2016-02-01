@@ -1,0 +1,66 @@
+<div id="menu" role="navigation" class="swiper-no-swiping">
+	<a href="http://www.sfchronicle.com" alt="SF Chronicle">
+		<img style="
+	float: left;
+    width: 27px;
+    padding: 5px 15px;
+    margin-top: -10px;" src="{{ url_for('static', filename='images/sf_letter_c_logo_black.png') }}">
+	</a>	
+	<span id="logo">
+		Surviving AIDS
+	</span>
+	
+	<ul id="main-links"> 
+		<li><a href="{{ url_for('mainbar_view') }}" class="about">Main Sotry</a></li> 
+		<li><a href="{{ url_for('profiles_view') }}" class="people">Featured Stories</a></li><li> 
+		</li><li><a href="{{ url_for('doc_view') }}">Documentary</a></li>
+	</ul> 
+	
+	<div id="footer-social"> 
+		<span class="share-button fb" id="fb-share"></span> 
+		<span class="share-button twiter" id="twitter-share"></span> 
+	</div> 
+	
+	<ul id="small-links"> 
+		<li><a href="#" id="about-link" class="credits internal">About</a></li>
+	</ul> 
+
+</div>
+
+
+<section id="about" style="    
+	position: absolute;
+    width: 100%;
+    z-index: 20;
+    display:none;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    height: 95%;
+    top: 0;"> 
+	<header id="landing-title" style="
+	max-width: 720px;
+    margin: 0 auto;
+    color: white;
+    margin-top: 10%;">
+    <a href="#" class=" active" onclick="hide('about')"> Close<span></span></a>
+        <a href="{{ url_for('index') }}"><h1>About This Project</h1></a><br>
+        <p class="byline">Written by <a href="">Erin Allday</a> | Edited by <a href="">Jim Trotter</a> | Designed by <a href="">Michael Grant</a> | Developed by <a href="">Aaron Williams</a> | Photography by <a href="">Russell Yip</a> | Videography by <a href="">Erin Brethauer</a> and <a href="">Tim Hussin</a> | Managed by <a href="">Kristen Go</a> &amp; <a href="">Judy Walgren</a></p>
+    </header>
+</section>
+
+
+
+<script type="text/javascript">
+var button = document.getElementById('about-link');
+
+button.onclick = function() {
+    var div = document.getElementById('about');
+    if (div.style.display !== 'none') {
+        div.style.display = 'none';
+    }
+    else {
+        div.style.display = 'block';
+    }
+};
+</script>

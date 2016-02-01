@@ -31,6 +31,15 @@ def doc_view():
         profiles=profiles
     )
 
+@app.route('/profiles/')
+def profiles_view():
+    profiles = Profile.query.all()
+    return render_template(
+        'profiles.html',
+        title='profiles',
+        profiles=profiles
+    )
+
 
 @app.route('/story/harry')
 def harry_view():

@@ -39,12 +39,15 @@ main.landing {
   }
 
   header {
-    @include span-columns(10);
-    @include shift(1);
-    margin-bottom: em(50);
+    float: left;
+    display: block;
+    margin: 0;
+    width: 100%;
 
     p {
       font-family: $serif;
+      max-width: 700px;
+      margin: 0 auto;
     }
   }
 

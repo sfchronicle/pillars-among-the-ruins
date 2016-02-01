@@ -144,8 +144,9 @@
 
   &.lede {
     position: absolute;
-    bottom: em(10);
+    bottom: em(50);
     right: em(10);
+    cursor:pointer;
   }
 
   &.fa-arrow-up {
@@ -187,6 +188,38 @@
     margin-bottom: em(20);
   }
 }
+
+.center-display {
+  @include align-items(center);
+  @include justify-content(center);
+
+  background-color: $inset-color;
+  height: 100%;
+
+  &.image-cover { background-size: cover; background-position: center; }
+
+  > .center-display-container {
+    max-width: 490px;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 2%;
+    @include media(max-width $small-breakpoint) {
+      max-width: 95%;
+    }
+  }
+
+  p,
+  blockquote {
+    position: relative;
+    z-index: 2;
+    margin-bottom: em(20);
+  }
+  p {
+   font-size: 18px;
+  }
+}
+
+
 
 .button-group {
   @include display(flex);

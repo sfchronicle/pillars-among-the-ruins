@@ -1,9 +1,10 @@
 @mixin grid-item-columns($columns) {
-  width: (100% / 12) * $columns;
+  width: (100% / 16) * $columns;
 }
 
 .grid-items {
   @include clearfix;
+  height: 100%;
 
   $action-color: #477DCA !default;
   $base-background-color: black !default;
@@ -16,7 +17,7 @@
   $grid-item-big-columns: 8;
   $grid-item-full-columns: 12;
   $grid-item-color: white;
-  $grid-item-height: em(300); // em(300 for mobile)
+  $grid-item-height: 50%;
 
   .grid-item {
     //@include transition (all 0.2s ease-in-out);
@@ -38,13 +39,22 @@
     text-align: center;
     text-decoration: none;
     width: 100%;
+    opacity: 0.8;
 
     @include media($large-screen) {
       @include grid-item-columns($grid-item-columns);
-      height: em(200);
+      height: 50%;
     }
   }
 
+      .grid-item:hover{
+      opacity:1;
+    }
+
+  .grid-title {
+    padding: 15px 10px;
+    text-align: left;
+  }
   .grid-item h2 {
     visibility: hidden; // TEMP
     color: $grid-item-color;

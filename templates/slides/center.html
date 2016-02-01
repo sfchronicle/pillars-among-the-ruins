@@ -1,0 +1,14 @@
+<section class="center-display">
+    <div class="center-display-container">
+        <div>
+        	<img src="{{ slide.image_url }}" />
+		</div>
+
+		{{ slide.body|safe }}
+
+    </div>
+    {% include 'slides/_controls.html' %}
+</section>
+
+
+

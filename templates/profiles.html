@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Last Man Standing | SF Chronicle{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+<main class="landing">
+    <a href="http://www.sfchronicle.com" alt="SF Chronicle">
+		<div id="sf_logo">
+			<img src="http://ww2.hdnux.com/photos/40/63/25/8598893/2/180x180.png">
+		</div>
+	</a>
+    
+    <nav id="nav" class="swiper-no-swiping is-visible">
+        <div class="grid-items">
+            
+			<a href="/harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg);width:24.966%;" tabindex="10" class="grid-item b-loaded" title="Harry">
+			<h2>Harry</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg));" tabindex="10" class="grid-item" title="Harry"&gt;&lt;h2&gt;Harry&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg);width: 50%;background-position: 0 20%;" tabindex="10" class="grid-item b-loaded" title="Ralph &amp; David">
+			<h2>Ralph &amp; David</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ralph &amp;amp; David"&gt;&lt;h2&gt;Ralph &amp;amp; David&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Ganymede">
+			<h2>Ganymede</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ganymede"&gt;&lt;h2&gt;Ganymede&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Jesus">
+			<h2>Jesus</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg));" tabindex="10" class="grid-item" title="Jesus"&gt;&lt;h2&gt;Jesus&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Mick">
+			<h2>Mick</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Mick"&gt;&lt;h2&gt;Mick&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Kevin">
+			<h2>Kevin</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Kevin"&gt;&lt;h2&gt;Kevin&lt;/h2&gt;&lt;/a&gt;</noscript>
+
+			<a href="/peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Peter">
+			<h2>Peter</h2>
+			</a>
+			<!-- Fallback for non JavaScript browsers -->
+			<noscript>&lt;a href="/peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg));" tabindex="10" class="grid-item" title="Peter"&gt;&lt;h2&gt;Peter&lt;/h2&gt;&lt;/a&gt;</noscript>
+            
+        </div>
+    </nav>
+ 
+</main>
+{% include 'components/menu.html' %}
+{% endblock %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+    
+</script>
+{% endblock %}

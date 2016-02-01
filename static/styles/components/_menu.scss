@@ -1,0 +1,96 @@
+$animation-duration: 0.4s;
+
+#menu {
+  font-family: "Georgia";
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  height: 42px;
+  background: #dddddd;
+  display: block;
+  width: 100%;
+  z-index: 22;
+  min-width: 1020px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-top: 20px;
+  box-sizing: content-box;
+
+  a { 
+    color:#595959;
+    text-decoration:none;
+
+  }
+
+  li {
+    float:left;
+    padding-left:20px;
+    font-size:13px;
+  }
+
+	a:hover { 
+	 ext-decoration:underline; 
+	}
+
+}
+
+#logo {
+  float: left;
+  padding: 0;
+  width: 154px;
+  cursor: pointer;
+  margin-top: -6px;
+  color: #C32525;
+
+  img {
+    width: 34px;
+  }
+
+}
+
+#main-links {
+  display: block;
+  float: left;
+  width: 37em;
+
+	li:last-child {
+	 padding-right:0;
+	}
+}
+
+#footer-social {
+  padding-left: 10px;
+  padding-right:0 !important;
+  float: right;
+
+  .share-button { 
+    background:url("http://img.timeinc.net/time/beyond911/img/social.gif");width:19px;height:19px;display:block;float:left;margin-right:5px;cursor:pointer;
+    }
+}
+
+#small-links {
+  float: right;
+  min-width: 3em;
+
+  li:last-child { 
+    padding-right:0; 
+  }
+}
+
+.credits { 
+    float:left;
+    margin-top:5px;
+    font-size:9px;
+    text-transform:uppercase; 
+}
+
+span {
+
+  .fb { 
+    background-position:50% 0%;
+  }
+  .twitter { 
+    background-position:0% 0%;
+  }
+
+}

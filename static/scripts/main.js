@@ -6,7 +6,7 @@ var App = App || {};
 
 // Globals
 // ===============================================
-App.LooperID = '151861402';
+App.LooperID = '145925416';
 
 // Initialize application
 // =====================================================
@@ -32,8 +32,8 @@ App.dropcap = function () {
 
 App.nav = function () {
   //open navigation clicking the menu icon
-  var $trigger = $('.nav-trigger');
-	$('.nav-trigger, .overlay, .landing-nav-trigger').on('click', function(event){
+  var $trigger = $('.nav-trigger, .their-stories');
+	$('.nav-trigger, .overlay, .landing-nav-trigger, .their-stories').on('click', function(event){
 		event.preventDefault();
 
     if ( $trigger.hasClass('active') ) {
