@@ -19,7 +19,10 @@ article > p  {
   margin-left: auto;
   margin-right: auto;
 
-
+  @include media(max-width $sm-md-breakpoint) {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
   @include media(max-width $small-breakpoint) {
     @include span-columns(12);
     @include shift(0);

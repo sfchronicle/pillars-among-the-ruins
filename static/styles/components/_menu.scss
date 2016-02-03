@@ -94,3 +94,22 @@ span {
   }
 
 }
+
+#about {
+  position: absolute;
+  width: 100%;
+  z-index: 20;
+  display:none;
+  background-color: black;
+  margin: 0 auto;
+  text-align: center;
+  height: 95%;
+  top: 0;
+}
+
+#landing-title {
+  max-width: 720px;
+  margin: 0 auto;
+  color: white;
+  margin-top: 10%;
+}

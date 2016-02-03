@@ -88,7 +88,7 @@
 
 .two-up-container {
   position: relative;
-  max-width: 60%;
+  max-width: 46.8%;
   @include media(max-width $medium-breakpoint) {
     @include align-self(flex-end);
     max-width: 95%;
@@ -119,6 +119,7 @@
 
   p {
     margin-bottom: em(30);
+    font-size: 0.895em;
   }
 }
 

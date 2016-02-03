@@ -6,9 +6,9 @@
     padding: 5px 15px;
     margin-top: -10px;" src="{{ url_for('static', filename='images/sf_letter_c_logo_black.png') }}">
 	</a>	
-	<span id="logo">
+	<a href="{{ url_for('index') }}"><span id="logo">
 		Surviving AIDS
-	</span>
+	</span></a>
 	
 	<ul id="main-links"> 
 		<li><a href="{{ url_for('mainbar_view') }}" class="about">Main Sotry</a></li> 
@@ -22,27 +22,14 @@
 	</div> 
 	
 	<ul id="small-links"> 
-		<li><a href="#" id="about-link" class="credits internal">About</a></li>
+		<li><a href="#" id="about-link" class="credits internal">Credits</a></li>
 	</ul> 
 
 </div>
 
 
-<section id="about" style="    
-	position: absolute;
-    width: 100%;
-    z-index: 20;
-    display:none;
-    background-color: black;
-    margin: 0 auto;
-    text-align: center;
-    height: 95%;
-    top: 0;"> 
-	<header id="landing-title" style="
-	max-width: 720px;
-    margin: 0 auto;
-    color: white;
-    margin-top: 10%;">
+<section id="about"> 
+	<header id="landing-title">
     <a href="#" class=" active" onclick="hide('about')"> Close<span></span></a>
         <a href="{{ url_for('index') }}"><h1>About This Project</h1></a><br>
         <p class="byline">Written by <a href="">Erin Allday</a> | Edited by <a href="">Jim Trotter</a> | Designed by <a href="">Michael Grant</a> | Developed by <a href="">Aaron Williams</a> | Photography by <a href="">Russell Yip</a> | Videography by <a href="">Erin Brethauer</a> and <a href="">Tim Hussin</a> | Managed by <a href="">Kristen Go</a> &amp; <a href="">Judy Walgren</a></p>
