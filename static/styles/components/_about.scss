@@ -1,6 +1,26 @@
-#about {
-  color: #fff;
+.about-title {
+	
+	a { color: #fff;}
+}
 
-  a { color: #fff;}
+.about-container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+	
+	header {
 
+		p {
+    	font-family: "FarnhamText", "Merriweather", Georgia, "Times New Roman", Times, serif;
+    	max-width: 830px;
+    	margin: 0 auto;
+    	color: #DDDDDD;
+    	}
+
+    	a {
+    	color: #DDDDDD;
+    	}
+    }
 }

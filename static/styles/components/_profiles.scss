@@ -52,7 +52,7 @@
   position: relative;
   height: 100%;
 
-  @include media(max-width $small-breakpoint) {
+  @include media(max-width $sm-md-breakpoint) {
     @include span-columns(12);
   }
 
@@ -60,8 +60,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin-right:0;
+    width:60%;
 
-    @include media(max-width $small-breakpoint) {
+    @include media(max-width $medium-breakpoint) {
       position: absolute;
       width: 100%;
       height: 100%;
@@ -74,13 +76,17 @@
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-
+    width:39.99%;
     float: right; // Prevents FOUC since the columns naturally float left
     background-color: $inset-color;
+
+    @include media(max-width $medium-breakpoint) {
+      width:100%;
+    }
   }
 
   .alt-overlay {
-    @include media(max-width $small-breakpoint) {
+    @include media(max-width $sm-md-breakpoint) {
       z-index: 2;
     }
   }
@@ -88,7 +94,7 @@
 
 .two-up-container {
   position: relative;
-  max-width: 46.8%;
+  max-width: 56.8%%;
   @include media(max-width $medium-breakpoint) {
     @include align-self(flex-end);
     max-width: 95%;
@@ -193,6 +199,7 @@
 .center-display {
   @include align-items(center);
   @include justify-content(center);
+  display: flex;
 
   background-color: $inset-color;
   height: 100%;
@@ -204,6 +211,7 @@
     width: 100%;
     margin: 0 auto;
     padding-top: 2%;
+    font-size: 18px;
     @include media(max-width $small-breakpoint) {
       max-width: 95%;
     }
@@ -214,9 +222,6 @@
     position: relative;
     z-index: 2;
     margin-bottom: em(20);
-  }
-  p {
-   font-size: 18px;
   }
 }
 

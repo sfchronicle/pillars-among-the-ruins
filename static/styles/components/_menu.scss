@@ -1,7 +1,7 @@
 $animation-duration: 0.4s;
 
 #menu {
-  font-family: "Georgia";
+  font-family: $serif;
   position: fixed;
   bottom: 0px;
   left: 0px;
@@ -59,40 +59,16 @@ $animation-duration: 0.4s;
 }
 
 #footer-social {
-  padding-left: 10px;
-  padding-right:0 !important;
   float: right;
+  font-size:0.9em;
 
-  .share-button { 
-    background:url("http://img.timeinc.net/time/beyond911/img/social.gif");width:19px;height:19px;display:block;float:left;margin-right:5px;cursor:pointer;
-    }
-}
-
-#small-links {
-  float: right;
-  min-width: 3em;
-
-  li:last-child { 
-    padding-right:0; 
-  }
-}
-
-.credits { 
-    float:left;
-    margin-top:5px;
-    font-size:9px;
-    text-transform:uppercase; 
-}
-
-span {
-
-  .fb { 
-    background-position:50% 0%;
-  }
-  .twitter { 
-    background-position:0% 0%;
+  a{ 
+    padding-right: 10px;
   }
 
+  a:last-child {
+    padding-right: 15px;
+  }
 }
 
 #about {
@@ -111,5 +87,4 @@ span {
   max-width: 720px;
   margin: 0 auto;
   color: white;
-  margin-top: 10%;
 }
