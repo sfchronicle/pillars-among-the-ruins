@@ -94,7 +94,7 @@
 
 .two-up-container {
   position: relative;
-  max-width: 56.8%%;
+  max-width: 56.8%;
   @include media(max-width $medium-breakpoint) {
     @include align-self(flex-end);
     max-width: 95%;
@@ -151,7 +151,7 @@
 
   &.lede {
     position: absolute;
-    bottom: em(50);
+    bottom: em(10);
     right: em(10);
     cursor:pointer;
   }
