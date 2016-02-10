@@ -50,18 +50,22 @@
   @include fill-parent();
   @include span-columns(6);
   position: relative;
-  height: 100%;
+  height: 93%;
 
   @include media(max-width $sm-md-breakpoint) {
     @include span-columns(12);
   }
 
+  @include media (max-width $medium-breakpoint) {
+    height: 100%;
+  }
+
   &#left {
     background-size: cover;
-    background-position: center;
+    background-position:center top;
     background-repeat: no-repeat;
     margin-right:0;
-    width:60%;
+    width:45%;
 
     @include media(max-width $medium-breakpoint) {
       position: absolute;
@@ -76,7 +80,7 @@
     @include display(flex);
     @include align-items(center);
     @include justify-content(center);
-    width:39.99%;
+    width:54.99%;
     float: right; // Prevents FOUC since the columns naturally float left
     background-color: $inset-color;
 
@@ -98,7 +102,7 @@
   @include media(max-width $medium-breakpoint) {
     @include align-self(flex-end);
     max-width: 95%;
-    margin-bottom: em(100);
+    margin-bottom: em(60);
   }
 
   h2 {
@@ -232,6 +236,9 @@
   @include flex-direction(row);
   @include justify-content(space-between);
   @include z-index(20);
+  @include media (max-width $medium-breakpoint){
+    margin: 0 auto;
+  }
 
   width: em(250);
 
