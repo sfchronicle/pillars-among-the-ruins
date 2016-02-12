@@ -28,6 +28,26 @@ main.landing {
   }
 }
 
+#landing-title {
+  
+  @include media (max-width $small-breakpoint) {
+    
+    h1 {
+      font-size: 1.5em;
+    }
+
+    p {
+      font-size: 0.8em;
+      padding: 0 10px;
+    }
+
+    section {
+      font-size: 0.8em;
+    }
+  }
+
+}
+
 .landing-container {
   @include outer-container(1024px);
   position: relative;
@@ -46,8 +66,8 @@ main.landing {
 
     p {
       font-family: $serif;
-      max-width: 700px;
-      margin: 0 auto;
+      max-width: 574px;
+      margin: 10px auto;
     }
   }
 

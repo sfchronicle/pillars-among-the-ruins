@@ -37,8 +37,6 @@
 
     @include media(max-width $small-breakpoint) {
       border-width: em(15);
-      height: em(500);
-      background-size: contain;
     }
 
     section {
@@ -48,12 +46,27 @@
       max-width: 720px;
       @include z-index(5);
 
+      p {
+        margin: 0 auto;
+        max-width: 560px;
+      }
+
       h1 {
         margin-bottom: em(5);
+
+        @include media (max-width $small-breakpoint) {
+          font-size: 1.5em;
+        }
       }
 
       .description {
         position: relative;
+        padding: 0 10px;
+
+        @include media (max-width $small-breakpoint) {
+          font-size: 0.8em;
+        }
+
       }
 
       .byline {
@@ -69,7 +82,7 @@
       }
 
       hr {
-        width: 33%;
+        width: 53%;
         margin-left: auto;
         margin-right: auto;
       }

@@ -186,7 +186,7 @@
   &.image-cover { background-size: cover; background-position: center; }
 
   > .large-display-container {
-    max-width: 50%;
+    max-width: 40%;
     @include media(max-width $small-breakpoint) {
       max-width: 95%;
     }
@@ -262,6 +262,10 @@
     font-family: $sans-serif;
   }
 
+  @include media (max-width 859px) {
+    width: 50% !important;
+  }
+
   &.current-profile {
     text-align: left;
 
@@ -293,6 +297,10 @@
       }
     }
   }
+}
+
+.peter {
+  
 }
 
 .lede-slide {

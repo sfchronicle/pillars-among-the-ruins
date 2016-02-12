@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Last Man Standing | SF Chronicle{% endblock %}
+{% block title %}Last Men Standing | SF Chronicle{% endblock %}
 
 {% block head %}
 {% endblock %}
@@ -8,43 +8,6 @@
 {% block content %}
 <main class="landing">
     {% include 'components/logo.html' %}
-    <nav id="nav" role="navigation" class="swiper-no-swiping">
-        <div class="grid-items">
-
-            <section class="grid-item grid-title">
-                <a href="{{ url_for('index') }}"><h1>Surviving AIDS</h2></a>
-                <ul>
-                    <li><a href="{{ url_for('mainbar_view') }}"><b>Read:</b> Mainbar hed goes here</a></li>
-                    <li><a href="{{ url_for('doc_view') }}"><b>Watch:</b> The Documentary</a></li>
-                    <li><a href="{{ url_for('about_view') }}"><b>About the project</b></a></li>
-                    <li><b>Share:</b> {% include 'components/_social-include.html' %}</li>
-
-                </ul>
-            </section>
-
-            {% if profile %}
-                <a href="{{ url_for('profile_view', slug=profile.slug) }}" data-src="{{ profile.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ profile.name }}">
-                  <h2>{{ profile.name }}</h2>
-                </a>
-                <!-- Fallback for non JavaScript browsers -->
-                <noscript><a href="{{ url_for('profile_view', slug=profile.slug) }}" style="background-image: url({{ profile.image_url }}));" tabindex="10" class="grid-item" title="{{ profile.name }}">
-                  <h2>{{ profile.name }}</h2>
-                </a></noscript>
-            {% endif %}
-
-            {% for p in profiles %}
-              <a href="{{ url_for('profile_view', slug=p.slug) }}" data-src="{{ p.image_url }}" style="background-image: url(//s3-us-west-1.amazonaws.com/projects.sfchronicle.com/media/holder.jpg);" tabindex="10" class="grid-item" title="{{ p.name }}">
-                <h2>{{ p.name }}</h2>
-              </a>
-              <!-- Fallback for non JavaScript browsers -->
-              <noscript><a href="{{ url_for('profile_view', slug=p.slug) }}" style="background-image: url({{ p.image_url }}));" tabindex="10" class="grid-item" title="{{ p.name }}">
-                <h2>{{ p.name }}</h2>
-              </a></noscript>
-            {% endfor %}
-
-        </div>
-    </nav>
-    <div class="overlay" unselectable="on"><!-- shadow layer visible when navigation is visible --></div>
     <section class="swiper-container">
         <div class="swiper-wrapper">
 
@@ -52,15 +15,14 @@
                 <section class="large-display">
                     <div class="landing-container">
                         <header id="landing-title">
-                            <h1>Surviving AIDS</h1>
-                            <p>A San Francisco Chronicle special report on the spread of AIDS in San Francisco, and the men who’s lives it touched, altered and changed forever.</p>
-                            <section class="button-group" style="width:620px; margin:20px auto 0">
-                                <a href="{{ url_for('mainbar_view') }}"  title="The story of AIDS in San Francisco’s Castro is one of a nearly forgotten past." style="margin: 0 15px;flex: none; width: 157px;">Main Story
+                            <h1>Last Men Standing</h1>
+                            <p>They outlived an epidemic, but San Francisco’s AIDS survivors are still fighting for their lives.</p>
+                            <section class="button-group" style="width:100%; margin:20px auto 0">
+                                <a href="{{ url_for('mainbar_view') }}"  title="The story of AIDS in San Francisco’s Castro is one of a nearly forgotten past." style="margin: 0 15px;">The Story
                                 </a>
-
-                                <a href="{{ url_for('profiles_view') }}" title="Their resiliance, remarkable. Their stories, hopeful. Meet these survivors." style="margin: 0 15px;flex: none; width: 177px;">Their Stories
+                                <a href="{{ url_for('profiles_view') }}" title="Their resiliance, remarkable. Their stories, hopeful. Meet these survivors." style="margin: 0 15px;">The Men
                                 </a>
-                                <a href="{{ url_for('doc_view') }}" title="Watch the in-depth 30-minute film that tells the stories of these survivors." style="margin: 0 15px;flex: none; width: 179px;">Documentary
+                                <a href="{{ url_for('doc_view') }}" title="Watch the in-depth 30-minute film that tells the stories of these survivors." style="margin: 0 15px;">The Film
                                 </a>
                             </section>
                         </header>
