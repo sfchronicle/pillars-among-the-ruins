@@ -1,8 +1,35 @@
 {% extends 'base.html' %}
 
-{% block title %}Last Man Standing | SF Chronicle{% endblock %}
+{% block title %}The Men - Last Men Standing | SF Chronicle{% endblock %}
 
 {% block head %}
+    <!-- Begin Hearst analytics -->
+    <script type="text/javascript">
+        var omni_channelPath = "News :: Special Projects";
+        var omni_title = "The Men - Last Men Standing";
+        var omni_className = "channel";
+        var omni_publicationDate = "2016-02-28 00:01:00";
+        var omni_authorName = "Erin AllDay, Jim Trotter, Michael Grant, Aaron Williams, Lucio Villa, Russell Yipp, Erin Brethauer, Tim Hussin, Kristen Go,Judy Walgren, Nicole Fruge";
+        var omni_authorTitle = "San Francisco Chronicle staff";
+    </script>
+    <!-- Hearst analytics: Ensighten -->
+    <script type="text/javascript">
+      (function(e) {
+        var t = '//nexus.ensighten.com/hearst/news/Bootstrap.js';
+        if (e.cookie.indexOf("nsghtn") > -1) {
+          if(e.cookie.indexOf("nsghtn=test-dev") > -1) {
+          console.log("Ensighten :: Test-Dev"); t = "//nexus-test.ensighten.com/hearst/news-dev/Bootstrap.js";
+          } else if(e.cookie.indexOf("nsghtn=test") > -1) {
+          console.log("Ensighten :: Test"); t = "//nexus-test.ensighten.com/hearst/news/Bootstrap.js";
+          } else if(e.cookie.indexOf("nsghtn=dev") > -1) {
+          console.log("Ensighten :: Dev"); t = "//nexus.ensighten.com/hearst/news-dev/Bootstrap.js";
+          }
+        }
+        e.write("<scr"+"ipt src='"+e.location.protocol+t+"'></scr"+"ipt>");
+      })(document);
+    </script>
+    <!-- End Hearst analytics: Ensighten -->
+    <!-- End Hearst analytics -->
 {% endblock %}
 
 {% block content %}
@@ -16,47 +43,47 @@
     <nav id="nav" class="swiper-no-swiping is-visible">
         <div class="grid-items">
             
-			<a href="/harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg);width:24.966%;" tabindex="10" class="grid-item b-loaded" title="Harry">
+			<a href="{{ url_for('index') }}harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg);width:24.966%;" tabindex="10" class="grid-item b-loaded" title="Harry">
 			<h2>Harry</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg));" tabindex="10" class="grid-item" title="Harry"&gt;&lt;h2&gt;Harry&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}harry-breaux/" style="background-image: url(http://ww1.hdnux.com/photos/41/51/43/8820952/11/1457x1457.jpg));" tabindex="10" class="grid-item" title="Harry"&gt;&lt;h2&gt;Harry&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg);width: 50%;background-position: 0 20%;" tabindex="10" class="grid-item b-loaded" title="Ralph &amp; David">
+			<a href="{{ url_for('index') }}ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg);width: 50%;background-position: 0 20%;" tabindex="10" class="grid-item b-loaded" title="Ralph &amp; David">
 			<h2>Ralph &amp; David</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ralph &amp;amp; David"&gt;&lt;h2&gt;Ralph &amp;amp; David&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}ralph-and-david/" style="background-image: url(http://ww3.hdnux.com/photos/41/51/43/8820958/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ralph &amp;amp; David"&gt;&lt;h2&gt;Ralph &amp;amp; David&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Ganymede">
+			<a href="{{ url_for('index') }}ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Ganymede">
 			<h2>Ganymede</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ganymede"&gt;&lt;h2&gt;Ganymede&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}ganymede/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820977/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Ganymede"&gt;&lt;h2&gt;Ganymede&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Jesus">
+			<a href="{{ url_for('index') }}jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Jesus">
 			<h2>Jesus</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg));" tabindex="10" class="grid-item" title="Jesus"&gt;&lt;h2&gt;Jesus&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}jesus-guillen/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820959/13/1457x1457.jpg));" tabindex="10" class="grid-item" title="Jesus"&gt;&lt;h2&gt;Jesus&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Mick">
+			<a href="{{ url_for('index') }}mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Mick">
 			<h2>Mick</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Mick"&gt;&lt;h2&gt;Mick&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}mick-robinson/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/43/8820937/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Mick"&gt;&lt;h2&gt;Mick&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Kevin">
+			<a href="{{ url_for('index') }}kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded" title="Kevin">
 			<h2>Kevin</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Kevin"&gt;&lt;h2&gt;Kevin&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}kevin-vandenbergh/" style="background-image: url(http://ww2.hdnux.com/photos/41/51/42/8820917/7/1457x1457.jpg));" tabindex="10" class="grid-item" title="Kevin"&gt;&lt;h2&gt;Kevin&lt;/h2&gt;&lt;/a&gt;</noscript>
 
-			<a href="/peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded peter" title="Peter">
+			<a href="{{ url_for('index') }}peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg);" tabindex="10" class="grid-item b-loaded peter" title="Peter">
 			<h2>Peter</h2>
 			</a>
 			<!-- Fallback for non JavaScript browsers -->
-			<noscript>&lt;a href="/peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg));" tabindex="10" class="grid-item peter" title="Peter"&gt;&lt;h2&gt;Peter&lt;/h2&gt;&lt;/a&gt;</noscript>
+			<noscript>&lt;a href="{{ url_for('index') }}peter-greene/" style="background-image: url(http://ww4.hdnux.com/photos/41/51/43/8820935/13/1457x1457.jpg));" tabindex="10" class="grid-item peter" title="Peter"&gt;&lt;h2&gt;Peter&lt;/h2&gt;&lt;/a&gt;</noscript>
             
         </div>
     </nav>

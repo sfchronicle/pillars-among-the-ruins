@@ -7,9 +7,9 @@ from views import *
 BUILD_DIR = os.path.join(os.path.realpath(os.path.dirname(__file__)), 'build')
 S3_BUCKET_NAME = 'projects.sfchronicle.com'
 ROOT_URL = '//extras.sfgate.com'
-TEST_PROJECT_NAME = 'test-proj'
+TEST_PROJECT_NAME = 'test-proj/aids-project'
 
-PROJECT_NAME = '2015/pillar-among-the-ruins/'
+PROJECT_NAME = '2016/pillar-among-the-ruins/'
 
 def upload_assets():
     print('Uploading ...')

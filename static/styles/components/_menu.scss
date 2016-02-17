@@ -10,7 +10,6 @@ $animation-duration: 0.4s;
   display: block;
   width: 100%;
   z-index: 22;
-  min-width: 1020px;
   overflow-x: auto;
   overflow-y: hidden;
   padding-top: 20px;
@@ -58,7 +57,6 @@ $animation-duration: 0.4s;
 #main-links {
   display: block;
   float: left;
-  width: 37em;
 
 	li:last-child {
 	 padding-right:0;
