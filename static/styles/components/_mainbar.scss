@@ -90,6 +90,39 @@
   }
 }
 
+.image {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+
+    p {
+    font-size: 0.65em;
+    color: #636363;
+    font-family: sans-serif;
+
+    @include media(max-width 900px) {
+      padding: 0 10px;
+    }
+  }
+}
+
+.img-full-width {
+  width:100%;
+
+  img {
+  width: 100%;
+  }
+
+  p {
+    font-size: 0.65em;
+    color: #636363;
+    font-family: sans-serif;
+    padding: 0 10px;
+  }
+}
+
+
+
 .ad {
   $border: 1px solid lightgray;
   @include span-columns(12);
