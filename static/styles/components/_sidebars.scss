@@ -46,16 +46,24 @@
 	padding: 4px 5px;
 }
 
-.sidebar-content {
+.sidebar-content {  
     font-family: $sans-serif;
     height: 100%;
     padding-top: 50px;
     padding-left: 45px;
     padding-right: 38px;
-    font-size: 0.9em;
     margin-top: -20px;
     overflow-y: scroll;
     -webkit-overflow-scrolling: touch;
+
+    p {
+        font-size: 0.9em;
+
+        @include media (max-width $small-breakpoint) {
+            font-size: 0.75em;
+        }
+
+    }
 }
 .sidebar {
 	background-color: rgba(255, 4, 4, 0.29);

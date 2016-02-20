@@ -53,5 +53,13 @@
         + ':35729/livereload.js"></'
         + 'script>')</script>
     {% endif %}
+    <script>var doc = document.documentElement;
+      doc.setAttribute('data-browser', navigator.userAgent);
+    </script>
+    <script type="text/javascript">
+    $("#mobile-menu").click(function () {
+    $("#mobile-navbar").slideToggle("open");
+    });
+    </script>
 </body>
 </html>

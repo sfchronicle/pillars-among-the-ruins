@@ -39,3 +39,26 @@
 body {
   background-color: #000;
 }
+
+//IE Hacks
+
+html[data-browser*='MSIE 10.0'] {
+  
+  .button-group a {
+    padding: 10px 2%;
+  }
+
+  .large-display {
+    -ms-flex-pack: justify;
+  }
+
+  .button-group {
+    display: block;
+
+  }
+}
+//Safari Hacks
+html[data-browser*='Safari'] {
+
+
+}

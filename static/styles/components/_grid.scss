@@ -45,6 +45,10 @@
       @include grid-item-columns($grid-item-columns);
       height: 50%;
     }
+
+    @include media(max-width $sm-md-breakpoint) {
+      opacity: 1;
+    }
   }
 
       .grid-item:hover{

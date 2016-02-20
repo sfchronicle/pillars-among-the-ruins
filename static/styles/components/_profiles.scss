@@ -198,6 +198,10 @@
     z-index: 2;
     margin-bottom: em(20);
   }
+
+  @include media (max-width $small-breakpoint) {
+    font-size: 0.79em;
+  }
 }
 
 .center-display {
@@ -264,6 +268,12 @@
 
   @include media (max-width 859px) {
     width: 50% !important;
+  }
+
+  @include media (max-width 630px) {
+    width: 100% !important;
+    min-height: 22em !important;
+    background-size: contain !important;
   }
 
   &.current-profile {

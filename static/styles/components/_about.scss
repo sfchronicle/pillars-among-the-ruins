@@ -1,6 +1,17 @@
-.about-title {
+#about-title {
 	
-	a { color: #fff;}
+	a { color: #fff;
+    }
+
+    @include media (max-width $small-breakpoint) {
+        h1 {
+            font-size:1.9em;
+        }
+
+        p {
+            font-size:0.8em;
+        }
+    }
 }
 
 .about-container {
@@ -9,6 +20,9 @@
     margin-right: auto;
     position: relative;
     text-align: center;
+    height: 100%;
+    margin-top: 100px;
+    padding: 0 15px;
 	
 	header {
 
