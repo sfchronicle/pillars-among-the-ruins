@@ -54,5 +54,9 @@
             }, 1000);
         return false;
     });
-</script>
+</script>    
+{% assets filters="uglifyjs", output="scripts/sidebars.%(version)s.js",
+    "scripts/sidebars.js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+{% endassets %}
 {% endblock %}

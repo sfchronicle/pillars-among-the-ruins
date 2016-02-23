@@ -41,7 +41,7 @@ def profiles_view():
     )
 
 
-@app.route('/story/harry')
+@app.route('/story/harry/')
 def harry_view():
     profiles = Profile.query.all()
     return render_template(
@@ -50,7 +50,7 @@ def harry_view():
         profiles=profiles
     )
 
-@app.route('/story/mick')
+@app.route('/story/mick/')
 def mick_view():
     profiles = Profile.query.all()
     return render_template(

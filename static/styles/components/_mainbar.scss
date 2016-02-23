@@ -91,11 +91,11 @@
 }
 
 .image {
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 
-    p {
+  p {
     font-size: 0.65em;
     color: #636363;
     font-family: sans-serif;
@@ -121,6 +121,9 @@
   }
 }
 
+.portrait {
+  max-width:400px;
+}
 
 
 .ad {
