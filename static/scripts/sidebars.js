@@ -4,12 +4,6 @@ $('.aids_prevention').click(function() {
     });
 });
 
-$('.aids_care').click(function() {
-    $('#aids_care').css({
-        'display': 'block'
-    });
-});
-
 $('.aids_aging').click(function() {
     $('#aids_aging').css({
         'display': 'block'
@@ -49,6 +43,12 @@ $('.aids_needs').click(function() {
 
 $('.aids_rank').click(function() {
     $('#aids_rank').css({
+        'display': 'block'
+    });
+});
+
+$('.aids_infections').click(function() {
+    $('#aids_infections').css({
         'display': 'block'
     });
 });
