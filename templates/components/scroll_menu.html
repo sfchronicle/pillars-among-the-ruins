@@ -20,6 +20,27 @@
         <a href="#" title="Share via Email"><i class="fa fa-envelope"></i></a>
 	</div> 
 
+	<div id="mobile-menu">
+	    <i class="fa fa-bars"></i>
+	</div>
+
+	<div id="mobile-navbar">
+		<ul>
+	        <section class="button-group" style="width: 100%;">
+	        	<a href="{{ url_for('mainbar_view') }}">The Story</a>
+	        	<a href="{{ url_for('profiles_view') }}">The Men</a>
+        	</section>
+        	<section class="button-group" style="width: 100%;">
+	        	<a href="{{ url_for('doc_view') }}">The Film</a>
+	        	<a href="{{ url_for('about_view') }}">About</a>
+        	</section><br>
+	        <section class="button-group social-icons" style="width: 100%;">
+                <a href="#" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
+                <a href="#" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                <a href="#" title="Share via Email"><i class="fa fa-envelope"></i></a>
+            </section>
+   		</ul>
+	</div>
 
 </div>
 
