@@ -1,12 +1,11 @@
 #documentary {
-  background-color: #383838;
-  height: 100%;
 
   .doc-container {
     max-width: 760px;
     width: 100%;
     margin: 0 auto;
     padding-top: 40px;
+    padding-bottom: 72px;
 
     @include media (max-width $sm-md-breakpoint) {
       padding-top: 0;
@@ -14,7 +13,6 @@
 
     @include media (max-width $small-breakpoint) {
       padding-bottom: 90px;
-      background: #383838;
     }
     
     p { 
@@ -25,6 +23,19 @@
       
       @include media(max-width $sm-md-breakpoint) {
         padding: 0 10px;
+      }
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: white;
+
+      @include media(max-width $sm-md-breakpoint) {
+        padding: 0 10px;
+      }
+
+      @include media(max-width $small-breakpoint) {
+        font-size: 1.5em;
       }
     }
 

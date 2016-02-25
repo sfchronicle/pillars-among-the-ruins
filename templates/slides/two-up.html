@@ -7,7 +7,7 @@
     <div class="two-up-container">
         {{ slide.body|safe }}
         {% if slide.is_lede %}
-            <h2>{{ profile.name }}</h2>
+            <h1>{{ profile.name }}</h1>
                 <p>{% if profile.body %}{{ profile.body }}{% else %}Lorem ipsum dolor sit amet, consectetur adipisicing elit.{% endif %}</p>
                 <section class="button-group">
                     <a href="#" data-featherlight="#video-modal" title="Play {{profile.name}}'s video vignette">
