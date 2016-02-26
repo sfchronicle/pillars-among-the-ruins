@@ -98,12 +98,20 @@
   p {
     font-size: 0.65em;
     color: #636363;
-    font-family: sans-serif;
+    font-family: $sans-serif;
 
     @include media(max-width 900px) {
       padding: 0 10px;
     }
   }
+}
+
+.byline {
+  float: right;
+  margin-bottom: 0;
+}
+.caption {
+  clear: right;
 }
 
 .img-full-width {
@@ -123,6 +131,10 @@
 
 .portrait {
   max-width:400px;
+  float: left;
+  padding: 1em;
+  margin-left: 14%;
+  margin-bottom: 1em;
 }
 
 
@@ -144,7 +156,11 @@
   width: 200px;
   float: right;
   margin-top: 2em;
-  margin-right: 18%;
+  margin-right: 14%;
+
+  a {
+    color: #333;
+  }
   
   article {
     padding: 1em;
