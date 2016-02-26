@@ -3,6 +3,21 @@
 {% block title %}{{ profile.name }} - Last Men Standing | SF Chronicle{% endblock %}
 
 {% block head %}
+
+    <!-- Facebook Tags -->
+    <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/{{ profile.slug }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ profile.name }} - Last Men Standing | SF Chronicle" />
+    <meta property="og:description" content="{{ profile.facebook }}" />
+    <meta property="og:image" content="
+    http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg" />
+    <meta property="og:site_name" content="San Francisco Chronicle" />
+    <meta property="fb:app_id" content="537896802938133"/>
+
+    <!-- Twitter Card Meta Data -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@sfchronicle" />
+
     <!-- Begin Hearst analytics -->
     <script type="text/javascript">
         var omni_channelPath = "News :: Special Projects";

@@ -9,6 +9,8 @@ class Profile(db.Model):
     slug = db.Column(db.String(100))
     image_url = db.Column(db.String(100))
     vimeo_id = db.Column(db.Integer())
+    facebook = db.Column(db.Text())
+    twitter = db.Column(db.Text())
 
     slides = db.relationship('Slide', backref=db.backref('profile', lazy='joined'), lazy='dynamic')
 
