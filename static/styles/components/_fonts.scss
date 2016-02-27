@@ -1,4 +1,16 @@
 @font-face{
+  font-family:"AntennaReg";
+  font-style: normal;
+  font-weight: normal;
+
+  src:url("http://projects.sfchronicle.com/shared/fonts/antenna/regular/antennaregular.eot");
+
+  src:url("http://projects.sfchronicle.com/shared/fonts/antenna/regular/antennaregular.eot?") format("embedded-opentype"),
+      url("http://projects.sfchronicle.com/shared/fonts/antenna/regular/antennaregular.woff") format("woff"),
+      url("http://projects.sfchronicle.com/shared/fonts/antenna/regular/antennaregular.ttf") format("truetype");
+}
+
+@font-face{
   font-family:"AntennaMedium";
   font-style: normal;
   font-weight: normal;

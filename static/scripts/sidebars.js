@@ -52,3 +52,21 @@ $('.aids_infections').click(function() {
         'display': 'block'
     });
 });
+
+$('.aids_kickass').click(function() {
+    $('#aids_kickass').css({
+        'display': 'block'
+    });
+});
+
+$('.aids_disability').click(function() {
+    $('#aids_disability').css({
+        'display': 'block'
+    });
+});
+
+$('.aids_antiretrovirals').click(function() {
+    $('#aids_antiretrovirals').css({
+        'display': 'block'
+    });
+});

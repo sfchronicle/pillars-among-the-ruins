@@ -132,3 +132,8 @@ App.lazyload = function () {
 
 App.triggerModel = function () {
 };
+
+    $("#mobile-menu").on('click', function (event) {
+      event.preventDefault();
+      $("#mobile-navbar").slideToggle("open");
+    });
