@@ -107,7 +107,7 @@ main.landing {
 
 .ucsf-ad {
   margin-top:1em;
-  max-height: 95px;
+  max-width: 230px;
 
   @include media(max-width $small-breakpoint) {
     max-height: 60px;
