@@ -75,3 +75,23 @@ aside > .inline-asset.inline-left {
     padding: 0 5px;
   }
 }
+
+.small-screen {
+  position:fixed;
+  background-image:url('http://projects.sfchronicle.com/media/aids-proj/nono.png');
+  background-size:cover;
+  top: 0;
+  left:0;
+  height:100%;
+  z-index: 99;
+  width:100%;
+  display: none;
+  background-position: center;
+}
+
+@media screen and (orientation: landscape){
+
+   .small-screen  {
+      display: block;
+   }
+}

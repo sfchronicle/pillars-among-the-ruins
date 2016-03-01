@@ -5,6 +5,10 @@
 {% block head %}
 
    <link rel="standout" href="{{ url_for('mainbar_view') }}" />
+   <link href="http://vjs.zencdn.net/5.7.1/video-js.css" rel="stylesheet">
+
+  <!-- Video JS IE Support -->
+  <script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
    
     <!-- Begin Hearst analytics -->
     <script type="text/javascript">
@@ -57,7 +61,8 @@
             }, 1000);
         return false;
     });
-</script>    
+</script> 
+<script src="http://vjs.zencdn.net/5.7.1/video.js"></script>   
 {% assets filters="uglifyjs", output="scripts/sidebars.%(version)s.js",
     "scripts/sidebars.js" %}
     <script type="text/javascript" src="{{ ASSET_URL }}"></script>

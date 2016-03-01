@@ -106,12 +106,20 @@
   }
 }
 
+.aside-video {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 .byline {
   float: right;
   margin-bottom: 0;
 }
 .caption {
   clear: right;
+  font-size: 0.65em;
+  color: #636363;
+  font-family: "AntennaMedium", "Lato", "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .img-full-width {
@@ -158,6 +166,13 @@
   margin-top: 2em;
   margin-right: 14%;
 
+  @include media (max-width 641px) {
+    width: 100%;
+    margin:0 auto;
+    float:none;
+    max-width: 300px;
+  }
+
   a {
     color: #333;
   }
@@ -165,6 +180,10 @@
   article {
     padding: 1em;
     margin-bottom: 1em;
+
+    @include media (max-width 641px) {
+      margin-bottom:0 ;
+    }
 
     h3 {
       color: #333;
@@ -193,9 +212,34 @@
     -o-transition: opacity 340ms ease-in-out;
     transition: opacity 340ms ease-in-out;
 
-    .sidebar-aside img {
+    img {
       width: 100%;
       height: auto;
     }
+  }
+
+}
+
+#landing-video {
+  
+  @include media (max-width $medium-breakpoint) {
+    display:none;
+  }
+}
+
+.landing-gif {
+
+  @include media(max-width $medium-breakpoint){
+    background-image: url('http://projects.sfchronicle.com/media/aids-proj/castro_flag.jpg');
+    opacity:0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @include media(max-width 600px){
+    opacity:0.65;
+    background-image: url('http://projects.sfchronicle.com/media/aids-proj/castro_flag.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }

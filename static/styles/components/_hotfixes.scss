@@ -40,6 +40,20 @@ body {
   background-color: #000;
 }
 
+.mick {
+  background: none !important;
+}
+
+#social {
+  a {    
+    padding: 10px;
+    color: #fff;
+  }
+  .fa{
+    font-size: 1.5em;
+  }
+}
+
 //IE Hacks
 
 html[data-browser*='MSIE 10.0'] {
