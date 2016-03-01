@@ -35,13 +35,18 @@
 {% endblock %}
 
 {% block content %}
-<main id="about-page" class="landing">
-  <div class="about-container">
-      <header id="about-title">
-          <a href="{{ url_for('index') }}"><h1>About This Project</h1></a><br>
-          <p>Written by <a href="">Erin Allday</a> | Designed by <a href="">Michael Grant</a> | Developed by <a href="">Aaron Williams</a> &amp; <a href="">Lucio Villa</a> | Photography by <a href="">Erin Brethauer</a>, <a href="">Tim Hussin</a>, <a href="">Leah Millis</a> &amp; <a href="">Russell Yip</a> | Video by <a href="">Erin Brethauer</a> &amp; <a href="">Tim Hussin</a>
-      </header>
-  </div>
+<div id="documentary">
+    <div class="doc-container">
+        <div class='embed-container'>
+            <iframe src='http://player.vimeo.com/video/155609975?title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+        <h1>About This Project</h1>
+        <p>The discovery of drugs to treat HIV and prevent AIDS in the mid-1990s altered the course of an epidemic almost overnight, revoking a death sentence for tens of thousands of people. But survival brought new challenges, and the survivors themselves largely have been forgotten. Reporter Erin Allday interviewed more than 50 men who have lived with HIV/AIDS for half of their lives, as well as doctors, activists, city officials and LGBT allies. Allday, along with photographers Erin Brethauer and Tim Hussin, spent 10 months focusing on eight survivors for this story. Their experiences reflect struggles taking place across San Francisco and the country as survivors continue fighting for their lives.</p>
+        <p>Written by Erin Allday | Designed by Michael Grant &amp; Lucio Villa | Developed by Aaron Williams &amp; Lucio Villa | Photography by Erin Brethauer, Tim Hussin, Leah Millis &amp; Russell Yip | Video & Film by Erin Brethauer &amp; Tim Hussin</p>
+    </div>
+</div> 
+
+
 {% include 'components/menu.html' %}
 </main>
 {% endblock %}
