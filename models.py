@@ -11,6 +11,8 @@ class Profile(db.Model):
     vimeo_id = db.Column(db.Integer())
     facebook = db.Column(db.Text())
     twitter = db.Column(db.Text())
+    fb_img_url = db.Column(db.Text())
+    fb_description = db.Column(db.Text())
 
     slides = db.relationship('Slide', backref=db.backref('profile', lazy='joined'), lazy='dynamic')
 

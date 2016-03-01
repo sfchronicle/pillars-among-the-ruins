@@ -54,6 +54,18 @@ body {
   }
 }
 
+.ucsf-adtwo {
+  margin-top: 1em;
+  max-width: 170px;
+}
+
+.vignette-ad {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    border: none !important;
+}
+
 //IE Hacks
 
 html[data-browser*='MSIE 10.0'] {
