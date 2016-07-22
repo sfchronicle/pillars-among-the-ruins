@@ -1,5 +1,5 @@
-# Pillars Among the Ruins
-Description TK
+# Last Men Standing
+They outlived an epidemic, but San Francisco’s AIDS survivors are still fighting for their lives. And the city that once helped save them is ill-prepared to serve them now.
 
 ## Requirements
 - Python 2.7.x
