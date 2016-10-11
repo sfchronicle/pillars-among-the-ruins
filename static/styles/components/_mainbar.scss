@@ -22,6 +22,8 @@
     @include align-items(center);
     @include align-self(center);
 
+
+
     color: white;
     height: 100vh;
     overflow: hidden;
@@ -35,6 +37,12 @@
     background-position: center;
     background-image: url($bg-image-2);
 
+    @include media(max-width 595px) {
+
+      @include align-items(flex-end);
+      @include justify-content(flex-end);
+    }
+
     @include media(max-width $small-breakpoint) {
       border-width: em(15);
     }
@@ -45,6 +53,10 @@
       margin: 0 auto;
       max-width: 720px;
       @include z-index(5);
+
+      @include media (max-width 595px) {
+        margin-bottom: 20%;
+      }
 
       p {
         margin: 0 auto;
@@ -245,5 +257,44 @@
     background-image: url('http://projects.sfchronicle.com/media/aids-proj/castro_flag.gif');
     background-size: contain;
     background-repeat: no-repeat;
+  }
+}
+
+#mainbar-video {
+  
+  @include media (max-width $medium-breakpoint) {
+    display:none;
+  }
+}
+
+.mainbar-gif {
+
+  @include media(max-width $medium-breakpoint){
+    background-image: url('http://ww2.hdnux.com/photos/41/00/73/8654565/15/900x900.jpg');
+    opacity:0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @include media(max-width 600px){
+    opacity:0.65;
+    background-image: url('http://projects.sfchronicle.com/media/aids-proj/mainbar.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.aids-graphics {
+  max-width: 1220px;
+  margin: 0 auto;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.aids-graphics-inner {
+  @include media (max-width $medium-breakpoint) {
+    width: 1029px !important;
+    border: 10px solid #333;
+    padding: 10px !important;
   }
 }

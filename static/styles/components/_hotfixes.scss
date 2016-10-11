@@ -12,6 +12,7 @@
   position: fixed;
   top: 10px;
   left: 10px;	
+  max-width:180px;
 }
 
 #sf_c_logo {
@@ -87,4 +88,55 @@ html[data-browser*='MSIE 10.0'] {
 html[data-browser*='Safari'] {
 
 
+}
+
+#harry-video {
+  
+  @include media (max-width $medium-breakpoint) {
+    display:none;
+  }
+}
+
+.harry-gif {
+
+  @include media(max-width $medium-breakpoint){
+    background-image: url('http://ww2.hdnux.com/photos/41/00/73/8654557/15/900x900.jpg');
+    opacity:0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  @include media(max-width 600px){
+    opacity:1;
+    background-image: url('http://projects.sfchronicle.com/media/aids-proj/harry.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+
+#mick-video {
+  
+  @include media (max-width $medium-breakpoint) {
+    display:none;
+  }
+}
+
+.mick-gif {
+
+  @include media(max-width $medium-breakpoint){
+    background-image: url('http://ww2.hdnux.com/photos/41/00/73/8654620/15/900x900.jpg');
+    opacity:0.5;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  
+  @include media(max-width 600px){
+    opacity:0.65;
+    background-image: url('http://projects.sfchronicle.com/media/aids-proj/mick.gif');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+  }
 }

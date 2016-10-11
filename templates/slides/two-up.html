@@ -25,7 +25,7 @@
             <h1>{{ profile.name }}</h1>
             <section class="button-group">
                 <a href="https://twitter.com/intent/tweet?url=http%3A%2F%2Fprojects.sfchronicle.com%2F2016%2Fliving-with-aids%2F{{ profile.slug }}&text={{ profile.twitter }}&via=sfchronicle&hashtags=survivingAIDS" title="Share on Twitter"><i class="fa fa-twitter"></i></a>
-                <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//projects.sfchronicle.com%2F2016%2Fliving-with-aids%2F{{ profile.slug }}" title="Share on Facebook"><i class="fa fa-facebook"></i></a>
+                <a id="facebook-icon" href="#" target="_blank" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://projects.sfchronicle.com/2016/living-with-aids/{{ profile.slug }}', 'facebook-share-dialog', 'width=626,height=436'); return false;"><i class="fa fa-facebook"></i></a>
                 <a href="mailto:?subject=Last Men Standing – A San Francisco Chronicle special report.&body=http://projects.sfchronicle.com/2016/living-with-aids" title="Share via Email"><i class="fa fa-envelope"></i></a>
             </section>
             <section class="button-group">

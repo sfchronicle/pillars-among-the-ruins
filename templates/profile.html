@@ -3,11 +3,12 @@
 {% block title %}{{ profile.name }} - Last Men Standing | SF Chronicle{% endblock %}
 
 {% block head %}
+    
     <meta name="description" content="{{ profile.fb_description }}">
     <!-- Facebook Tags -->
     <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/{{ profile.slug }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="{{ profile.name }} - Last Men Standing | SF Chronicle" />
+    <meta property="og:title" content="The forgotten survivors of AIDS" />
     <meta property="og:description" content="{{ profile.facebook }}" />
     <meta property="og:image" content="{{ profile.fb_img_url }}" />
     <meta property="og:site_name" content="San Francisco Chronicle" />
@@ -47,8 +48,12 @@
 
 {% endblock %}
 
+
+
 {% block content %}
+
 <main class="profile" id="{{ profile.slug }}">
+    <script>document.getElementById("ganymede").className += " fade-out";</script>
     <section class="swiper-container">
         <div class="swiper-wrapper">
         {% for slide in slides %}
@@ -66,6 +71,8 @@
             {% endif %}
             </section>
         {% endfor %}
+        
+        <style type="text/css">#ganymede{opacity: 1;transition: 1s opacity;}#ganymede.fade-out{opacity: 0;transition: none;}</style>
         </div>
     </section>
 
@@ -82,6 +89,10 @@
 <script>
     $(document).ready(function() {
         App.init();
+    });
+    
+    $(function() {
+     $('#ganymede').removeClass('fade-out');
     });
 </script>
 {% endblock %}

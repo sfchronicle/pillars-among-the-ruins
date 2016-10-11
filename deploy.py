@@ -9,7 +9,7 @@ S3_BUCKET_NAME = 'projects.sfchronicle.com'
 ROOT_URL = '//extras.sfgate.com'
 TEST_PROJECT_NAME = 'test-proj/aids-project'
 
-PROJECT_NAME = '2016/pillar-among-the-ruins/'
+PROJECT_NAME = '2016/living-with-aids'
 
 def upload_assets():
     print('Uploading ...')
@@ -27,7 +27,7 @@ if __name__ == '__main__':
 
     for arg in sys.argv[1:]:
         if arg == 'build':
-            app.config['FREEZER_BASE_URL'] = '{}/{}'.format(ROOT_URL, TEST_PROJECT_NAME)
+            app.config['FREEZER_BASE_URL'] = '{}/{}'.format(ROOT_URL, PROJECT_NAME)
             freezer.freeze()
 
         else:
