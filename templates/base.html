@@ -2,10 +2,25 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
+    <meta name="__sync_contentCategory" content="meterA">
     <title>{% block title %}{% endblock %}</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" href="http://www.sfchronicle.com/favicon.ico?v=2">
+    {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
+              "bower_components/jquery/dist/jquery.js",
+              "bower_components/fastclick/lib/fastclick.js",
+              "bower_components/featherlight/src/featherlight.js",
+              "bower_components/bLazy/blazy.js",
+              "bower_components/dropcap.js/dropcap.js",
+              "bower_components/Swiper/dist/js/swiper.jquery.js",
+              "bower_components/okvideo/src/okvideo.js" %}
+    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
+    {% endassets %}
+     <!-- Treg & Syncronex -->
+    <script type="text/javascript" src="http://treg.hearstnp.com/treg.js"></script>
+    <script type="text/javascript" src="http://www.sfchronicle.com/js/hdn/omniture/syncronex.js"></script>
+    <script type="text/javascript" src="https://syncaccess-hst-sfc.syncronex.com/hst/sfc/api/scripts/syncwall"></script>
     {% block head %}{% endblock %}
 
 
@@ -28,16 +43,7 @@
 <!--     {% if config.DEBUG %}
     <script src="{{ url_for('static', filename='bower_components/tota11y/build/tota11y.js') }}"></script>
     {% endif %} -->
-    {% assets filters="uglifyjs", output="scripts/vendor.%(version)s.js",
-              "bower_components/jquery/dist/jquery.js",
-              "bower_components/fastclick/lib/fastclick.js",
-              "bower_components/featherlight/src/featherlight.js",
-              "bower_components/bLazy/blazy.js",
-              "bower_components/dropcap.js/dropcap.js",
-              "bower_components/Swiper/dist/js/swiper.jquery.js",
-              "bower_components/okvideo/src/okvideo.js" %}
-    <script type="text/javascript" src="{{ ASSET_URL }}"></script>
-    {% endassets %}
+    
 
         <script>
       // Adds and removes body class depending on screen width.

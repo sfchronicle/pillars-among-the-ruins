@@ -330,3 +330,16 @@
   max-width: 583px;
   padding: 10% 8%;
 }
+
+#profile-fade{
+  opacity: 1;
+  transition: 1s opacity;
+  
+  &.fade-out{
+    opacity: 0;transition: none;
+  }
+}
+
+.vignette-ad:hover {
+    background-color: transparent !important;
+}

@@ -129,3 +129,16 @@ main.landing {
     margin-bottom: 3em;
   }
 }
+
+.alt-overlay{
+  &.gif{
+  opacity:0.5;
+  }
+}
+
+.landing-gif{
+  background-image:url('http://projects.sfchronicle.com/2016/living-with-aids/static/images/castro-flag.gif');
+  background-repeat:no-repeat;
+  background-size:cover;
+
+}

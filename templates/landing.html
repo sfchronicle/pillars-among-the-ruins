@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 
-{% block title %}30 years after the AIDS epidemic, survivors are still fighting for their lives – A San Francisco Chronicle special report.{% endblock %}
+{% block title %}30 years after AIDS epidemic, survivors still fighting for their lives{% endblock %}
 
 {% block head %}
 
     <meta name="description" content="Special Report: Eight men who had the remarkable luck to survive the AIDS epidemic, and the brutal misfortune to live on.">
     <!-- Facebook Tags -->
-    <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/living-with-aids" />
+    <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/living-with-aids/" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="The forgotten survivors of AIDS" />
     <meta property="og:description" content="Special Report: Eight men who had the remarkable luck to survive the AIDS epidemic, and the brutal misfortune to live on." />
@@ -23,6 +23,7 @@
         var omni_channelPath = "News :: Special Projects";
         var omni_title = "Last Men Standing";
         var omni_className = "channel";
+        var omni_paywallSite = "1";
         var omni_publicationDate = "2016-02-28 00:01:00";
         var omni_authorName = "Erin AllDay, Jim Trotter, Michael Grant, Aaron Williams, Lucio Villa, Russell Yipp, Erin Brethauer, Tim Hussin, Kristen Go,Judy Walgren, Nicole Fruge";
         var omni_authorTitle = "San Francisco Chronicle staff";
@@ -53,33 +54,30 @@
     {% include 'components/logo.html' %}
     <section class="swiper-container">
         <div class="swiper-wrapper">
-
             <section class="section swiper-slide">
                 <section class="large-display landing-display">
                     <div class="landing-container">
                         <header id="landing-title">
                             <h1>Last Men Standing</h1>
-                            <p>They outlived an epidemic, but San Francisco’s AIDS survivors are still fighting for their lives.</p>
+                            <p>They outlived an epidemic, but San Francisco’s AIDS survivors are still fighting for their lives. And the city that once helped save them is ill-prepared to serve them now.</p>
                             {% include 'components/_social-include.html' %}
                             <section class="button-group" style="width:100%; margin:20px auto 0">
                                 <a href="{{ url_for('mainbar_view') }}"  title="The struggles and hopes of AIDS survivors." style="margin: 0 15px;">The Story
                                 </a>
                                 <a href="{{ url_for('profiles_view') }}" title="Meet eight men who shared stories of survival." style="margin: 0 15px;">The Men
                                 </a>
-                                <a href="{{ url_for('doc_view') }}" title="View a trailer of the “Last Men Standing” documentary." style="margin: 0 15px;">The Film
+                                <a href="http://projects.sfchronicle.com/2016/last-men-standing-film/" title="View a trailer of the “Last Men Standing” documentary." style="margin: 0 15px;">The Film
                                 </a>
                             </section>
-                            <a href="https://www.ucsf.edu" target="_blank"><img class="ucsf-ad" src="http://projects.sfchronicle.com/media/aids-proj/ucsf_ad.png"></a>
+                            <a href="http://tiny.ucsf.edu/mBxM3A" target="_blank"><img class="ucsf-ad" src="http://projects.sfchronicle.com/media/aids-proj/ucsf_ad.png"></a>
                         </header>
+                        <div class="update-btn"><a href="http://projects.sfchronicle.com/2016/aids-survivors/portraits/">Read the update</a></div>
                     </div>
                 </section>
             </section>
         </div>
     </section>
-    <div id="okplayer-mask" style="position: fixed; left: 0px; top: 0px; overflow: hidden; z-index: -998; height: 100%; width: 100%; background-image: url(&quot;data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw%3D%3D&quot;);"></div>
-    <iframe src="//player.vimeo.com/video/145925416?api=1&amp;title=0&amp;byline=0&amp;portrait=0&amp;playbar=0&amp;loop=1&amp;autoplay=1" frameborder="0" style="position: fixed; left: -10px; top: -10px; overflow: hidden; height: 120%; width: 116%; visibility: visible; background-color: black; z-index:-999;" id="landing-video"></iframe>
-    <iframe id="rufous-sandbox" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: none;"></iframe>
-    <div class="alt-overlay landing-gif" unselectable="on"></div>
+    <div class="alt-overlay gif landing-gif" unselectable="on"></div>
 </main>
 {% endblock %}
 

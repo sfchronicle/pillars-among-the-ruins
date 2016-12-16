@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}{{ profile.name }} - Last Men Standing | SF Chronicle{% endblock %}
+{% block title %}Last Men Standing: {{ profile.name }}{% endblock %}
 
 {% block head %}
     
@@ -23,6 +23,7 @@
         var omni_channelPath = "News :: Special Projects";
         var omni_title = "{{ profile.name }} - Last Men Standing";
         var omni_className = "article";
+        var omni_paywallSite = "1";
         var omni_publicationDate = "2016-02-28 00:01:00";
         var omni_authorName = "Erin AllDay, Jim Trotter, Michael Grant, Aaron Williams, Lucio Villa, Russell Yipp, Erin Brethauer, Tim Hussin, Kristen Go,Judy Walgren, Nicole Fruge";
         var omni_authorTitle = "San Francisco Chronicle staff";
@@ -52,8 +53,7 @@
 
 {% block content %}
 
-<main class="profile" id="{{ profile.slug }}">
-    <script>document.getElementById("ganymede").className += " fade-out";</script>
+<main class="profile fade-out" id="profile-fade">
     <section class="swiper-container">
         <div class="swiper-wrapper">
         {% for slide in slides %}
@@ -71,8 +71,6 @@
             {% endif %}
             </section>
         {% endfor %}
-        
-        <style type="text/css">#ganymede{opacity: 1;transition: 1s opacity;}#ganymede.fade-out{opacity: 0;transition: none;}</style>
         </div>
     </section>
 
@@ -90,9 +88,11 @@
     $(document).ready(function() {
         App.init();
     });
+
+
     
     $(function() {
-     $('#ganymede').removeClass('fade-out');
+     $('#profile-fade').removeClass('fade-out');
     });
 </script>
 {% endblock %}

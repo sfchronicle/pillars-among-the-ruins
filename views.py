@@ -18,8 +18,10 @@ def mainbar_view():
     profiles = Profile.query.all()
     return render_template(
         'mainbar.html',
-        title='mainbar',
-        profiles=profiles
+        title='story',
+        profiles=profiles,
+        slug='story'
+
     )
 
 @app.route('/documentary/')
