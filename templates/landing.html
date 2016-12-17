@@ -3,7 +3,7 @@
 {% block title %}30 years after AIDS epidemic, survivors still fighting for their lives{% endblock %}
 
 {% block head %}
-
+    <meta name="__sync_contentCategory" content="meterA">
     <meta name="description" content="Special Report: Eight men who had the remarkable luck to survive the AIDS epidemic, and the brutal misfortune to live on.">
     <!-- Facebook Tags -->
     <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/living-with-aids/" />
@@ -66,7 +66,7 @@
                                 </a>
                                 <a href="{{ url_for('profiles_view') }}" title="Meet eight men who shared stories of survival." style="margin: 0 15px;">The Men
                                 </a>
-                                <a href="http://projects.sfchronicle.com/2016/last-men-standing-film/" title="View a trailer of the “Last Men Standing” documentary." style="margin: 0 15px;">The Film
+                                <a href="{{ url_for('doc_view') }}" title="View a trailer of the “Last Men Standing” documentary." style="margin: 0 15px;">The Film
                                 </a>
                             </section>
                             <a href="http://tiny.ucsf.edu/mBxM3A" target="_blank"><img class="ucsf-ad" src="http://projects.sfchronicle.com/media/aids-proj/ucsf_ad.png"></a>

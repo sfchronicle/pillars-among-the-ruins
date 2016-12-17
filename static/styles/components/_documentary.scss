@@ -1,13 +1,12 @@
 #documentary {
 
-  background-color: #151414;
+  background-color: #f7f7f7;
 
   .doc-container {
-    max-width: 700px;
+    max-width: 1000px;
     width: 100%;
     margin: 0 auto;
-    padding-top: 40px;
-    padding-bottom: 72px;
+    padding: 40px 0 72px;
 
     @include media (max-width $sm-md-breakpoint) {
       padding-top: 0;
@@ -19,25 +18,24 @@
     
     p { 
       margin-top: 1.5em;
-      color: #fff;
+      color: #333;
+      padding:0 10px;
       font-size:0.8em;
       font-family: $antenna-reg;
       
-      @include media(max-width $sm-md-breakpoint) {
-        padding: 0 10px;
-      }
     }
 
     h1 {
       margin-top: 20px;
-      color: white;
+      color: black;
+      text-align:center;
 
       @include media(max-width $sm-md-breakpoint) {
         padding: 0 10px;
       }
 
       @include media(max-width $small-breakpoint) {
-        font-size: 1.5em;
+        font-size: 1.4em;
       }
     }
 
@@ -59,4 +57,35 @@
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+#screenings{
+  li{
+    color: #C32525;
+    font-size:0.9em;
+    padding:0 10px;
+  }
+  p{
+    font-size:0.8em;
+    margin-top:0 !important;
+  }
+}
+
+.center-images{
+  text-align: center;
+    padding-top: 2em;
+}
+.row {
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-images img {
+    width: 20%;
+    max-width: 150px;
+    padding-bottom: 1em;
+
+    @include media(max-width 480px){
+    width:30%;
+    }
 }

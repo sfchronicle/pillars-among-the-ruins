@@ -1,0 +1,6 @@
+{% macro info(screen='', location='', date='') -%}
+<ul id="screenings">
+	<li class="screen">{{screen}}</li>
+	<li><p>{{location}}<br>{{date}}</p></li>
+</ul>
+{%- endmacro %}
