@@ -5,7 +5,6 @@
 {% block head %}
   <meta name="__sync_contentCategory" content="meterA">
    <link rel="standout" href="{{ url_for('mainbar_view') }}" />
-   <link href="http://vjs.zencdn.net/5.7.1/video-js.css" rel="stylesheet">
    <meta name="description" content="Special Report: Eight men who had the remarkable luck to survive the AIDS epidemic, and the brutal misfortune to live on.">
     <!-- Facebook Tags -->
     <meta property="og:url" content="http://www.projects.sfchronicle.com/2016/living-with-aids/story" />
@@ -66,15 +65,14 @@
 
 {% block javascript %}
 <script>
-    $(document).ready(function() {
-        App.init();
-    });
-    // $('link').click(function(){
-    //     $('html, body').animate({
-    //         scrollTop: $( $(this).attr('href') ).offset().top + 40
-    //         }, 1000);
-    //     return false;
-    // });
+  $(document).ready(function() {
+    App.init();
+  });
+  $('.slide-control-lede').on('click', function() {
+    $('html, body').animate({
+      scrollTop: $("#mainbar").offset().top+80
+      }, 300);
+  });
 </script> 
 {% assets filters="uglifyjs", output="scripts/sidebars.%(version)s.js",
     "scripts/sidebars.js" %}

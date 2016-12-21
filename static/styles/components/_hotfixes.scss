@@ -140,3 +140,16 @@ html[data-browser*='Safari'] {
     background-position: top;
   }
 }
+
+.featherlight .featherlight-content {
+  min-width:59%;
+  padding:0;
+  border-bottom:none;
+}
+
+@media only screen and (max-width: 480px){
+  .featherlight .featherlight-content {
+    margin:0;
+    min-width:89%;
+  }
+}

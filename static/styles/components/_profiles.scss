@@ -177,7 +177,18 @@
     margin-right: em(20);
   }
 }
-
+.slide-control-lede{
+  z-index: 10;
+  color: white;
+  font-size: 1.25em;
+  background-color: #000;
+  text-align: center;
+  width: 25px;
+  position: absolute;
+  bottom: em(10);
+  right: em(10);
+  cursor:pointer;
+}
 .video-container {
   position: relative;
   width: 100%;

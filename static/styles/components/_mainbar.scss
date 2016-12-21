@@ -330,3 +330,48 @@
     display:none;
   }
 }
+
+
+.float-img-container {
+    max-width: 735px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.float-img.right {
+    float: right;
+    margin: 1em -7.5em 0.5em 1.5em;
+}
+.infobox {
+    background: #e6e6e6;
+    font-family: $serif;
+    font-size: 0.68em;
+    padding: 20px;
+    color: black;
+
+    a{
+    color:$red;
+    }
+}
+
+.infobox .info-title {
+    font-family: $sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    color: #333;
+}
+.box {
+    max-width: 260px;
+}
+@media (max-width: 1072px){
+.float-img.right {
+    float: none;
+    margin: 2em auto;
+}
+}
+
+@media (max-width: 730px){
+.float-img-container {
+    padding: 0 1em;
+}
+}

@@ -119,7 +119,7 @@ App.profileScroll = function () {
     self.swiper.slidePrev();
   });
 
-  $('.fa-arrow-down, #start-profile').on('click', function (event) {
+  $('.slide-control, #start-profile').on('click', function (event) {
     event.preventDefault();
     self.swiper.slideNext();
   });
@@ -133,7 +133,7 @@ App.lazyload = function () {
 App.triggerModel = function () {
 };
 
-    $("#mobile-menu").on('click', function (event) {
-      event.preventDefault();
-      $("#mobile-navbar").slideToggle("open");
-    });
+$("#mobile-menu").on('click', function (event) {
+  event.preventDefault();
+  $("#mobile-navbar").slideToggle("open");
+});
