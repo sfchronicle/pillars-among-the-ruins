@@ -37,13 +37,14 @@
       <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
     </p>
   </video>
+  <img class="book-gif" src="{{ url_for('static', filename='images/lms-book.gif') }}">
   <p class="caption" style="margin-top: 10px;">When San Francisco General Hospital opened the nation’s first inpatient AIDS ward, nurses started a scrapbook for photos of patients and staff and thank-you cards from families. They also started a list. On the first page, in 1983, one nurse at Ward 5B wrote: “I don’t want the names of the folks who have died on this ward to be forgotten.” There are 28 carefully handwritten names on that page. Flip a few pages to 1985, and the list contains nearly 200 names, each so tightly scrawled, some are hard to read.</p>
 </aside>
 
 <p>AIDS gutted their generation. But not everyone died. Many men had the remarkable luck &mdash; and often brutal misfortune &mdash; to struggle on. Now some have fought AIDS for half their lives, and by the most primitive measure, they&rsquo;ve won.</p>
 
 
-<p>In San Francisco and across the country, AIDS has become an older person&rsquo;s disease: More than half of those living with AIDS or HIV, the virus that causes it, are now 50 or older. In San Francisco alone, 6,000 gay men have been living with HIV or AIDS for at least 20 years. Some have been able to thrive. But most have not.</p>
+<p>In San Francisco and across the country, AIDS has become an older person&rsquo;s disease: More than half of those living with AIDS or <span class="sidebar aids_infections" title="Click for more info">HIV, the virus that causes it</span>, are now 50 or older. In San Francisco alone, 6,000 gay men have been living with HIV or AIDS for at least 20 years. Some have been able to thrive. But most have not.</p>
 
 {% include 'inlines/graphic-3.html' %}
 
@@ -59,15 +60,6 @@
 
 <p>In the throes of a plague, no one thought about those who would live.</p>
 
-{% include 'inlines/graphic-1.html' %}
-
-<p><span class="dropcap">P</span>eter Greene was 22 when he hitchhiked to San Francisco just after college. It was 1977, and he was Mr. Gay Colorado, a title he had won in a barroom stunt. With his Tom Selleck mustache and athletic body, Peter was confident and fearless. He supported himself with modeling gigs for gay newspapers and magazines, posing half-naked in ads for Castro district bars.</p>
-
-<p>He arrived in a city exploding with political and cultural gay life, host to a great migration that created a boomtown in the Castro. It was a thrilling time. A new live-out-loud generation was coalescing around political touchstones: the Stonewall riots in New York City, attacks on gay rights in California and the rest of the country, and in San Francisco, the 1978 assassinations of Supervisor Harvey Milk, the first openly gay elected official in a major U.S. city, and Mayor George Moscone.</p>
-
-<p>For young gay men from places where living openly was out of the question, the city, especially the Castro, offered a feast of freedom and opportunity. They could walk down the street holding hands or flirt in bars with windows facing the street. In the bathhouses they could have sex with whomever, whenever, free of judgment or shame.</p>
-
-<p>Still, &ldquo;it wasn&rsquo;t just a Sodom and Gomorrah as they like to paint San Francisco,&rdquo; Peter said. &ldquo;We were all just young kids trying to figure out who we were.&rdquo;</p>
 <aside class="image">
         <img src="http://ww1.hdnux.com/photos/43/64/14/9388821/7/900x600.jpg">
         <p class="caption">
@@ -76,9 +68,18 @@ Photo by Erin Brethauer
         </p>
 </aside>
 
+<p><span class="dropcap">P</span>eter Greene was 22 when he hitchhiked to San Francisco just after college. It was 1977, and he was Mr. Gay Colorado, a title he had won in a barroom stunt. With his Tom Selleck mustache and athletic body, Peter was confident and fearless. He supported himself with modeling gigs for gay newspapers and magazines, posing half-naked in ads for Castro district bars.</p>
+
+<p>He arrived in a city exploding with political and cultural gay life, host to a great migration that created a boomtown in the Castro. It was a thrilling time. A new live-out-loud generation was coalescing around political touchstones: the Stonewall riots in New York City, attacks on gay rights in California and the rest of the country, and in San Francisco, the 1978 assassinations of Supervisor Harvey Milk, the first openly gay elected official in a major U.S. city, and Mayor George Moscone.</p>
+
+<p>For young gay men from places where living openly was out of the question, the city, especially the Castro, offered a feast of freedom and opportunity. They could walk down the street holding hands or flirt in bars with windows facing the street. In the bathhouses they could have sex with whomever, whenever, free of judgment or shame.</p>
+
+<p>Still, &ldquo;it wasn&rsquo;t just a Sodom and Gomorrah as they like to paint San Francisco,&rdquo; Peter said. &ldquo;We were all just young kids trying to figure out who we were.&rdquo;</p>
+
+
 <p>AIDS was then an invisible, not-yet-deadly presence. It was never a disease of gay men alone; women and straight men were always at risk too. But in San Francisco it was gay men who were &mdash; and still are &mdash; most vulnerable to AIDS. And in the earliest years, HIV, the human immunodeficiency virus, circulated among people who had no idea it existed, spreading silently among men exploring unprecedented sexual freedom. But first slowly, then relentlessly, HIV and AIDS began taking hold.</p>
 
-{% include 'inlines/graphic-2.html' %}
+{% include 'inlines/graphic-1.html' %}
 
 <p>Nine people died of AIDS in San Francisco in 1981. By 1992, 30 people were dying each week.</p>
 
@@ -131,7 +132,7 @@ Photo by Erin Brethauer
 
 <p>&ldquo;In 1987, my life skittered off,&rdquo; Kevin said. &ldquo;It&rsquo;s been a disaster ever since.&rdquo;</p>
 
-<p>In a support group for people diagnosed with HIV/AIDS, Kevin met men his age who were <span class="sidebar aids_infections" title="Click for more info">clearly dying</span> &mdash; going blind or suffering dementia from HIV invading their brains, or barely able to walk anymore. It was more terrifying than helpful.</p>
+<p>In a support group for people diagnosed with HIV/AIDS, Kevin met men his age who were clearly dying &mdash; going blind or suffering dementia from HIV invading their brains, or barely able to walk anymore. It was more terrifying than helpful.</p>
 
 <p>Every day he expected to begin failing himself. He took experimental drugs, signing up for clinical trials and seeking out underground buyers&rsquo; clubs for medications not yet legal in the United States. Eventually, he began experiencing odd neurological symptoms &mdash; shaky hands, a stiff, awkward walk. Tests showed he might have an AIDS-related infection in his brain.</p>
 
@@ -149,10 +150,12 @@ Photo by Erin Brethauer
 
 <p>Now money, not his health, is Kevin&rsquo;s foremost worry. During the five years he worked, he paid into a disability insurance program that provides enough to cover his rent, food and small indulgences. But the policy will end when he turns 65, cutting his income nearly in half. Living on Social Security alone, about $1,600 a month, will mean he won&rsquo;t be able to afford rent.</p>
 
+{% include 'inlines/graphic-2.html' %}
+
 <p>In many ways, Kevin&rsquo;s situation is better than most &mdash; he currently takes home more than other long-term survivors who have been making do with Social Security for decades. But Kevin and others like him have become dependent on private disability and have no means for making up the difference when their policies expire.</p>
 
 <p><span class="aids_disability sidebar" title="Click for more info">
-        A 2014</span> city report estimated that up to 1,200 people with HIV or AIDS have private disability insurance that will expire at retirement age. Helping them stay in their homes or find new ones would require as much as $19 million in rental subsidies from the city over the next five years. But at the moment, the city has no plan to allocate that money.</p>
+        A 2014 city report</span> estimated that up to 1,200 people with HIV or AIDS have private disability insurance that will expire at retirement age. Helping them stay in their homes or find new ones would require as much as $19 million in rental subsidies from the city over the next five years. But at the moment, the city has no plan to allocate that money.</p>
 
 <p>Last spring, Kevin worked up the courage to speak before a Board of Supervisors committee about his money problems. But he&rsquo;s doubtful that there will be help coming. City leaders seem concerned, he said, but he and his peers would be easy to overlook, to forget.</p>
 
@@ -199,8 +202,8 @@ Photo by Erin Brethauer
 
 <p>&ldquo;We were pillars standing amidst the ruins,&rdquo; he said.</p>
 
-<p>When effective <span class="sidebar aids_antiretrovirals" title="Click for more info">
-        drugs to treat</span> HIV arrived in 1995, their vision of a future together truly seemed possible. The development of antiretroviral drugs called protease inhibitors had a sudden and dramatic impact on the epidemic. Deaths from AIDS in San Francisco dropped from nearly 1,500 in 1995 to just 424 in 1997. Three years after the drugs came along, the Bay Area Reporter, a weekly gay newspaper, ran a banner headline: &ldquo;No obits.&rdquo; For the first time in 15 years, there were no deaths from AIDS to report that week.</p>
+<p>When effective 
+        drugs to treat HIV arrived in 1995, their vision of a future together truly seemed possible. The development of <span class="sidebar aids_antiretrovirals" title="Click for more info">antiretroviral drugs</span> called protease inhibitors had a sudden and dramatic impact on the epidemic. Deaths from AIDS in San Francisco dropped from nearly 1,500 in 1995 to just 424 in 1997. Three years after the drugs came along, the Bay Area Reporter, a weekly gay newspaper, ran a banner headline: &ldquo;No obits.&rdquo; For the first time in 15 years, there were no deaths from AIDS to report that week.</p>
 
 <p>But AIDS could still grab hold. The drugs kept Ganymede alive, but they couldn&rsquo;t save Steven. The virus in his body was too deeply rooted, his immune system too broken.</p>
 
@@ -325,8 +328,7 @@ Photo by Erin Brethauer
 
 <p>Years ago, after he tested positive for HIV, Kevin constantly feared rejection from other men. He would feel indebted to potential partners who accepted him, even if there wasn&rsquo;t a spark of romance. These days, dating men his age can feel like a minefield, so he&rsquo;s largely avoided it. Everyone&rsquo;s damaged. Everyone carries baggage.</p>
 
-<p>For 10 years, Truman was his <span class="sidebar aids_pets" title="Click for more info">
-        closest companion</span>. He talked to the cat constantly, confided his thoughts and feelings. When he was so depressed he stayed in bed day after day, Truman was there, curled up at his side.</p>
+<p>For 10 years, Truman was <span class="sidebar aids_pets" title="Click for more info">his closest companion</span>. He talked to the cat constantly, confided his thoughts and feelings. When he was so depressed he stayed in bed day after day, Truman was there, curled up at his side.</p>
 
 <p>&ldquo;He was the love of my life, the most intimate relationship I have ever had,&rdquo; he said. &ldquo;He was my reason for living.&rdquo;</p>
 
@@ -511,11 +513,11 @@ Photo by Erin Brethauer
 
 <p>The model blended health and support services that provided compassionate care to patients often treated as outcasts elsewhere. Wards dedicated to AIDS treatment &mdash; the first of their kind in the country &mdash; opened at San Francisco General Hospital. Around them rose a web of nonprofit agencies, created largely by the gay community itself.</p>
 
-<p>In the decades since, the needs of those earliest patients have changed, as has the city&rsquo;s model of care. The focus has shifted to <span class="aids_prevention sidebar" title="Click for more info">prevention and rapid treatment</span> for younger people and the newly infected, with the ultimate aim of ending the epidemic.</p>
+<p>In the decades since, the needs of those earliest patients have changed, as has the city&rsquo;s model of care. The focus has shifted to prevention and rapid treatment for younger people and the newly infected, with the ultimate aim of <span class="aids_prevention sidebar" title="Click for more info">ending the epidemic.</span></p>
 
-<p>Long-term survivors feel they are being ignored again. Only in the past year or so have city leaders and health care providers begun <span class="aids_rank sidebar" title="Click for more info">trying to address the issues facing them</span>.</p>
+<p>Long-term survivors feel they are being ignored again. Only in the past year or so have city leaders and health care providers begun trying to address the issues facing them.</p>
 
-<p>&ldquo;We as a community are starting to have awareness. More will happen,&rdquo; said Supervisor Scott Wiener, whose district includes the Castro. &ldquo;But we&rsquo;re in the early stages, and we&rsquo;re definitely behind.&rdquo;</p>
+<p>&ldquo;We as a community are starting to have awareness. More will happen,&rdquo; said Supervisor Scott Wiener, whose district includes the Castro. &ldquo;But <span class="aids_rank sidebar" title="Click for more info">we&rsquo;re in the early stages</span>, and we&rsquo;re definitely behind.&rdquo;</p>
 
 <p>Jesus wasn&rsquo;t an activist back in the epidemic&rsquo;s early days. But over the past several years, watching so many of his peers struggle, he has been moved to act.</p>
 

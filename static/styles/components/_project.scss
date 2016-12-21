@@ -11,21 +11,27 @@ article {
   @include outer-container(100%);
   background-color: #fff;
   padding: em(60) 0 em(120);
+
+  @include media (max-width $small-breakpoint){
+    padding: 0.75em 0 em(120);
+  }
 }
 
 article > p  {
   width: 100%;
-  max-width:700px;
+  max-width:680px;
   margin-left: auto;
   margin-right: auto;
 
   @include media(max-width $sm-md-breakpoint) {
-    padding-left: 1em;
-    padding-right: 1em;
+    padding-left: 10px;
+    padding-right: 10px;
   }
   @include media(max-width $small-breakpoint) {
     @include span-columns(12);
     @include shift(0);
+    font-size:16px;
+    float:none;
   }
 }
 

@@ -8,7 +8,7 @@
     margin: 0 auto;
     padding: 40px 0 72px;
 
-    @include media (max-width $sm-md-breakpoint) {
+    @media (max-width: 1000px) {
       padding-top: 0;
     }
 
@@ -17,11 +17,18 @@
     }
     
     p { 
-      margin-top: 1.5em;
+      text-align:center;
       color: #333;
+      max-width: 870px;
+      margin: 1em auto 0;
       padding:0 10px;
       font-size:0.8em;
       font-family: $antenna-reg;
+
+      @media (max-width:480px){
+        font-size:0.65em;
+        text-align:left;
+      }
       
     }
 
@@ -60,11 +67,15 @@
 }
 
 #screenings{
-  li{
-    color: #C32525;
-    font-size:0.9em;
-    padding:0 10px;
+  text-align: center;
+  max-width: 400px;
+  margin: 1em auto;
+
+  .screen-info{
+    color: #333;
+    font-size:0.8em;
   }
+
   p{
     font-size:0.8em;
     margin-top:0 !important;
@@ -88,4 +99,37 @@
     @include media(max-width 480px){
     width:30%;
     }
+}
+
+.doc-caption{
+  margin-top:0.2em;
+  font-size: 0.6em;
+  color: #333;
+  padding: 0;
+  font-family:$antenna-reg;  
+
+  a{
+    color:#C32525;
+  }
+
+  @media (max-width:1000px){
+    padding: 0 10px;
+  }
+}
+
+#image-jump{
+  @media (max-width:480px){
+    display:none;
+  }
+}
+
+.screen{
+  margin-top:1em;
+  color: #C32525;
+  font-size:0.9em;
+  padding:0 10px;
+  
+  @media (max-width:480px){
+    text-align:center;
+  }
 }

@@ -53,8 +53,9 @@
 <div id="documentary">
     <div class="doc-container">
         <div class='embed-container'>
-            <iframe src='http://player.vimeo.com/video/141968771?title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+            <iframe src='http://player.vimeo.com/video/196470265?title=0&byline=0&portrait=0' frameborder='0' webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
         </div>
+        <div class="doc-caption">Film viewing for personal use only. To host a community screening or share the film in a public or educational setting, please contact <a href="mailto:erin.brethauer@gmail.com">erin.brethauer@gmail.com</a> or <a href="mailto:eallday@sfchronicle.com">eallday@sfchronicle.com</a>.</div>
         <h1>'Last Men Standing'</h1>
 
         <p>"Last Men Standing," the first feature-length documentary from The San Francisco Chronicle, was selected for entry into a series of prestigious film festivals in the U.S. and Canada. The film follows eight Bay Area men who had the remarkable luck to survive AIDS, and the brutal misfortune to live on.</p>
@@ -63,8 +64,8 @@
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/frameline.png">
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/qdoc.png">
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/toronto.png">
-			<span id="image-jump"><br></span>
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/twist.png">
+			<span id="image-jump"><br></span>
 				
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/outfest.png">
 			<img src="http://projects.sfchronicle.com/2016/last-men-standing-film/static/images/laurels/reeling.png">
@@ -77,8 +78,8 @@
   
         	
 			{% import 'components/screenings.html' as screen %}
-
-			{{ screen.info('Metropolitan Community Church of the Palm Beaches World AIDS Day Screening', 'Palm Beach Gardens, Fla' 'December 2016' )}}
+			<ul id="screenings">
+			{{ screen.info('Metropolitan Community Church of the Palm Beaches World AIDS Day Screening', 'Palm Beach Gardens, Fla', 'December 2016' )}}
 
 			{{ screen.info('Sacramento LGBT Center and Sacramento Gay & Lesbian Film Festival', 'Sacramento', 'December 2016') }}
 
@@ -113,7 +114,7 @@
 			{{ screen.info('Queer Documentary Film Festival','Portland, Ore.','May 2016')}}
 
 			{{ screen.info('World Premiere at Castro Theatre','San Francisco','April 2016')}}
-
+			</ul>
 			<hr style="max-width: 80%; margin: 1.5em auto;">
 		
     </div>

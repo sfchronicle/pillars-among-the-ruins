@@ -114,6 +114,7 @@
 
     @include media(max-width 900px) {
       padding: 0 10px;
+      font-size:0.55em;
     }
   }
 }
@@ -131,7 +132,12 @@
   clear: right;
   font-size: 0.65em;
   color: #636363;
+  padding: 0 10px;
   font-family: "AntennaMedium", "Lato", "Helvetica Neue", Helvetica, sans-serif;
+
+  @include media (max-width $small-breakpoint){
+    font-size:12px;
+  }
 }
 
 .img-full-width {
@@ -308,5 +314,19 @@
 
   @include media (max-width $small-breakpoint){
     font-size:12px;
+  }
+}
+
+.book-gif{
+  display:none;
+    @include media (max-width $medium-breakpoint){
+      display:block;
+      margin:0 auto;
+    }
+}
+
+#my-video{
+  @include media (max-width $medium-breakpoint){
+    display:none;
   }
 }
