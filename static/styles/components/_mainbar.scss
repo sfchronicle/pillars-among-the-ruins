@@ -91,6 +91,17 @@
       a {
         color: white;
         font-weight: bold;
+        font-family:$antenna-reg;
+      }
+
+      .date{
+        margin-top:0.7em;
+        font-family:$antenna-reg;
+        font-size:em(12);
+
+        @include media (max-width $small-breakpoint) {
+          font-size: em(10);
+        }
       }
 
       hr {
